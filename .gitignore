@@ -3,3 +3,4 @@ scripts/shots/
 scripts/audit-report.json
 __pycache__/
 node_modules/
+.photo-cache/

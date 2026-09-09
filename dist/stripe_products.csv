@@ -1,18 +1,18 @@
 id,name,description,unit_amount_usd_cents,currency,sku,image
-damiao-dm-j4310,DAMIAO DM-J4310-2EC,10:1 MIT-mode joint module with dual encoders,11900,usd,MR-ACT-4310,https://robotmabel.github.io/store/assets/img/products/damiao-dm-j4310.svg
-damiao-dm4340,DAMIAO DM4340,"9 N·m geared joint motor, dual encoder",16900,usd,MR-ACT-4340,https://robotmabel.github.io/store/assets/img/products/damiao-dm4340.svg
-damiao-dm8009p,DAMIAO DM8009P,"40 N·m joint module, V4",35900,usd,MR-ACT-8009,https://robotmabel.github.io/store/assets/img/products/damiao-dm8009p.svg
+damiao-dm-j4310,DAMIAO DM-J4310-2EC,10:1 MIT-mode joint module with dual encoders,11900,usd,MR-ACT-4310,https://robotmabel.github.io/store/assets/img/photos/damiao-dm-j4310.webp
+damiao-dm4340,DAMIAO DM4340,"9 N·m geared joint motor, dual encoder",16900,usd,MR-ACT-4340,https://robotmabel.github.io/store/assets/img/photos/damiao-dm4340.webp
+damiao-dm8009p,DAMIAO DM8009P,"40 N·m joint module, V4",35900,usd,MR-ACT-8009,https://robotmabel.github.io/store/assets/img/photos/damiao-dm8009p.webp
 damiao-dm10422p,DAMIAO DM10422P,400 N·m hollow-shaft torso actuator,37900,usd,MR-ACT-10422,https://robotmabel.github.io/store/assets/img/products/damiao-dm10422p.svg
-unitree-go-m8010-6,Unitree GO-M8010-6,"Quasi-direct-drive joint motor, 23.7 N·m peak",15900,usd,MR-ACT-GO8010,https://robotmabel.github.io/store/assets/img/products/unitree-go-m8010-6.svg
-unitree-a1,Unitree A1 Motor,33.5 N·m high-torque joint motor,30900,usd,MR-ACT-A1,https://robotmabel.github.io/store/assets/img/products/unitree-a1.svg
-xiaomi-cybergear-rs01,Xiaomi CyberGear RS-01,"Micro joint actuator, 12 N·m peak",12900,usd,MR-ACT-RS01,https://robotmabel.github.io/store/assets/img/products/xiaomi-cybergear-rs01.svg
+unitree-go-m8010-6,Unitree GO-M8010-6,"Quasi-direct-drive joint motor, 23.7 N·m peak",15900,usd,MR-ACT-GO8010,https://robotmabel.github.io/store/assets/img/photos/unitree-go-m8010-6.webp
+unitree-a1,Unitree A1 Motor,33.5 N·m high-torque joint motor,30900,usd,MR-ACT-A1,https://robotmabel.github.io/store/assets/img/photos/unitree-a1.webp
+xiaomi-cybergear-rs01,Xiaomi CyberGear RS-01,"Micro joint actuator, 12 N·m peak",12900,usd,MR-ACT-RS01,https://robotmabel.github.io/store/assets/img/photos/xiaomi-cybergear-rs01.webp
 xiaomi-cybergear-rs03,Xiaomi CyberGear RS-03,"High-torque CyberGear, 60 N·m peak",34900,usd,MR-ACT-RS03,https://robotmabel.github.io/store/assets/img/products/xiaomi-cybergear-rs03.svg
 eyou-phu17h-80,EYou PHU17H-80,"Size-17 harmonic joint, 101:1, CANopen",119900,usd,MR-ACT-PHU17,https://robotmabel.github.io/store/assets/img/products/eyou-phu17h-80.svg
 eyou-phu20h-100,EYou PHU20H-100,"Size-20 harmonic joint, 100:1, CANopen",149900,usd,MR-ACT-PHU20,https://robotmabel.github.io/store/assets/img/products/eyou-phu20h-100.svg
-feetech-hl3915m,Feetech HL3915M,"14 kg·cm dual-shaft bus servo, steel gears",4400,usd,MR-ACT-3915,https://robotmabel.github.io/store/assets/img/products/feetech-hl3915m.svg
-feetech-hl3930m,Feetech HL3930M,"35 kg·cm dual-shaft bus servo, metal case",6900,usd,MR-ACT-3930,https://robotmabel.github.io/store/assets/img/products/feetech-hl3930m.svg
-feetech-sts3215,Feetech STS3215,30 kg·cm magnetic-encoder bus servo,1900,usd,MR-ACT-3215,https://robotmabel.github.io/store/assets/img/products/feetech-sts3215.svg
-dynamixel-xc330,Dynamixel XC330-T181-T,"Smart servo, 181:1, TTL",13900,usd,MR-ACT-XC330,https://robotmabel.github.io/store/assets/img/products/dynamixel-xc330.svg
+feetech-hl3915m,Feetech HL3915M,"14 kg·cm dual-shaft bus servo, steel gears",4400,usd,MR-ACT-3915,https://robotmabel.github.io/store/assets/img/photos/feetech-hl3915m.webp
+feetech-hl3930m,Feetech HL3930M,"35 kg·cm dual-shaft bus servo, metal case",6900,usd,MR-ACT-3930,https://robotmabel.github.io/store/assets/img/photos/feetech-hl3930m.webp
+feetech-sts3215,Feetech STS3215,30 kg·cm magnetic-encoder bus servo,1900,usd,MR-ACT-3215,https://robotmabel.github.io/store/assets/img/photos/feetech-sts3215.webp
+dynamixel-xc330,Dynamixel XC330-T181-T,"Smart servo, 181:1, TTL",13900,usd,MR-ACT-XC330,https://robotmabel.github.io/store/assets/img/photos/dynamixel-xc330.webp
 nema17-foc,NEMA 17 Closed-Loop Stepper,"Stepper + FOC driver, 0.45 N·m",4400,usd,MR-ACT-N17FOC,https://robotmabel.github.io/store/assets/img/products/nema17-foc.svg
 nema23-foc,NEMA 23 Closed-Loop Stepper,"Stepper + FOC driver, 1.9 N·m",7900,usd,MR-ACT-N23FOC,https://robotmabel.github.io/store/assets/img/products/nema23-foc.svg
 lift-column,Linear Lift Column,"635 mm stroke, three-stage",51900,usd,MR-ACT-LIFT,https://robotmabel.github.io/store/assets/img/products/lift-column.svg
@@ -69,14 +69,14 @@ usb-hub,Powered USB 3 Hub,"7-port, externally powered",10900,usd,MR-EL-HUB,https
 net-switch,2.5 GbE Managed Switch,4 × 2.5G + 2 × 10G SFP+,6900,usd,MR-EL-SW25,https://robotmabel.github.io/store/assets/img/products/net-switch.svg
 battery-pack,24 V Li-ion Battery Pack,24 V · 20 Ah · BMS and XT60,6400,usd,MR-EL-BATT,https://robotmabel.github.io/store/assets/img/products/battery-pack.svg
 pico,Raspberry Pi Pico,RP2040 microcontroller,2400,usd,MR-EL-PICO,https://robotmabel.github.io/store/assets/img/products/pico.svg
-teensy41,Teensy 4.1,600 MHz real-time controller,4400,usd,MR-EL-TEENSY41,https://robotmabel.github.io/store/assets/img/products/teensy41.svg
+teensy41,Teensy 4.1,600 MHz real-time controller,4400,usd,MR-EL-TEENSY41,https://robotmabel.github.io/store/assets/img/photos/teensy41.webp
 bts7960,BTS7960 Motor Driver,43 A H-bridge for brushed DC,1399,usd,MR-EL-BTS7960,https://robotmabel.github.io/store/assets/img/products/bts7960.svg
 cable-usb-c-a,"USB-C to USB-A Cable, 4-pack","USB 3, 1 m, right-angle option",999,usd,MR-EL-USBCA,https://robotmabel.github.io/store/assets/img/products/cable-usb-c-a.svg
 sleeving,Braided Cable Sleeving Set,"6 mm and 12 mm, self-closing",1199,usd,MR-EL-SLV,https://robotmabel.github.io/store/assets/img/products/sleeving.svg
 led-eyes,LED Matrix Eye Panels,A pair of animated 32 × 16 displays,5400,usd,MR-EL-EYES,https://robotmabel.github.io/store/assets/img/products/led-eyes.svg
-realsense-d405,Intel RealSense D405,Short-range metric depth for the wrist,34900,usd,MR-SEN-D405,https://robotmabel.github.io/store/assets/img/products/realsense-d405.svg
-realsense-d435i,Intel RealSense D435i,Wide-field depth with an onboard IMU,38900,usd,MR-SEN-D435I,https://robotmabel.github.io/store/assets/img/products/realsense-d435i.svg
-realsense-d455,Intel RealSense D455,Long-baseline depth for navigation,50900,usd,MR-SEN-D455,https://robotmabel.github.io/store/assets/img/products/realsense-d455.svg
+realsense-d405,Intel RealSense D405,Short-range metric depth for the wrist,34900,usd,MR-SEN-D405,https://robotmabel.github.io/store/assets/img/photos/realsense-d405.webp
+realsense-d435i,Intel RealSense D435i,Wide-field depth with an onboard IMU,38900,usd,MR-SEN-D435I,https://robotmabel.github.io/store/assets/img/photos/realsense-d435i.webp
+realsense-d455,Intel RealSense D455,Long-baseline depth for navigation,50900,usd,MR-SEN-D455,https://robotmabel.github.io/store/assets/img/photos/realsense-d455.webp
 wrist-cam-720,"Wrist Camera, 720p Global Shutter",AR0144 · 60 fps · 170° fisheye,5900,usd,MR-SEN-WR720,https://robotmabel.github.io/store/assets/img/products/wrist-cam-720.svg
 wrist-cam-1200,"Wrist Camera, 1200p Global Shutter",AR0144 · 90 fps · the recommended wrist,9900,usd,MR-SEN-WR1200,https://robotmabel.github.io/store/assets/img/products/wrist-cam-1200.svg
 head-cam-stereo,"Stereo Head Camera, 1200p",Synchronised pair · 112° HFOV · 60 fps,11900,usd,MR-SEN-HEAD,https://robotmabel.github.io/store/assets/img/products/head-cam-stereo.svg
@@ -93,7 +93,7 @@ jetson-orin-nano,Jetson Orin Nano Super,8 GB · 67 TOPS · developer kit,45900,u
 jetson-orin-nx16,Jetson Orin NX 16 GB + Carrier,16 GB · 157 TOPS · recommended,149900,usd,MR-CMP-ORINNX16,https://robotmabel.github.io/store/assets/img/products/jetson-orin-nx16.svg
 jetson-agx-orin,Jetson AGX Orin 64 GB,64 GB · 275 TOPS · developer kit,399900,usd,MR-CMP-AGXORIN,https://robotmabel.github.io/store/assets/img/products/jetson-agx-orin.svg
 jetson-thor,Jetson AGX Thor,128 GB · 2 070 TFLOPS · developer kit,629900,usd,MR-CMP-THOR,https://robotmabel.github.io/store/assets/img/products/jetson-thor.svg
-pi5,"Raspberry Pi 5, 8 GB",For the parts of the robot that are not the policy,9400,usd,MR-CMP-PI5,https://robotmabel.github.io/store/assets/img/products/pi5.svg
+pi5,"Raspberry Pi 5, 8 GB",For the parts of the robot that are not the policy,9400,usd,MR-CMP-PI5,https://robotmabel.github.io/store/assets/img/photos/pi5.webp
 nvme-2tb,"NVMe SSD, 2 TB","For episode data, not for the OS",13900,usd,MR-CMP-NVME2,https://robotmabel.github.io/store/assets/img/products/nvme-2tb.svg
 training-workstation,Training Workstation,RTX 5090 · 128 GB · built for policy training,619900,usd,MR-CMP-WS,https://robotmabel.github.io/store/assets/img/products/training-workstation.svg
 hoto-precision-24,HOTO 24-in-1 Precision Screwdriver,Aluminium body · S2 steel bits,3400,usd,MR-TL-PRECI,https://robotmabel.github.io/store/assets/img/products/hoto-precision-24.svg
@@ -102,7 +102,7 @@ hoto-ratchet-48,HOTO 48-in-1 Ratchet Wrench Set,72-tooth ratchet · sockets and 
 hoto-laser-measure,HOTO Laser Distance Meter,40 m · ±2 mm,4900,usd,MR-TL-LASER,https://robotmabel.github.io/store/assets/img/products/hoto-laser-measure.svg
 crimper-kit,Ratcheting Crimp Tool Kit,"JST, Dupont, ferrule jaws",7900,usd,MR-TL-KIT,https://robotmabel.github.io/store/assets/img/products/crimper-kit.svg
 caliper-digital,"Digital Calipers, 150 mm",±0.02 mm · IP54,4400,usd,MR-TL-DIGIT,https://robotmabel.github.io/store/assets/img/products/caliper-digital.svg
-mabel-kit,MABEL Developer Kit,"Every part, every file, and the build guide",1500000,usd,MR-ROB-KIT,https://robotmabel.github.io/store/assets/img/products/mabel-kit.svg
-mabel-assembled,"MABEL, Assembled","Built, calibrated, tested — and it drives out of the crate",2500000,usd,MR-ROB-ASM,https://robotmabel.github.io/store/assets/img/products/mabel-assembled.svg
-mabel-arm,MABEL Arm,"One 7-DOF arm, assembled and calibrated",429900,usd,MR-ROB-ARM,https://robotmabel.github.io/store/assets/img/products/mabel-arm.svg
-orca-hand-pair,"ORCA Hands, Pair","2 × 17-DOF tendon-driven hands, assembled",249900,usd,MR-ROB-HAND,https://robotmabel.github.io/store/assets/img/products/orca-hand-pair.svg
+mabel-kit,MABEL Developer Kit,"Every part, every file, and the build guide",1500000,usd,MR-ROB-KIT,https://robotmabel.github.io/store/assets/img/photos/mabel-kit.webp
+mabel-assembled,"MABEL, Assembled","Built, calibrated, tested — and it drives out of the crate",2500000,usd,MR-ROB-ASM,https://robotmabel.github.io/store/assets/img/photos/mabel-assembled.webp
+mabel-arm,MABEL Arm,"One 7-DOF arm, assembled and calibrated",429900,usd,MR-ROB-ARM,https://robotmabel.github.io/store/assets/img/photos/mabel-arm.webp
+orca-hand-pair,"ORCA Hands, Pair","2 × 17-DOF tendon-driven hands, assembled",249900,usd,MR-ROB-HAND,https://robotmabel.github.io/store/assets/img/photos/orca-hand-pair.webp

@@ -15,7 +15,8 @@ publishes it. Everything a shopper sees is generated from one Python file.
 | | |
 |---|---|
 | **107 SKUs** | Actuators, wheels, hardware, electronics, sensors, compute, tools, robots |
-| **107 generated figures** | One parametric SVG per product — no photographs, no stock art |
+| **Real photography** | 19 products carry a real photograph — 4 shot on our own build, 15 from the manufacturer. The rest use a generated SVG, and the product page says which is which |
+| **107 generated figures** | One parametric SVG per product, as the fallback and the diagram |
 | **Full commerce flow** | Bag, drawer, four-step checkout, accounts, order history |
 | **Shopify + Stripe ready** | Both wired behind placeholder keys; see `docs/COMMERCE.md` |
 | **0 errors, 0 warnings** | 13 pages × 3 viewports, audited in real Chrome — see below |
@@ -27,10 +28,12 @@ about.html support.html 404.html                   the rest
 assets/css/store.css        one stylesheet, all tokens
 assets/js/                  config · store · ui · commerce · pages · checkout · account · mabel
 assets/data/products.json   generated — do not edit
-assets/img/products/*.svg   generated — do not edit
+assets/img/products/*.svg   generated illustrations — do not edit
+assets/img/photos/*.webp    normalised photographs — from tools/photos.py
 tools/catalog.py            THE SOURCE OF TRUTH for every product
 tools/art.py                the SVG figure engine
 tools/build.py              catalog.py → json + svg + csv + sitemap + provenance
+tools/photos.py             the photo registry, fetcher and normaliser
 tools/sync_ids.py           Shopify/Stripe ids back into the site
 scripts/audit.mjs           the UI/UX test suite
 api/                        Stripe Checkout Session function
@@ -64,6 +67,40 @@ add(id="new-thing", sku="MR-ACT-NEW", cat="actuators", brand="DAMIAO",
 `family` picks one of 29 renderers in `tools/art.py`; `art={...}` tunes its
 colours and proportions. `build.py` refuses to ship a product with no specs,
 fewer than three highlights, or a price below cost.
+
+## What the stock actually is
+
+**Almost everything here is surplus from the MABEL build** — spares held against a
+failure, the remainder of minimum order quantities, and options we tried and did
+not keep. Unused, in original packaging, and finite. That framing is on the home
+page, the store page, every product page and in the support FAQ, and it changes
+the warranty: ninety days functional on surplus parts, two years on robots we
+build. `SURPLUS_NOTE` in `tools/catalog.py` is the single source of that wording.
+
+## Photographs
+
+```bash
+python3 tools/photos.py --fetch     # download and normalise
+python3 tools/photos.py --sheet     # contact sheet — then LOOK at it
+```
+
+Two kinds, and the difference is on the page:
+
+* **ours** — a photograph of the actual build. The 42 MP frames in
+  `~/Desktop/MABEL/marketing/` crop down to individual parts at full resolution.
+  No licensing question, and for surplus stock it is the honest image: it is the
+  item the buyer receives.
+* **vendor** — the manufacturer's own product photograph. **These are not cleared
+  yet.** `docs/PHOTO_SOURCES.md` lists every one with its source; get a
+  distributor agreement or written permission, or replace them with your own
+  photographs of the stock.
+
+The normaliser floods the studio background in from the edges to the same
+`#f5f5f7` the tiles use, trims, and centres on a square — so a folder of
+inconsistent vendor JPEGs reads as one studio set. **Always run `--sheet` and
+actually look**: the first pass shipped a Dynamixel shot with an "Out of Stock"
+badge burned into it, an XL330 photo on an XC330 listing, and a Slamtec spec
+infographic instead of a lidar. All three were caught by eye, not by code.
 
 ## Prices are derived, not typed
 

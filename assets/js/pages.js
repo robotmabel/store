@@ -152,7 +152,7 @@
       const cat = d.categories.find(c => c.id === state.cat);
       $("#storeTitle").textContent = cat ? cat.name : "Store";
       $("#storeIntro").textContent = cat ? cat.intro
-        : "Every part we stock, from single fasteners to a complete robot. Sourced for research robots, held in Toronto, shipped worldwide.";
+        : "Spare parts from our own MABEL build \u2014 unused, in original packaging, in the quantity one robot left over. Held in Toronto, shipped worldwide.";
       $("#count").textContent = `${list.length} ${list.length === 1 ? "product" : "products"}`;
 
       const tags = [];
@@ -254,6 +254,12 @@
     main.innerHTML = `
       <div class="pdp-media">
         <div class="pdp-stage"><img id="stage" src="${h(p.image)}" alt="${esc(p.name)}" width="620" height="620"></div>
+        <p class="t-tiny center" style="margin-top:12px">${
+          p.photoKind === "local"
+            ? "Photographed on our own build."
+            : p.photo
+              ? `Manufacturer photograph &middot; ${esc(p.photoCredit)}`
+              : "Illustration &mdash; we have not photographed this part yet."}</p>
       </div>
       <div class="pdp-buy">
         ${p.badge ? `<p class="t-eyebrow">${esc(p.badge)}</p>` : ""}
@@ -265,6 +271,8 @@
           <span class="chip ${stockChip}" style="margin-left:auto">${esc(stockLabel)}</span>
         </div>
         <p class="t-small" style="margin:0">${esc(p.brand)} · ${esc(p.sku)}</p>
+        ${p.category === "robots" ? "" : `<p class="t-small" style="margin:10px 0 0">
+          <b>Condition.</b> ${esc(d.surplusNote)}</p>`}
         <p class="t-body" style="margin:22px 0 0">${esc(p.summary)}</p>
         <ul class="hl">${p.highlights.map(x => `<li>${esc(x)}</li>`).join("")}</ul>
         ${p.note ? `<div class="note-box"><b>Note.</b> ${esc(p.note)}</div>` : ""}
@@ -278,13 +286,19 @@
         </div>
         <ul class="assure">
           <li><svg viewBox="0 0 20 20" fill="none"><path d="M10 2.5l6 2.4v5c0 3.6-2.4 6.6-6 7.6-3.6-1-6-4-6-7.6v-5l6-2.4Z" stroke="currentColor" stroke-width="1.4"/><path d="M7.4 10l1.9 1.9 3.5-3.7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            <span>One-year warranty on everything we sell, two years on MABEL robots.</span></li>
+            <span>${p.category === "robots"
+              ? "Two-year warranty, and we support the robot for its life."
+              : "Ninety-day functional warranty on surplus parts. If it does not work, we replace it or refund it."}</span></li>
           <li><svg viewBox="0 0 20 20" fill="none"><path d="M2.5 6.5h9v7h-9z" stroke="currentColor" stroke-width="1.4"/><path d="M11.5 9h3l3 2.6v1.9h-6z" stroke="currentColor" stroke-width="1.4"/><circle cx="6" cy="15" r="1.6" stroke="currentColor" stroke-width="1.4"/><circle cx="14.5" cy="15" r="1.6" stroke="currentColor" stroke-width="1.4"/></svg>
             <span>Ships from Toronto. Free shipping in Canada and the US over ${M.money(M.CFG.commerce.freeShippingOver)}.</span></li>
           <li><svg viewBox="0 0 20 20" fill="none"><path d="M10 3v9m0 0l-3.2-3.2M10 12l3.2-3.2M3.5 14.5v2h13v-2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-            <span>CAD, firmware and integration notes are open source on GitHub.</span></li>
+            <span>${p.category === "robots"
+              ? "CAD, firmware and integration notes are open source on GitHub."
+              : "We fitted this part to a robot ourselves \u2014 ask us anything about it."}</span></li>
           <li><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.2" stroke="currentColor" stroke-width="1.4"/><path d="M10 6.4v4.2l2.6 1.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-            <span>Thirty-day returns on unopened parts.</span></li>
+            <span>${p.stock === "in-stock"
+              ? "Limited quantity \u2014 one build\u2019s worth. Thirty-day returns."
+              : "Thirty-day returns on unopened parts."}</span></li>
         </ul>
       </div>`;
 

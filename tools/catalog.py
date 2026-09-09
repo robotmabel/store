@@ -27,6 +27,16 @@ MARGINS = {
     "sensors": 1.20, "compute": 1.14, "tools": 1.30, "robots": 1.00,
 }
 
+# Every part in this catalogue was bought for the MABEL build. What is on the
+# shelf is what is left over: spares held against failures, the remainder of a
+# minimum order quantity, and parts from options we tried and did not keep.
+# That framing appears on the site verbatim — it is the honest description of
+# the stock and it sets expectations about quantity and re-supply.
+SURPLUS_NOTE = (
+    "Surplus from our own MABEL build \u2014 unused, in original packaging, "
+    "in the quantity shown."
+)
+
 CATEGORIES = [
     ("actuators",   "Actuators",  "Joint modules, bus servos, steppers and gearboxes.",
      "Every axis on a research robot starts here. MIT-mode joint modules with dual encoders, "
