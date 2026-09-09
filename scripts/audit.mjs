@@ -49,6 +49,9 @@ const PAGES = [
 ];
 
 const VIEWPORTS = [
+  // 360 is the narrowest common Android width and, with a wider fallback font
+  // than SF Pro, the case that catches grids which never collapse.
+  { w: 360, h: 780, name: "small", dpr: 2 },
   { w: 390, h: 844, name: "phone", dpr: 2 },
   { w: 768, h: 1024, name: "tablet", dpr: 2 },
   { w: 1440, h: 900, name: "desktop", dpr: 1 },
