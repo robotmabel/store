@@ -317,6 +317,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); margin: 0; font-weight: 600; 
   filter: drop-shadow(0 34px 60px rgba(0,0,0,.13));
 }
 .hero-art svg { width: 100%; height: auto; }
+.hero-art img { width: 100%; height: auto; border-radius: var(--r-xl); }
 .hero-price { margin-top: 18px; font-size: 17px; color: var(--ink-2); }
 
 /* stat strip */
