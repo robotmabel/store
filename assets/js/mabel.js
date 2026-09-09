@@ -72,8 +72,10 @@
       <p class="t-tiny" style="margin:-6px 0 14px">${esc(p.note || "")}</p>`;
     $("#cfgArt").src = h(p.image);
     $("#cfgArt").alt = p.name;
+    // The product note above already covers assembly time; this line is only
+    // about when it leaves us.
     $("#cfgLead").textContent = build === "mabel-kit"
-      ? "Ships in 3–4 weeks. Assembly takes roughly 60–80 hours."
+      ? "Ships in 3–4 weeks."
       : "Built to order. Lead time 8–10 weeks from confirmation.";
   }
 

@@ -148,6 +148,17 @@ const AUDIT = String.raw`(() => {
       E("img-broken", "Image failed to load: " + img.getAttribute("src"), path(img));
   });
 
+  /* ---- letterboxed images (a missing height:auto) ---- */
+  document.querySelectorAll("img").forEach(img => {
+    const r = img.getBoundingClientRect();
+    if (!r.width || !r.height || !img.naturalWidth || !img.naturalHeight) return;
+    if (getComputedStyle(img).objectFit === "contain") return;   // deliberate
+    const want = img.naturalWidth / img.naturalHeight, got = r.width / r.height;
+    if (Math.abs(Math.log(got / want)) > 0.35)
+      E("img-ratio", "Image box " + Math.round(r.width) + "x" + Math.round(r.height) +
+        " does not match its intrinsic ratio — letterboxing: " + img.getAttribute("src"), path(img));
+  });
+
   /* ---- horizontal overflow ---- */
   const docW = document.documentElement.clientWidth;
   if (document.documentElement.scrollWidth > docW + 1) {
@@ -243,6 +254,13 @@ const AUDIT = String.raw`(() => {
     if (!has) W("focus", "No visible focus indicator on " + path(probe));
     probe.blur();
   }
+
+  /* ---- stray template escapes leaking into the page as text ---- */
+  [...document.body.childNodes].forEach(n => {
+    if (n.nodeType === 3 && /\\[nrt]/.test(n.textContent))
+      E("stray-escape", "A literal escape sequence is rendering as text: " +
+        JSON.stringify(n.textContent.trim().slice(0, 20)));
+  });
 
   /* ---- content actually rendered ---- */
   out.info.cards = document.querySelectorAll(".card").length;

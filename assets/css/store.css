@@ -107,16 +107,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
-img, svg { max-width: 100%; display: block; }
+img, svg { max-width: 100%; height: auto; display: block; }
 a { color: var(--link); text-decoration: none; }
 a:hover { text-decoration: underline; }
 button, input, select, textarea { font: inherit; color: inherit; }
 
-:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+:where(a, button, input, select, textarea, [tabindex]):not([tabindex="-1"]):focus-visible {
   outline: 3px solid var(--key);
   outline-offset: 3px;
   border-radius: 5px;
 }
+
+[tabindex="-1"]:focus { outline: none; }
 
 .skip {
   position: absolute; left: 12px; top: -60px; z-index: 200;
