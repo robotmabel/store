@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Checkout — MABEL Robotics</title>
+<meta name="description" content="Secure checkout for robot parts and complete robots.">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="assets/img/brand/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://robotmabel.github.io/store/checkout.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MABEL Robotics">
+<meta property="og:title" content="Checkout — MABEL Robotics">
+<meta property="og:description" content="Secure checkout for robot parts and complete robots.">
+<meta property="og:image" content="https://robotmabel.github.io/store/assets/img/products/mabel-assembled.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/store.css">
+</head>
+<body data-page="checkout" data-root="">
+<a class="skip" href="#main">Skip to content</a>
+<main id="main">
+  <div class="wrap">
+    <h1 class="vh">Checkout</h1>
+    <ol class="steps" id="coSteps" aria-label="Checkout progress">
+      <li aria-current="step"><b>1</b><span>Delivery</span></li>
+      <li><b>2</b><span>Payment</span></li>
+      <li><b>3</b><span>Review</span></li>
+      <li><b>4</b><span>Done</span></li>
+    </ol>
+
+    <div class="co-layout" style="padding-top:0">
+      <div id="coMain">
+        <form id="coForm" novalidate>
+
+          <!-- step 1 -->
+          <section class="co-step on" data-step="1" aria-label="Delivery details">
+            <h2 class="t-title">Where should it go?</h2>
+            <p class="t-sub">We ship from Toronto to Canada, the United States and worldwide.</p>
+            <div class="fields">
+              <div class="field full"><label for="f-email">Email</label>
+                <input id="f-email" name="email" type="email" autocomplete="email"
+                       inputmode="email" placeholder="you@lab.edu" required>
+                <span class="err"></span></div>
+              <div class="field full"><label for="f-name">Full name</label>
+                <input id="f-name" name="name" type="text" autocomplete="name" required>
+                <span class="err"></span></div>
+              <div class="field"><label for="f-org">Organisation <span class="muted">(optional)</span></label>
+                <input id="f-org" name="org" type="text" autocomplete="organization">
+                <span class="err"></span></div>
+              <div class="field"><label for="f-phone">Phone <span class="muted">(optional)</span></label>
+                <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+                <span class="err"></span></div>
+              <div class="field full"><label for="f-a1">Street address</label>
+                <input id="f-a1" name="address1" type="text" autocomplete="address-line1" required>
+                <span class="err"></span></div>
+              <div class="field full"><label for="f-a2">Apartment, suite, unit <span class="muted">(optional)</span></label>
+                <input id="f-a2" name="address2" type="text" autocomplete="address-line2">
+                <span class="err"></span></div>
+              <div class="field"><label for="f-city">City</label>
+                <input id="f-city" name="city" type="text" autocomplete="address-level2" required>
+                <span class="err"></span></div>
+              <div class="field"><label for="f-region">Province / State</label>
+                <select id="f-region" name="region"><option value="ON">ON</option><option value="QC">QC</option><option value="BC">BC</option><option value="AB">AB</option><option value="MB">MB</option><option value="SK">SK</option><option value="NS">NS</option><option value="NB">NB</option><option value="NL">NL</option><option value="PE">PE</option><option value="YT">YT</option><option value="NT">NT</option><option value="NU">NU</option><option value="CA">CA</option><option value="NY">NY</option><option value="MA">MA</option><option value="WA">WA</option><option value="TX">TX</option><option value="MI">MI</option><option value="PA">PA</option><option value="IL">IL</option><option value="CO">CO</option><option value="GA">GA</option><option value="FL">FL</option><option value="OH">OH</option><option value="NC">NC</option><option value="NJ">NJ</option><option value="VA">VA</option><option value="MD">MD</option><option value="MN">MN</option><option value="WI">WI</option><option value="AZ">AZ</option><option value="OR">OR</option></select>
+                <span class="err"></span></div>
+              <div class="field"><label for="f-postal">Postal / ZIP code</label>
+                <input id="f-postal" name="postal" type="text" autocomplete="postal-code"
+                       inputmode="text" required><span class="err"></span></div>
+              <div class="field"><label for="f-country">Country</label>
+                <select id="f-country" name="country">
+                  <option value="CA">Canada</option><option value="US">United States</option>
+                  <option value="GB">United Kingdom</option><option value="DE">Germany</option>
+                  <option value="JP">Japan</option><option value="AU">Australia</option>
+                  <option value="OTHER">Elsewhere</option>
+                </select><span class="err"></span></div>
+              <div class="field full"><label for="f-po">Purchase order number <span class="muted">(optional)</span></label>
+                <input id="f-po" name="po" type="text" placeholder="For university and lab purchasing">
+                <span class="err"></span></div>
+            </div>
+            <div class="co-nav">
+              <button type="button" class="btn" data-next="2">Continue to payment</button>
+              <a class="btn-text" href="bag.html">Back to bag</a>
+            </div>
+          </section>
+
+          <!-- step 2 -->
+          <section class="co-step" data-step="2" aria-label="Delivery method and payment">
+            <h2 class="t-title">How should it get there?</h2>
+            <div class="pay-opts">
+              <label class="pay-opt"><input type="radio" name="method" value="standard" checked>
+                <span class="pi"><b>Standard</b><span>3&ndash;6 business days &middot; free over US$500</span></span></label>
+              <label class="pay-opt"><input type="radio" name="method" value="express">
+                <span class="pi"><b>Express &mdash; US$48</b><span>1&ndash;2 business days &middot; UPS Express</span></span></label>
+              <label class="pay-opt"><input type="radio" name="method" value="freight">
+                <span class="pi"><b>Freight</b><span>Crated, for robots and heavy orders &middot; quoted and booked after ordering</span></span></label>
+            </div>
+
+            <h2 class="t-title" style="margin-top:44px">Payment</h2>
+            <p class="t-sub" id="payNote" style="margin-bottom:8px"></p>
+            <p id="payMode" style="margin:0 0 18px"></p>
+            <div class="pay-opts">
+              <label class="pay-opt"><input type="radio" name="pay" value="card" checked>
+                <span class="pi"><b>Card</b><span>Visa, Mastercard, American Express</span></span>
+                <span class="pay-logos" aria-hidden="true">
+                  <svg viewBox="0 0 40 24" width="34"><rect width="40" height="24" rx="4" fill="#1434CB"/><path d="M17 16.5l1.6-9h2.6l-1.6 9H17Zm11.7-8.8c-.5-.2-1.3-.4-2.3-.4-2.5 0-4.3 1.3-4.3 3.2 0 1.4 1.3 2.2 2.2 2.6.97.44 1.3.72 1.3 1.1 0 .6-.7.9-1.4.9-1 0-1.5-.14-2.3-.5l-.3-.15-.34 2.1c.56.26 1.6.48 2.7.5 2.7 0 4.4-1.3 4.4-3.3 0-1.1-.66-1.9-2.1-2.6-.87-.44-1.4-.73-1.4-1.2 0-.4.45-.8 1.4-.8.8 0 1.4.16 1.8.34l.22.1.33-2Z" fill="#fff"/></svg>
+                  <svg viewBox="0 0 40 24" width="34"><rect width="40" height="24" rx="4" fill="#252525"/><circle cx="16" cy="12" r="7" fill="#EB001B"/><circle cx="24" cy="12" r="7" fill="#F79E1B"/><path d="M20 6.6a7 7 0 0 0 0 10.8 7 7 0 0 0 0-10.8Z" fill="#FF5F00"/></svg>
+                </span></label>
+              <label class="pay-opt"><input type="radio" name="pay" value="invoice">
+                <span class="pi"><b>Invoice / purchase order</b>
+                  <span>For universities, labs and companies. Net 30 on approval.</span></span></label>
+              <label class="pay-opt"><input type="radio" name="pay" value="transfer">
+                <span class="pi"><b>Wire transfer</b><span>For orders over US$5,000. We send banking details with the invoice.</span></span></label>
+            </div>
+            <div class="fields" style="margin-top:24px">
+              <div class="field full"><label for="f-notes">Order notes <span class="muted">(optional)</span></label>
+                <textarea id="f-notes" name="notes" rows="3"
+                  placeholder="Anything we should know — deadlines, a compute tier, a substitution you would accept."></textarea>
+                <span class="err"></span></div>
+            </div>
+            <div class="co-nav">
+              <button type="button" class="btn" data-next="3">Review your order</button>
+              <button type="button" class="btn-text" data-back="1">Back</button>
+            </div>
+          </section>
+
+          <!-- step 3 -->
+          <section class="co-step" data-step="3" aria-label="Review your order">
+            <h2 class="t-title">Check it over.</h2>
+            <p class="t-sub">Nothing is charged until you confirm.</p>
+            <div id="reviewOut"></div>
+            <div id="coError" aria-live="assertive"></div>
+            <div class="co-nav">
+              <button type="button" class="btn btn-lg" id="placeBtn">Place order</button>
+              <button type="button" class="btn-text" data-back="2">Back</button>
+            </div>
+            <p class="t-tiny" style="margin-top:16px;max-width:52ch">By placing this order you agree
+              to our <a href="support.html#terms">terms of sale</a>. Export-controlled items may
+              require additional documentation.</p>
+          </section>
+
+          <!-- step 4 -->
+          <section class="co-step" data-step="4" aria-label="Order placed">
+            <div id="doneOut"></div>
+          </section>
+
+        </form>
+      </div>
+      <aside class="co-aside" id="coAside"><div id="coSummary"></div></aside>
+    </div>
+  </div>
+</main>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/pages.js"></script>
+<script src="assets/js/commerce.js"></script>\n<script src="assets/js/checkout.js"></script>\n</body>
+</html>

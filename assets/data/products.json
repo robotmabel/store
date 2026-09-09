@@ -1,0 +1,8232 @@
+{
+ "generated": "2026-09-09",
+ "currency": {
+  "base": "USD",
+  "usdToCad": 1.37
+ },
+ "categories": [
+  {
+   "id": "actuators",
+   "name": "Actuators",
+   "blurb": "Joint modules, bus servos, steppers and gearboxes.",
+   "intro": "Every axis on a research robot starts here. MIT-mode joint modules with dual encoders, TTL bus servos for tendon-driven hands, and closed-loop steppers with field-oriented control."
+  },
+  {
+   "id": "wheels",
+   "name": "Wheels",
+   "blurb": "Swerve modules, omni and mecanum wheels, hub drives.",
+   "intro": "Holonomic mobility, assembled and tested. Complete swerve modules, the motors and encoders inside them, and every wheel type a mobile base can stand on."
+  },
+  {
+   "id": "hardware",
+   "name": "Hardware",
+   "blurb": "Fasteners, bearings, extrusion, machined structure.",
+   "intro": "The metal in between. Sorted fastener sets, T-slot extrusion cut to length, bearings, and the laser-cut and CNC structural parts for MABEL, OpenArm and ORCA."
+  },
+  {
+   "id": "electronics",
+   "name": "Electronics",
+   "blurb": "CAN adapters, power distribution, harnesses.",
+   "intro": "Buses, power and wire. USB-CAN adapters, distribution boards, fused power paths, connector kits and the pre-made harnesses that save an evening per arm."
+  },
+  {
+   "id": "sensors",
+   "name": "Sensors",
+   "blurb": "Depth cameras, wrist cams, lidar, IMU, tactile.",
+   "intro": "How the robot sees and feels. Global-shutter wrist cameras, stereo depth, scanning lidar, and the IMUs and force sensors that close the loop."
+  },
+  {
+   "id": "compute",
+   "name": "Compute",
+   "blurb": "Jetson, carriers, storage, workstations.",
+   "intro": "Where the policy runs. Jetson modules and carriers sized to real memory budgets, plus the storage and desktop hardware for training."
+  },
+  {
+   "id": "tools",
+   "name": "Tools",
+   "blurb": "Precision drivers, crimpers, measurement.",
+   "intro": "Build tools chosen for one job: assembling small, dense robots without stripping anything."
+  },
+  {
+   "id": "robots",
+   "name": "Robots",
+   "blurb": "MABEL, complete.",
+   "intro": "A mobile bimanual research platform, as a kit you build or a robot that arrives working."
+  }
+ ],
+ "products": [
+  {
+   "id": "damiao-dm-j4310",
+   "sku": "MR-ACT-4310",
+   "name": "DAMIAO DM-J4310-2EC",
+   "tagline": "10:1 MIT-mode joint module with dual encoders",
+   "brand": "DAMIAO",
+   "category": "actuators",
+   "family": "joint_module",
+   "price": 119.0,
+   "priceCad": 169.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "The workhorse of a lightweight research arm. A 4310-frame BLDC with an integrated FOC driver, a 10:1 planetary stage and encoders on both the rotor and the output, so the controller knows where the joint is even after the gearbox winds up.",
+   "highlights": [
+    "Dual encoder — rotor and output, so backlash is observed, not assumed",
+    "MIT impedance mode: position, velocity, kp, kd and feed-forward torque in one frame",
+    "Driver integrated into the housing — CAN in, torque out, no external ESC",
+    "Six of these sit in every MABEL arm pair"
+   ],
+   "specs": [
+    {
+     "group": "Performance",
+     "rows": [
+      {
+       "k": "Rated torque",
+       "v": "3.5 N·m"
+      },
+      {
+       "k": "Peak torque",
+       "v": "10 N·m"
+      },
+      {
+       "k": "Reduction",
+       "v": "10:1 planetary"
+      },
+      {
+       "k": "Max speed",
+       "v": "30 rad/s"
+      },
+      {
+       "k": "Rated voltage",
+       "v": "24 V DC"
+      }
+     ]
+    },
+    {
+     "group": "Feedback & control",
+     "rows": [
+      {
+       "k": "Encoders",
+       "v": "Dual — rotor + output, magnetic"
+      },
+      {
+       "k": "Resolution",
+       "v": "14-bit per encoder"
+      },
+      {
+       "k": "Control modes",
+       "v": "MIT impedance · position · velocity · torque"
+      },
+      {
+       "k": "Bus",
+       "v": "CAN 2.0A, up to 1 Mbit/s"
+      },
+      {
+       "k": "Loop rate",
+       "v": "Up to 1 kHz per joint"
+      }
+     ]
+    },
+    {
+     "group": "Physical",
+     "rows": [
+      {
+       "k": "Mass",
+       "v": "300 g"
+      },
+      {
+       "k": "Outer diameter",
+       "v": "43 mm"
+      },
+      {
+       "k": "Output",
+       "v": "Bolt-circle flange, 6 × M3"
+      },
+      {
+       "k": "Connector",
+       "v": "4-pin power + CAN pigtail"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "arm",
+    "neck",
+    "can",
+    "mit-mode"
+   ],
+   "image": "assets/img/products/damiao-dm-j4310.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 85.91,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "damiao-dm4340",
+   "sku": "MR-ACT-4340",
+   "name": "DAMIAO DM4340",
+   "tagline": "9 N·m geared joint motor, dual encoder",
+   "brand": "DAMIAO",
+   "category": "actuators",
+   "family": "joint_module",
+   "price": 169.0,
+   "priceCad": 239.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "A step up in torque for shoulder roll and elbow. Same integrated-driver architecture as the 4310, same CAN protocol, roughly three times the continuous torque.",
+   "highlights": [
+    "9 N·m rated — sized for shoulder roll and elbow on a 7-DOF arm",
+    "Drop-in protocol compatibility with the rest of the DAMIAO line",
+    "Dual encoder for output-side position truth",
+    "Four per MABEL, two per arm"
+   ],
+   "specs": [
+    {
+     "group": "Performance",
+     "rows": [
+      {
+       "k": "Rated torque",
+       "v": "9 N·m"
+      },
+      {
+       "k": "Peak torque",
+       "v": "27 N·m"
+      },
+      {
+       "k": "Reduction",
+       "v": "Integrated planetary"
+      },
+      {
+       "k": "Rated voltage",
+       "v": "24 V DC"
+      }
+     ]
+    },
+    {
+     "group": "Feedback & control",
+     "rows": [
+      {
+       "k": "Encoders",
+       "v": "Dual — rotor + output"
+      },
+      {
+       "k": "Control modes",
+       "v": "MIT impedance · position · velocity · torque"
+      },
+      {
+       "k": "Bus",
+       "v": "CAN 2.0A, up to 1 Mbit/s"
+      }
+     ]
+    },
+    {
+     "group": "Physical",
+     "rows": [
+      {
+       "k": "Frame",
+       "v": "43 mm class"
+      },
+      {
+       "k": "Output",
+       "v": "Flanged, bolt circle"
+      },
+      {
+       "k": "Connector",
+       "v": "Power + CAN pigtail"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "arm",
+    "can",
+    "mit-mode"
+   ],
+   "image": "assets/img/products/damiao-dm4340.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 126.55,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "damiao-dm8009p",
+   "sku": "MR-ACT-8009",
+   "name": "DAMIAO DM8009P",
+   "tagline": "40 N·m joint module, V4",
+   "brand": "DAMIAO",
+   "category": "actuators",
+   "family": "joint_module",
+   "price": 359.0,
+   "priceCad": 499.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "The shoulder joint. Where a 4310 runs out of authority — carrying a whole arm at full extension — the 8009P takes over with four times the torque in an 80 mm frame.",
+   "highlights": [
+    "40 N·m — holds a loaded arm horizontal without creeping",
+    "V4 hardware with the integrated driver and dual encoders",
+    "Shoulder pitch and yaw on both MABEL arms use this module",
+    "Same CAN frame format as every other DAMIAO joint"
+   ],
+   "specs": [
+    {
+     "group": "Performance",
+     "rows": [
+      {
+       "k": "Peak torque",
+       "v": "40 N·m"
+      },
+      {
+       "k": "Reduction",
+       "v": "Integrated planetary"
+      },
+      {
+       "k": "Rated voltage",
+       "v": "24 V DC"
+      },
+      {
+       "k": "Hardware revision",
+       "v": "V4"
+      }
+     ]
+    },
+    {
+     "group": "Feedback & control",
+     "rows": [
+      {
+       "k": "Encoders",
+       "v": "Dual — rotor + output"
+      },
+      {
+       "k": "Control modes",
+       "v": "MIT impedance · position · velocity · torque"
+      },
+      {
+       "k": "Bus",
+       "v": "CAN 2.0A, up to 1 Mbit/s"
+      }
+     ]
+    },
+    {
+     "group": "Physical",
+     "rows": [
+      {
+       "k": "Frame",
+       "v": "80 mm class"
+      },
+      {
+       "k": "Output",
+       "v": "Flanged, bolt circle"
+      },
+      {
+       "k": "Connector",
+       "v": "Power + CAN pigtail"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "arm",
+    "shoulder",
+    "can",
+    "mit-mode"
+   ],
+   "image": "assets/img/products/damiao-dm8009p.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 272.36,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "damiao-dm10422p",
+   "sku": "MR-ACT-10422",
+   "name": "DAMIAO DM10422P",
+   "tagline": "400 N·m hollow-shaft torso actuator",
+   "brand": "DAMIAO",
+   "category": "actuators",
+   "family": "harmonic_joint",
+   "price": 379.0,
+   "priceCad": 519.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "A torso-scale joint. Hollow-shaft planetary reduction with dual inductive encoders — the bore lets the arm and head harness pass straight through the joint instead of looping around it.",
+   "highlights": [
+    "400 N·m — tilts an entire upper body under load",
+    "Hollow shaft: route power and CAN through the axis of rotation",
+    "Dual inductive encoders, immune to the magnetic clutter of a motor housing",
+    "MABEL's torso-pitch joint"
+   ],
+   "specs": [
+    {
+     "group": "Performance",
+     "rows": [
+      {
+       "k": "Rated torque",
+       "v": "400 N·m"
+      },
+      {
+       "k": "Reduction",
+       "v": "Hollow-shaft planetary"
+      },
+      {
+       "k": "Rated voltage",
+       "v": "24–48 V DC"
+      }
+     ]
+    },
+    {
+     "group": "Feedback & control",
+     "rows": [
+      {
+       "k": "Encoders",
+       "v": "Dual inductive, high precision"
+      },
+      {
+       "k": "Control modes",
+       "v": "Position · velocity · torque"
+      },
+      {
+       "k": "Bus",
+       "v": "CAN 2.0A"
+      }
+     ]
+    },
+    {
+     "group": "Physical",
+     "rows": [
+      {
+       "k": "Through bore",
+       "v": "Hollow shaft for harness pass-through"
+      },
+      {
+       "k": "Output",
+       "v": "Large-diameter bolt circle"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "torso",
+    "can",
+    "hollow-shaft"
+   ],
+   "image": "assets/img/products/damiao-dm10422p.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 286.7,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "unitree-go-m8010-6",
+   "sku": "MR-ACT-GO8010",
+   "name": "Unitree GO-M8010-6",
+   "tagline": "Quasi-direct-drive joint motor, 23.7 N·m peak",
+   "brand": "Unitree",
+   "category": "actuators",
+   "family": "pancake",
+   "price": 159.0,
+   "priceCad": 219.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "The motor that made low-cost legged robots possible. A 6.33:1 planetary stage keeps the reflected inertia low enough for genuine torque control, so the leg feels the ground rather than fighting it.",
+   "highlights": [
+    "Quasi-direct drive — low gearing, high backdrivability",
+    "23.7 N·m peak from a 485 g package",
+    "RS-485 daisy chain, up to 15 motors on one bus",
+    "The standard actuator for quadruped and low-cost humanoid legs"
+   ],
+   "specs": [
+    {
+     "group": "Performance",
+     "rows": [
+      {
+       "k": "Peak torque",
+       "v": "23.7 N·m"
+      },
+      {
+       "k": "Reduction",
+       "v": "6.33:1 planetary"
+      },
+      {
+       "k": "Max speed",
+       "v": "33.5 rad/s"
+      },
+      {
+       "k": "Rated voltage",
+       "v": "24 V DC"
+      }
+     ]
+    },
+    {
+     "group": "Feedback & control",
+     "rows": [
+      {
+       "k": "Encoder",
+       "v": "15-bit absolute, rotor side"
+      },
+      {
+       "k": "Control",
+       "v": "Position · velocity · torque, with kp/kd"
+      },
+      {
+       "k": "Bus",
+       "v": "RS-485, 4 Mbit/s"
+      }
+     ]
+    },
+    {
+     "group": "Physical",
+     "rows": [
+      {
+       "k": "Mass",
+       "v": "485 g"
+      },
+      {
+       "k": "Outer diameter",
+       "v": "80 mm"
+      },
+      {
+       "k": "Output",
+       "v": "Keyed shaft with pulley flange"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "legged",
+    "qdd",
+    "rs485"
+   ],
+   "image": "assets/img/products/unitree-go-m8010-6.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 118,
+   "_costSrc": "vendor"
+  },
+  {
+   "id": "unitree-a1",
+   "sku": "MR-ACT-A1",
+   "name": "Unitree A1 Motor",
+   "tagline": "33.5 N·m high-torque joint motor",
+   "brand": "Unitree",
+   "category": "actuators",
+   "family": "pancake",
+   "price": 309.0,
+   "priceCad": 429.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "The larger sibling. Same quasi-direct-drive philosophy, more frame, more torque — for hips, knees and anything carrying the mass of a whole robot.",
+   "highlights": [
+    "33.5 N·m peak torque",
+    "9.1:1 planetary reduction",
+    "Fully backdrivable — safe for contact-rich work",
+    "RS-485 with the same protocol as the GO series"
+   ],
+   "specs": [
+    {
+     "group": "Performance",
+     "rows": [
+      {
+       "k": "Peak torque",
+       "v": "33.5 N·m"
+      },
+      {
+       "k": "Reduction",
+       "v": "9.1:1 planetary"
+      },
+      {
+       "k": "Max speed",
+       "v": "21 rad/s"
+      },
+      {
+       "k": "Rated voltage",
+       "v": "24 V DC"
+      }
+     ]
+    },
+    {
+     "group": "Feedback & control",
+     "rows": [
+      {
+       "k": "Encoder",
+       "v": "15-bit absolute"
+      },
+      {
+       "k": "Control",
+       "v": "Position · velocity · torque"
+      },
+      {
+       "k": "Bus",
+       "v": "RS-485"
+      }
+     ]
+    },
+    {
+     "group": "Physical",
+     "rows": [
+      {
+       "k": "Mass",
+       "v": "605 g"
+      },
+      {
+       "k": "Outer diameter",
+       "v": "88 mm"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "legged",
+    "qdd",
+    "rs485"
+   ],
+   "image": "assets/img/products/unitree-a1.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 232,
+   "_costSrc": "vendor"
+  },
+  {
+   "id": "xiaomi-cybergear-rs01",
+   "sku": "MR-ACT-RS01",
+   "name": "Xiaomi CyberGear RS-01",
+   "tagline": "Micro joint actuator, 12 N·m peak",
+   "brand": "Xiaomi",
+   "category": "actuators",
+   "family": "micro_motor",
+   "price": 129.0,
+   "priceCad": 179.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Xiaomi's micro-motor, sold openly and documented well. A 7.75:1 planetary stage, an integrated driver and a genuine impedance mode in a package small enough for a wrist.",
+   "highlights": [
+    "12 N·m peak from a 317 g motor",
+    "Impedance, position, velocity and current modes over CAN",
+    "Published protocol and a maintained SDK",
+    "A clean entry point for small arms and grippers"
+   ],
+   "specs": [
+    {
+     "group": "Performance",
+     "rows": [
+      {
+       "k": "Rated torque",
+       "v": "4 N·m"
+      },
+      {
+       "k": "Peak torque",
+       "v": "12 N·m"
+      },
+      {
+       "k": "Reduction",
+       "v": "7.75:1 planetary"
+      },
+      {
+       "k": "Max speed",
+       "v": "297 rpm"
+      },
+      {
+       "k": "Rated voltage",
+       "v": "24 V DC"
+      }
+     ]
+    },
+    {
+     "group": "Feedback & control",
+     "rows": [
+      {
+       "k": "Encoder",
+       "v": "14-bit magnetic"
+      },
+      {
+       "k": "Control modes",
+       "v": "Impedance · position · velocity · current"
+      },
+      {
+       "k": "Bus",
+       "v": "CAN 2.0, 1 Mbit/s"
+      }
+     ]
+    },
+    {
+     "group": "Physical",
+     "rows": [
+      {
+       "k": "Mass",
+       "v": "317 g"
+      },
+      {
+       "k": "Outer diameter",
+       "v": "60 mm"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "compact",
+    "can",
+    "mit-mode"
+   ],
+   "image": "assets/img/products/xiaomi-cybergear-rs01.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 96,
+   "_costSrc": "vendor"
+  },
+  {
+   "id": "xiaomi-cybergear-rs03",
+   "sku": "MR-ACT-RS03",
+   "name": "Xiaomi CyberGear RS-03",
+   "tagline": "High-torque CyberGear, 60 N·m peak",
+   "brand": "Xiaomi",
+   "category": "actuators",
+   "family": "micro_motor",
+   "price": 349.0,
+   "priceCad": 479.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "The high-torque CyberGear. Same protocol and tooling as the RS-01, scaled up for hips, shoulders and anything that has to hold a load statically.",
+   "highlights": [
+    "60 N·m peak torque",
+    "Shares the RS-01 CAN protocol and SDK",
+    "Integrated driver — no external ESC",
+    "For legs, shoulders and torso joints"
+   ],
+   "specs": [
+    {
+     "group": "Performance",
+     "rows": [
+      {
+       "k": "Peak torque",
+       "v": "60 N·m"
+      },
+      {
+       "k": "Reduction",
+       "v": "Integrated planetary"
+      },
+      {
+       "k": "Rated voltage",
+       "v": "48 V DC"
+      }
+     ]
+    },
+    {
+     "group": "Feedback & control",
+     "rows": [
+      {
+       "k": "Encoder",
+       "v": "Magnetic absolute"
+      },
+      {
+       "k": "Control modes",
+       "v": "Impedance · position · velocity · current"
+      },
+      {
+       "k": "Bus",
+       "v": "CAN 2.0"
+      }
+     ]
+    },
+    {
+     "group": "Physical",
+     "rows": [
+      {
+       "k": "Frame",
+       "v": "90 mm class"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "can",
+    "mit-mode"
+   ],
+   "image": "assets/img/products/xiaomi-cybergear-rs03.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 268,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "eyou-phu17h-80",
+   "sku": "MR-ACT-PHU17",
+   "name": "EYou PHU17H-80",
+   "tagline": "Size-17 harmonic joint, 101:1, CANopen",
+   "brand": "EYou",
+   "category": "actuators",
+   "family": "harmonic_joint",
+   "price": 1199.0,
+   "priceCad": 1699.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "A harmonic-drive joint for work where backlash is not negotiable — camera motion, metrology, any arm whose repeatability is the specification. Strain-wave reduction means near-zero backlash and a hollow bore straight through the axis.",
+   "highlights": [
+    "Strain-wave (harmonic) reduction — near-zero backlash",
+    "101:1 in a single stage",
+    "CANopen CiA 402, so it drops into an existing motion stack",
+    "Hollow bore for through-axis cable routing"
+   ],
+   "specs": [
+    {
+     "group": "Performance",
+     "rows": [
+      {
+       "k": "Reduction",
+       "v": "101:1 strain wave"
+      },
+      {
+       "k": "Backlash",
+       "v": "Near zero, by construction"
+      },
+      {
+       "k": "Rated voltage",
+       "v": "48 V DC"
+      }
+     ]
+    },
+    {
+     "group": "Feedback & control",
+     "rows": [
+      {
+       "k": "Encoders",
+       "v": "Dual — motor + output"
+      },
+      {
+       "k": "Protocol",
+       "v": "CANopen, CiA 402 profile"
+      },
+      {
+       "k": "Default node ID",
+       "v": "1 (configurable, object 0x26A0)"
+      }
+     ]
+    },
+    {
+     "group": "Physical",
+     "rows": [
+      {
+       "k": "Frame size",
+       "v": "17"
+      },
+      {
+       "k": "Through bore",
+       "v": "Hollow output shaft"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "harmonic",
+    "canopen",
+    "zero-backlash",
+    "cinema"
+   ],
+   "image": "assets/img/products/eyou-phu17h-80.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 880,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "eyou-phu20h-100",
+   "sku": "MR-ACT-PHU20",
+   "name": "EYou PHU20H-100",
+   "tagline": "Size-20 harmonic joint, 100:1, CANopen",
+   "brand": "EYou",
+   "category": "actuators",
+   "family": "harmonic_joint",
+   "price": 1499.0,
+   "priceCad": 2099.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "One frame size up from the PHU17H. For the proximal joints of a long-reach arm, where the joint carries every link outboard of it.",
+   "highlights": [
+    "Larger frame for base and shoulder joints",
+    "100:1 strain-wave reduction, near-zero backlash",
+    "CANopen CiA 402",
+    "Hollow output shaft"
+   ],
+   "specs": [
+    {
+     "group": "Performance",
+     "rows": [
+      {
+       "k": "Reduction",
+       "v": "100:1 strain wave"
+      },
+      {
+       "k": "Backlash",
+       "v": "Near zero"
+      },
+      {
+       "k": "Rated voltage",
+       "v": "48 V DC"
+      }
+     ]
+    },
+    {
+     "group": "Feedback & control",
+     "rows": [
+      {
+       "k": "Encoders",
+       "v": "Dual — motor + output"
+      },
+      {
+       "k": "Protocol",
+       "v": "CANopen, CiA 402 profile"
+      }
+     ]
+    },
+    {
+     "group": "Physical",
+     "rows": [
+      {
+       "k": "Frame size",
+       "v": "20"
+      },
+      {
+       "k": "Through bore",
+       "v": "Hollow output shaft"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "harmonic",
+    "canopen",
+    "zero-backlash",
+    "cinema"
+   ],
+   "image": "assets/img/products/eyou-phu20h-100.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 1120,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "feetech-hl3915m",
+   "sku": "MR-ACT-3915",
+   "name": "Feetech HL3915M",
+   "tagline": "14 kg·cm dual-shaft bus servo, steel gears",
+   "brand": "Feetech",
+   "category": "actuators",
+   "family": "bus_servo",
+   "price": 44.0,
+   "priceCad": 59.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "The finger servo. Sixteen of these drive one ORCA hand — dual-shaft so the output is supported on both sides, steel gears because a tendon-driven finger stalls often.",
+   "highlights": [
+    "Dual output shafts — the finger pivot is supported at both ends",
+    "Full steel gear train, rated for repeated stall",
+    "1 Mbit TTL bus: 16 servos share four wires",
+    "Position, speed and load readback on every servo"
+   ],
+   "specs": [
+    {
+     "group": "Performance",
+     "rows": [
+      {
+       "k": "Stall torque",
+       "v": "14 kg·cm at 12 V"
+      },
+      {
+       "k": "Operating voltage",
+       "v": "9–14.8 V DC"
+      },
+      {
+       "k": "Gear train",
+       "v": "Full steel"
+      }
+     ]
+    },
+    {
+     "group": "Feedback & control",
+     "rows": [
+      {
+       "k": "Bus",
+       "v": "TTL half-duplex, up to 1 Mbit/s"
+      },
+      {
+       "k": "Feedback",
+       "v": "Position, speed, load, voltage, temperature"
+      },
+      {
+       "k": "Addressing",
+       "v": "1–253 on one chain"
+      },
+      {
+       "k": "Part number",
+       "v": "HL-3915-C001"
+      }
+     ]
+    },
+    {
+     "group": "Physical",
+     "rows": [
+      {
+       "k": "Output",
+       "v": "Dual shaft"
+      },
+      {
+       "k": "Connector",
+       "v": "3-pin, daisy-chainable"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "orca",
+    "hand",
+    "ttl",
+    "force-control"
+   ],
+   "image": "assets/img/products/feetech-hl3915m.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 33.7,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "feetech-hl3930m",
+   "sku": "MR-ACT-3930",
+   "name": "Feetech HL3930M",
+   "tagline": "35 kg·cm dual-shaft bus servo, metal case",
+   "brand": "Feetech",
+   "category": "actuators",
+   "family": "bus_servo",
+   "price": 69.0,
+   "priceCad": 94.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "The wrist servo of an ORCA hand. Metal case, two and a half times the torque of the finger servo, on the same TTL bus and in the same control API.",
+   "highlights": [
+    "35 kg·cm — rotates a loaded hand",
+    "Metal case, better heat path under sustained load",
+    "Same 1 Mbit TTL bus as the HL3915M",
+    "One per hand"
+   ],
+   "specs": [
+    {
+     "group": "Performance",
+     "rows": [
+      {
+       "k": "Stall torque",
+       "v": "35 kg·cm at 12 V"
+      },
+      {
+       "k": "Operating voltage",
+       "v": "9–14.8 V DC"
+      },
+      {
+       "k": "Case",
+       "v": "Metal"
+      }
+     ]
+    },
+    {
+     "group": "Feedback & control",
+     "rows": [
+      {
+       "k": "Bus",
+       "v": "TTL half-duplex, up to 1 Mbit/s"
+      },
+      {
+       "k": "Feedback",
+       "v": "Position, speed, load, voltage, temperature"
+      },
+      {
+       "k": "Part number",
+       "v": "HL-3930-C001"
+      }
+     ]
+    },
+    {
+     "group": "Physical",
+     "rows": [
+      {
+       "k": "Output",
+       "v": "Dual shaft"
+      },
+      {
+       "k": "Connector",
+       "v": "3-pin, daisy-chainable"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "orca",
+    "hand",
+    "wrist",
+    "ttl"
+   ],
+   "image": "assets/img/products/feetech-hl3930m.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 51.49,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "feetech-sts3215",
+   "sku": "MR-ACT-3215",
+   "name": "Feetech STS3215",
+   "tagline": "30 kg·cm magnetic-encoder bus servo",
+   "brand": "Feetech",
+   "category": "actuators",
+   "family": "bus_servo",
+   "price": 19.0,
+   "priceCad": 29.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "The servo behind most low-cost teleoperation arms. A magnetic encoder on the output gives it absolute position, which is what makes leader-follower arms practical.",
+   "highlights": [
+    "Magnetic absolute encoder — knows its angle at power-on",
+    "30 kg·cm at 12 V",
+    "1 Mbit TTL bus, chainable",
+    "The standard actuator for leader-follower teleop rigs"
+   ],
+   "specs": [
+    {
+     "group": "Performance",
+     "rows": [
+      {
+       "k": "Stall torque",
+       "v": "30 kg·cm at 12 V"
+      },
+      {
+       "k": "Operating voltage",
+       "v": "6–12.6 V DC"
+      },
+      {
+       "k": "Gear train",
+       "v": "Metal"
+      }
+     ]
+    },
+    {
+     "group": "Feedback & control",
+     "rows": [
+      {
+       "k": "Encoder",
+       "v": "12-bit magnetic, absolute"
+      },
+      {
+       "k": "Bus",
+       "v": "TTL half-duplex, up to 1 Mbit/s"
+      },
+      {
+       "k": "Feedback",
+       "v": "Position, speed, load, temperature"
+      }
+     ]
+    },
+    {
+     "group": "Physical",
+     "rows": [
+      {
+       "k": "Rotation",
+       "v": "360° continuous or 0–360° position"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "ttl",
+    "budget",
+    "teleop"
+   ],
+   "image": "assets/img/products/feetech-sts3215.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 15.5,
+   "_costSrc": "vendor"
+  },
+  {
+   "id": "dynamixel-xc330",
+   "sku": "MR-ACT-XC330",
+   "name": "Dynamixel XC330-T181-T",
+   "tagline": "Smart servo, 181:1, TTL",
+   "brand": "Robotis",
+   "category": "actuators",
+   "family": "bus_servo",
+   "price": 139.0,
+   "priceCad": 189.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "A small, precise smart servo with a real control table — current-based position control, PID gains you can tune live, and status you can trust. MABEL's neck.",
+   "highlights": [
+    "181:1 gearing in a 23 g-class housing",
+    "Current-based position control for compliant head motion",
+    "Full control table over TTL",
+    "Two drive MABEL's neck pitch and roll"
+   ],
+   "specs": [
+    {
+     "group": "Performance",
+     "rows": [
+      {
+       "k": "Stall torque",
+       "v": "0.92 N·m at 12 V"
+      },
+      {
+       "k": "Reduction",
+       "v": "181:1"
+      },
+      {
+       "k": "No-load speed",
+       "v": "81 rpm at 12 V"
+      },
+      {
+       "k": "Operating voltage",
+       "v": "5–12 V DC"
+      }
+     ]
+    },
+    {
+     "group": "Feedback & control",
+     "rows": [
+      {
+       "k": "Encoder",
+       "v": "12-bit magnetic contactless"
+      },
+      {
+       "k": "Control modes",
+       "v": "Current · velocity · position · extended position · PWM"
+      },
+      {
+       "k": "Bus",
+       "v": "TTL, up to 4.5 Mbit/s"
+      },
+      {
+       "k": "Model number",
+       "v": "1190"
+      }
+     ]
+    },
+    {
+     "group": "Physical",
+     "rows": [
+      {
+       "k": "Mass",
+       "v": "23 g"
+      },
+      {
+       "k": "Case",
+       "v": "Engineering plastic"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "neck",
+    "head",
+    "ttl"
+   ],
+   "image": "assets/img/products/dynamixel-xc330.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 103.39,
+   "_costSrc": "vendor"
+  },
+  {
+   "id": "nema17-foc",
+   "sku": "MR-ACT-N17FOC",
+   "name": "NEMA 17 Closed-Loop Stepper",
+   "tagline": "Stepper + FOC driver, 0.45 N·m",
+   "brand": "MABEL Robotics",
+   "category": "actuators",
+   "family": "stepper",
+   "price": 44.0,
+   "priceCad": 59.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "A stepper that behaves like a servo. The integrated driver closes the loop on a magnetic encoder and commutates with field-oriented control, so it never loses steps and draws current in proportion to the load rather than constantly.",
+   "highlights": [
+    "Closed-loop FOC — no lost steps, no holding-current heat soak",
+    "Magnetic encoder on the rear shaft",
+    "Step/dir, UART or CAN command",
+    "For lead screws, lifts and linear axes"
+   ],
+   "specs": [
+    {
+     "group": "Performance",
+     "rows": [
+      {
+       "k": "Holding torque",
+       "v": "0.45 N·m"
+      },
+      {
+       "k": "Step angle",
+       "v": "1.8° (200 steps/rev)"
+      },
+      {
+       "k": "Microstepping",
+       "v": "Up to 1/256"
+      },
+      {
+       "k": "Rated current",
+       "v": "1.5 A/phase"
+      },
+      {
+       "k": "Supply",
+       "v": "12–36 V DC"
+      }
+     ]
+    },
+    {
+     "group": "Feedback & control",
+     "rows": [
+      {
+       "k": "Encoder",
+       "v": "14-bit magnetic, on-shaft"
+      },
+      {
+       "k": "Commutation",
+       "v": "Field-oriented control"
+      },
+      {
+       "k": "Interface",
+       "v": "Step/dir · UART · CAN"
+      }
+     ]
+    },
+    {
+     "group": "Physical",
+     "rows": [
+      {
+       "k": "Frame",
+       "v": "NEMA 17, 42 mm"
+      },
+      {
+       "k": "Body length",
+       "v": "48 mm"
+      },
+      {
+       "k": "Shaft",
+       "v": "5 mm with flat"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "stepper",
+    "foc",
+    "lift",
+    "linear"
+   ],
+   "image": "assets/img/products/nema17-foc.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 34,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "nema23-foc",
+   "sku": "MR-ACT-N23FOC",
+   "name": "NEMA 23 Closed-Loop Stepper",
+   "tagline": "Stepper + FOC driver, 1.9 N·m",
+   "brand": "MABEL Robotics",
+   "category": "actuators",
+   "family": "stepper",
+   "price": 79.0,
+   "priceCad": 109.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "The larger closed-loop stepper, for gantries, heavy lifts and anything that has to hold position with the power off the coils.",
+   "highlights": [
+    "1.9 N·m holding torque",
+    "Closed-loop FOC with on-shaft encoder",
+    "Step/dir, UART or CAN",
+    "57 mm NEMA 23 frame"
+   ],
+   "specs": [
+    {
+     "group": "Performance",
+     "rows": [
+      {
+       "k": "Holding torque",
+       "v": "1.9 N·m"
+      },
+      {
+       "k": "Step angle",
+       "v": "1.8°"
+      },
+      {
+       "k": "Rated current",
+       "v": "3.0 A/phase"
+      },
+      {
+       "k": "Supply",
+       "v": "24–48 V DC"
+      }
+     ]
+    },
+    {
+     "group": "Feedback & control",
+     "rows": [
+      {
+       "k": "Encoder",
+       "v": "14-bit magnetic"
+      },
+      {
+       "k": "Commutation",
+       "v": "Field-oriented control"
+      },
+      {
+       "k": "Interface",
+       "v": "Step/dir · UART · CAN"
+      }
+     ]
+    },
+    {
+     "group": "Physical",
+     "rows": [
+      {
+       "k": "Frame",
+       "v": "NEMA 23, 57 mm"
+      },
+      {
+       "k": "Shaft",
+       "v": "8 mm with flat"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "stepper",
+    "foc",
+    "gantry"
+   ],
+   "image": "assets/img/products/nema23-foc.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 62,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "lift-column",
+   "sku": "MR-ACT-LIFT",
+   "name": "Linear Lift Column",
+   "tagline": "635 mm stroke, three-stage",
+   "brand": "MABEL Robotics",
+   "category": "actuators",
+   "family": "lift_column",
+   "price": 519.0,
+   "priceCad": 719.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "A three-stage telescoping column that gives a mobile robot a floor-to-tabletop workspace. MABEL uses the column and frame from a FlexiSpot E7 Pro desk, driven by its own controller instead of the desk's.",
+   "highlights": [
+    "0–635 mm stroke, three stages",
+    "Holds position with power removed",
+    "Driven from a Pico + BTS7960 in MABEL, or from your own controller",
+    "Turns a fixed-height robot into one that reaches the floor and the counter"
+   ],
+   "specs": [
+    {
+     "group": "Performance",
+     "rows": [
+      {
+       "k": "Stroke",
+       "v": "0–635 mm"
+      },
+      {
+       "k": "Stages",
+       "v": "3"
+      },
+      {
+       "k": "Supply",
+       "v": "24 V DC"
+      },
+      {
+       "k": "Holding",
+       "v": "Leadscrew, self-locking"
+      }
+     ]
+    },
+    {
+     "group": "Integration",
+     "rows": [
+      {
+       "k": "Control",
+       "v": "Direct H-bridge, or the MABEL Pico lift board"
+      },
+      {
+       "k": "Feedback",
+       "v": "Hall/limit, position by count"
+      },
+      {
+       "k": "Source",
+       "v": "FlexiSpot E7 Pro column and frame (CBR4830MD-E7WS)"
+      }
+     ]
+    },
+    {
+     "group": "Physical",
+     "rows": [
+      {
+       "k": "Top plate",
+       "v": "Bolt pattern for the MABEL torso adapter"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "torso",
+    "linear"
+   ],
+   "image": "assets/img/products/lift-column.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 399,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "planetary-gearbox-n17",
+   "sku": "MR-ACT-PG17",
+   "name": "Planetary Gearbox, NEMA 17",
+   "tagline": "5:1 / 10:1 / 27:1, low backlash",
+   "brand": "MABEL Robotics",
+   "category": "actuators",
+   "family": "gearbox",
+   "price": 39.0,
+   "priceCad": 54.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "A planetary reduction that bolts to any NEMA 17 face. Trades speed for torque and reduces the resolution you need from the driver.",
+   "highlights": [
+    "5:1, 10:1 and 27:1 ratios",
+    "≤1° backlash",
+    "Standard NEMA 17 input face",
+    "8 mm keyed output"
+   ],
+   "specs": [
+    {
+     "group": "Performance",
+     "rows": [
+      {
+       "k": "Ratios",
+       "v": "5:1 · 10:1 · 27:1"
+      },
+      {
+       "k": "Backlash",
+       "v": "≤ 1°"
+      },
+      {
+       "k": "Rated output torque",
+       "v": "3 N·m at 10:1"
+      },
+      {
+       "k": "Efficiency",
+       "v": "≈ 90%"
+      }
+     ]
+    },
+    {
+     "group": "Physical",
+     "rows": [
+      {
+       "k": "Input",
+       "v": "NEMA 17 face, 5 mm bore"
+      },
+      {
+       "k": "Output",
+       "v": "8 mm keyed"
+      },
+      {
+       "k": "Mass",
+       "v": "260 g at 10:1"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "gearbox",
+    "stepper"
+   ],
+   "image": "assets/img/products/planetary-gearbox-n17.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 28,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "swerve-module",
+   "sku": "MR-WHL-SWRV",
+   "name": "MABEL Swerve Module",
+   "tagline": "Holonomic drive module, assembled and tested",
+   "brand": "MABEL Robotics",
+   "category": "wheels",
+   "family": "swerve",
+   "price": 899.0,
+   "priceCad": 1299.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "One corner of a holonomic base, built and run in before it ships. Independent drive and steering motors, a belt-driven azimuth stage with an absolute encoder, and a traction wheel — bolt three or four to a plate and the robot moves in any direction while facing any direction.",
+   "highlights": [
+    "Drive and azimuth motors, controllers, belt stage and wheel — complete",
+    "Absolute azimuth encoder: no homing routine at power-on",
+    "Continuous 360° steering, no wire wrap",
+    "Every module is run through a steering and drive test before it ships"
+   ],
+   "specs": [
+    {
+     "group": "Drive",
+     "rows": [
+      {
+       "k": "Wheel diameter",
+       "v": "76 mm (3 in)"
+      },
+      {
+       "k": "Free speed",
+       "v": "4.4 m/s"
+      },
+      {
+       "k": "Drive reduction",
+       "v": "Belt + planetary"
+      },
+      {
+       "k": "Traction",
+       "v": "Grey rubber tread"
+      }
+     ]
+    },
+    {
+     "group": "Steering",
+     "rows": [
+      {
+       "k": "Azimuth range",
+       "v": "Continuous 360°"
+      },
+      {
+       "k": "Azimuth feedback",
+       "v": "Absolute magnetic encoder"
+      },
+      {
+       "k": "Azimuth reduction",
+       "v": "Belt drive"
+      }
+     ]
+    },
+    {
+     "group": "Interfaces",
+     "rows": [
+      {
+       "k": "Bus",
+       "v": "CAN"
+      },
+      {
+       "k": "Supply",
+       "v": "24 V DC"
+      },
+      {
+       "k": "Mounting",
+       "v": "Flat top plate, bolt circle"
+      }
+     ]
+    }
+   ],
+   "note": "Ships complete. The REV-21-3005 catalogue module by itself does not include motors, controllers or framing — this one does.",
+   "tags": [
+    "mabel",
+    "base",
+    "holonomic",
+    "swerve"
+   ],
+   "image": "assets/img/products/swerve-module.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 675,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "hexfellow-swerve-motor",
+   "sku": "MR-WHL-HEXF",
+   "name": "HexFellow FOC Drive Motor",
+   "tagline": "CANopen field-oriented drive motor",
+   "brand": "HexFellow",
+   "category": "wheels",
+   "family": "pancake",
+   "price": 239.0,
+   "priceCad": 329.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "The motor inside a swerve module. Field-oriented control with the driver on board, speaking CANopen so it joins the same bus as the rest of the drivetrain.",
+   "highlights": [
+    "Integrated FOC driver — velocity and torque control out of the box",
+    "CANopen: two motors per swerve module, all on one bus",
+    "Temperature telemetry per motor",
+    "Two per module in a four-module base"
+   ],
+   "specs": [
+    {
+     "group": "Performance",
+     "rows": [
+      {
+       "k": "Control",
+       "v": "Field-oriented, velocity and torque"
+      },
+      {
+       "k": "Supply",
+       "v": "24 V DC"
+      }
+     ]
+    },
+    {
+     "group": "Interfaces",
+     "rows": [
+      {
+       "k": "Protocol",
+       "v": "CANopen"
+      },
+      {
+       "k": "Telemetry",
+       "v": "Speed, current, temperature"
+      },
+      {
+       "k": "Data format",
+       "v": "float32 process values"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "swerve",
+    "canopen",
+    "foc",
+    "base"
+   ],
+   "image": "assets/img/products/hexfellow-swerve-motor.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 182,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "azimuth-encoder-kit",
+   "sku": "MR-WHL-AZENC",
+   "name": "Azimuth Encoder Kit",
+   "tagline": "Absolute steering feedback for swerve",
+   "brand": "MABEL Robotics",
+   "category": "wheels",
+   "family": "pcb",
+   "price": 34.0,
+   "priceCad": 49.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Absolute angle on the steering axis, so a module knows which way its wheel points the instant it powers on. Magnet, board, and the standoffs to set the air gap.",
+   "highlights": [
+    "14-bit absolute — no homing sweep at boot",
+    "Diametric magnet and mount included",
+    "SPI or PWM output",
+    "Sets the air gap correctly by construction"
+   ],
+   "specs": [
+    {
+     "group": "Performance",
+     "rows": [
+      {
+       "k": "Resolution",
+       "v": "14-bit (16 384 counts/rev)"
+      },
+      {
+       "k": "Type",
+       "v": "Absolute, on-axis magnetic"
+      },
+      {
+       "k": "Air gap",
+       "v": "0.5–2.5 mm"
+      }
+     ]
+    },
+    {
+     "group": "Interfaces",
+     "rows": [
+      {
+       "k": "Output",
+       "v": "SPI · PWM · analogue"
+      },
+      {
+       "k": "Supply",
+       "v": "3.3 or 5 V"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "swerve",
+    "encoder",
+    "base"
+   ],
+   "image": "assets/img/products/azimuth-encoder-kit.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 26,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "wheel-traction-3",
+   "sku": "MR-WHL-3",
+   "name": "Traction Wheel, 76 mm",
+   "tagline": "76 mm (3 in) · traction",
+   "brand": "MABEL Robotics",
+   "category": "wheels",
+   "family": "wheel",
+   "price": 17.99,
+   "priceCad": 24.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Grey non-marking tread on an aluminium hub. The default swerve wheel.",
+   "highlights": [
+    "Aluminium hub, not moulded plastic",
+    "Standard hex or bolt-circle bore",
+    "Non-marking compound",
+    "Matched sets available"
+   ],
+   "specs": [
+    {
+     "group": "Wheel",
+     "rows": [
+      {
+       "k": "Diameter",
+       "v": "76 mm (3 in)"
+      },
+      {
+       "k": "Type",
+       "v": "Traction"
+      },
+      {
+       "k": "Tread",
+       "v": "Non-marking rubber"
+      },
+      {
+       "k": "Hub",
+       "v": "Machined aluminium"
+      }
+     ]
+    },
+    {
+     "group": "Fitment",
+     "rows": [
+      {
+       "k": "Bore",
+       "v": "1/2 in hex or M8 bolt circle"
+      },
+      {
+       "k": "Load rating",
+       "v": "25 kg per wheel"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "base",
+    "traction"
+   ],
+   "image": "assets/img/products/wheel-traction-3.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 14,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "wheel-traction-6",
+   "sku": "MR-WHL-6",
+   "name": "Traction Wheel, 152 mm",
+   "tagline": "152 mm (6 in) · traction",
+   "brand": "MABEL Robotics",
+   "category": "wheels",
+   "family": "wheel",
+   "price": 34.0,
+   "priceCad": 49.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "A larger traction wheel for rougher floors, door thresholds and cable runs.",
+   "highlights": [
+    "Aluminium hub, not moulded plastic",
+    "Standard hex or bolt-circle bore",
+    "Non-marking compound",
+    "Matched sets available"
+   ],
+   "specs": [
+    {
+     "group": "Wheel",
+     "rows": [
+      {
+       "k": "Diameter",
+       "v": "152 mm (6 in)"
+      },
+      {
+       "k": "Type",
+       "v": "Traction"
+      },
+      {
+       "k": "Tread",
+       "v": "Non-marking rubber"
+      },
+      {
+       "k": "Hub",
+       "v": "Machined aluminium"
+      }
+     ]
+    },
+    {
+     "group": "Fitment",
+     "rows": [
+      {
+       "k": "Bore",
+       "v": "1/2 in hex or M8 bolt circle"
+      },
+      {
+       "k": "Load rating",
+       "v": "25 kg per wheel"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "base",
+    "traction"
+   ],
+   "image": "assets/img/products/wheel-traction-6.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 26,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "wheel-omni-100",
+   "sku": "MR-WHL-100",
+   "name": "Omni Wheel, 100 mm",
+   "tagline": "100 mm · omni",
+   "brand": "MABEL Robotics",
+   "category": "wheels",
+   "family": "wheel",
+   "price": 24.0,
+   "priceCad": 34.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Rollers on the rim let the wheel slide sideways freely — three or four give a holonomic base without steering motors.",
+   "highlights": [
+    "Aluminium hub, not moulded plastic",
+    "Standard hex or bolt-circle bore",
+    "Non-marking compound",
+    "Matched sets available"
+   ],
+   "specs": [
+    {
+     "group": "Wheel",
+     "rows": [
+      {
+       "k": "Diameter",
+       "v": "100 mm"
+      },
+      {
+       "k": "Type",
+       "v": "Omni"
+      },
+      {
+       "k": "Tread",
+       "v": "Non-marking rubber"
+      },
+      {
+       "k": "Hub",
+       "v": "Machined aluminium"
+      }
+     ]
+    },
+    {
+     "group": "Fitment",
+     "rows": [
+      {
+       "k": "Bore",
+       "v": "1/2 in hex or M8 bolt circle"
+      },
+      {
+       "k": "Load rating",
+       "v": "25 kg per wheel"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "base",
+    "omni"
+   ],
+   "image": "assets/img/products/wheel-omni-100.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 19,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "wheel-mecanum-152",
+   "sku": "MR-WHL-152",
+   "name": "Mecanum Wheel, 152 mm",
+   "tagline": "152 mm · mecanum",
+   "brand": "MABEL Robotics",
+   "category": "wheels",
+   "family": "wheel",
+   "price": 59.0,
+   "priceCad": 79.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Angled rollers turn four independent wheels into full planar motion. Sold as a handed set of four.",
+   "highlights": [
+    "Aluminium hub, not moulded plastic",
+    "Standard hex or bolt-circle bore",
+    "Non-marking compound",
+    "Matched sets available"
+   ],
+   "specs": [
+    {
+     "group": "Wheel",
+     "rows": [
+      {
+       "k": "Diameter",
+       "v": "152 mm"
+      },
+      {
+       "k": "Type",
+       "v": "Mecanum"
+      },
+      {
+       "k": "Tread",
+       "v": "Non-marking rubber"
+      },
+      {
+       "k": "Hub",
+       "v": "Machined aluminium"
+      }
+     ]
+    },
+    {
+     "group": "Fitment",
+     "rows": [
+      {
+       "k": "Bore",
+       "v": "1/2 in hex or M8 bolt circle"
+      },
+      {
+       "k": "Load rating",
+       "v": "25 kg per wheel"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "base",
+    "mecanum"
+   ],
+   "image": "assets/img/products/wheel-mecanum-152.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 44,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "hub-motor-8",
+   "sku": "MR-WHL-HUB8",
+   "name": "Hub Drive Motor, 8 in",
+   "tagline": "Direct-drive wheel with integrated motor",
+   "brand": "MABEL Robotics",
+   "category": "wheels",
+   "family": "wheel",
+   "price": 129.0,
+   "priceCad": 179.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Motor and wheel in one part. Nothing to align, nothing to tension — for differential bases where simplicity beats holonomy.",
+   "highlights": [
+    "Direct drive, no gearbox to service",
+    "Hall sensors for smooth low-speed commutation",
+    "Regenerative braking with a suitable controller",
+    "Two make a differential base"
+   ],
+   "specs": [
+    {
+     "group": "Performance",
+     "rows": [
+      {
+       "k": "Diameter",
+       "v": "203 mm (8 in)"
+      },
+      {
+       "k": "Rated power",
+       "v": "250 W"
+      },
+      {
+       "k": "Supply",
+       "v": "24–36 V DC"
+      },
+      {
+       "k": "Rated torque",
+       "v": "12 N·m"
+      }
+     ]
+    },
+    {
+     "group": "Feedback",
+     "rows": [
+      {
+       "k": "Sensors",
+       "v": "3 × Hall"
+      },
+      {
+       "k": "Controller",
+       "v": "External BLDC/FOC required"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "base",
+    "differential"
+   ],
+   "image": "assets/img/products/hub-motor-8.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 98,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "belt-pulley-set",
+   "sku": "MR-WHL-HTD5",
+   "name": "HTD-5M Belt & Pulley Set",
+   "tagline": "Timing belts, pulleys and tensioners",
+   "brand": "MABEL Robotics",
+   "category": "wheels",
+   "family": "fastener_set",
+   "price": 44.0,
+   "priceCad": 59.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "The transmission side of a swerve module or a belt-driven arm joint: matched HTD-5M belts, aluminium pulleys in the common tooth counts, and idlers to take up slack.",
+   "highlights": [
+    "HTD-5M profile — the standard for robot drivetrains",
+    "Pulleys in 15T, 18T, 24T, 36T and 60T",
+    "Closed-loop belts in five lengths",
+    "Bearing idlers for tensioning"
+   ],
+   "specs": [
+    {
+     "group": "Contents",
+     "rows": [
+      {
+       "k": "Belt profile",
+       "v": "HTD-5M, 15 mm wide"
+      },
+      {
+       "k": "Belt lengths",
+       "v": "150 · 225 · 300 · 375 · 450 mm"
+      },
+      {
+       "k": "Pulleys",
+       "v": "15T · 18T · 24T · 36T · 60T, aluminium"
+      },
+      {
+       "k": "Idlers",
+       "v": "2 × sealed-bearing"
+      }
+     ]
+    },
+    {
+     "group": "Fitment",
+     "rows": [
+      {
+       "k": "Bore",
+       "v": "8 mm with M4 set screws"
+      },
+      {
+       "k": "Flanges",
+       "v": "Both sides on all pulleys"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "base",
+    "transmission"
+   ],
+   "image": "assets/img/products/belt-pulley-set.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 32,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "screw-set-metric",
+   "sku": "MR-HW-SCRW",
+   "name": "Metric Fastener Set, M2–M6",
+   "tagline": "1 200 pieces, A2 stainless, sorted",
+   "brand": "MABEL Robotics",
+   "category": "hardware",
+   "family": "fastener_set",
+   "price": 19.99,
+   "priceCad": 29.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "The set you actually reach for. Socket-head cap screws from M2 to M6 in the lengths a robot needs, with matching nuts and washers, in a case with dividers that stay put.",
+   "highlights": [
+    "A2 stainless throughout — no rust on a robot that lives near a sink",
+    "M2, M2.5, M3, M4, M5, M6 in 6–30 mm lengths",
+    "Nyloc nuts and flat washers to match every size",
+    "Latching case with fixed dividers"
+   ],
+   "specs": [
+    {
+     "group": "Contents",
+     "rows": [
+      {
+       "k": "Screws",
+       "v": "M2–M6 socket head cap, 6–30 mm"
+      },
+      {
+       "k": "Nuts",
+       "v": "Nyloc and plain hex, M2–M6"
+      },
+      {
+       "k": "Washers",
+       "v": "Flat and split, M2–M6"
+      },
+      {
+       "k": "Total pieces",
+       "v": "≈ 1 200"
+      }
+     ]
+    },
+    {
+     "group": "Material",
+     "rows": [
+      {
+       "k": "Grade",
+       "v": "A2 / 304 stainless"
+      },
+      {
+       "k": "Drive",
+       "v": "Hex socket"
+      },
+      {
+       "k": "Thread",
+       "v": "Coarse, ISO metric"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "fasteners",
+    "stainless"
+   ],
+   "image": "assets/img/products/screw-set-metric.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 13.99,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "heatset-insert-kit",
+   "sku": "MR-HW-INSRT",
+   "name": "Heat-Set Insert Kit, M2–M5",
+   "tagline": "Brass inserts plus the soldering tips",
+   "brand": "MABEL Robotics",
+   "category": "hardware",
+   "family": "fastener_set",
+   "price": 24.0,
+   "priceCad": 34.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Threads in printed plastic that survive being taken apart. Knurled brass inserts melt into the print and give you a real machine thread — the single biggest upgrade to a 3D-printed robot's serviceability.",
+   "highlights": [
+    "M2, M2.5, M3, M4 and M5 in short and long forms",
+    "Matched soldering-iron tips for each size — the part most kits leave out",
+    "Knurled and barbed so they resist both pull-out and rotation",
+    "500 inserts, enough for a whole robot"
+   ],
+   "specs": [
+    {
+     "group": "Contents",
+     "rows": [
+      {
+       "k": "Inserts",
+       "v": "M2 · M2.5 · M3 · M4 · M5, two lengths each"
+      },
+      {
+       "k": "Quantity",
+       "v": "500 pieces"
+      },
+      {
+       "k": "Tips",
+       "v": "5 installation tips, M3 iron thread"
+      }
+     ]
+    },
+    {
+     "group": "Material",
+     "rows": [
+      {
+       "k": "Insert",
+       "v": "Brass, knurled and barbed"
+      },
+      {
+       "k": "Working temperature",
+       "v": "200–250 °C"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "3d-printing",
+    "fasteners"
+   ],
+   "image": "assets/img/products/heatset-insert-kit.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 17,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "extrusion-2020",
+   "sku": "MR-HW-2020",
+   "name": "Aluminium Extrusion, 20×20",
+   "tagline": "20 × 20 mm T-slot · cut to length",
+   "brand": "MABEL Robotics",
+   "category": "hardware",
+   "family": "extrusion",
+   "price": 12.99,
+   "priceCad": 17.99,
+   "unit": "per 100 mm",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "The default frame stock. Light, stiff enough for most robot structure, and every bracket in the world fits it.",
+   "highlights": [
+    "Cut to your length, ±0.5 mm, ends faced square",
+    "6063-T5, clear anodised",
+    "T-slot on every face",
+    "Priced per 100 mm — order the length you need"
+   ],
+   "specs": [
+    {
+     "group": "Profile",
+     "rows": [
+      {
+       "k": "Section",
+       "v": "20 × 20 mm"
+      },
+      {
+       "k": "Slot width",
+       "v": "6 mm"
+      },
+      {
+       "k": "Alloy",
+       "v": "6063-T5"
+      },
+      {
+       "k": "Finish",
+       "v": "Clear anodised"
+      }
+     ]
+    },
+    {
+     "group": "Supply",
+     "rows": [
+      {
+       "k": "Cut tolerance",
+       "v": "±0.5 mm"
+      },
+      {
+       "k": "Ends",
+       "v": "Faced square"
+      },
+      {
+       "k": "Priced",
+       "v": "Per 100 mm"
+      },
+      {
+       "k": "Maximum length",
+       "v": "2 000 mm"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "frame",
+    "extrusion"
+   ],
+   "image": "assets/img/products/extrusion-2020.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 9.5,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "extrusion-2040",
+   "sku": "MR-HW-2040",
+   "name": "Aluminium Extrusion, 20×40",
+   "tagline": "20 × 40 mm T-slot · cut to length",
+   "brand": "MABEL Robotics",
+   "category": "hardware",
+   "family": "extrusion",
+   "price": 24.0,
+   "priceCad": 34.0,
+   "unit": "per 100 mm",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Twice the section modulus in the direction that matters. For gantry beams and cantilevered arms.",
+   "highlights": [
+    "Cut to your length, ±0.5 mm, ends faced square",
+    "6063-T5, clear anodised",
+    "T-slot on every face",
+    "Priced per 100 mm — order the length you need"
+   ],
+   "specs": [
+    {
+     "group": "Profile",
+     "rows": [
+      {
+       "k": "Section",
+       "v": "20 × 40 mm"
+      },
+      {
+       "k": "Slot width",
+       "v": "6 mm"
+      },
+      {
+       "k": "Alloy",
+       "v": "6063-T5"
+      },
+      {
+       "k": "Finish",
+       "v": "Clear anodised"
+      }
+     ]
+    },
+    {
+     "group": "Supply",
+     "rows": [
+      {
+       "k": "Cut tolerance",
+       "v": "±0.5 mm"
+      },
+      {
+       "k": "Ends",
+       "v": "Faced square"
+      },
+      {
+       "k": "Priced",
+       "v": "Per 100 mm"
+      },
+      {
+       "k": "Maximum length",
+       "v": "2 000 mm"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "frame",
+    "extrusion"
+   ],
+   "image": "assets/img/products/extrusion-2040.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 16,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "extrusion-1010",
+   "sku": "MR-HW-1010",
+   "name": "Aluminium Extrusion, 1×1 in",
+   "tagline": "25.4 × 25.4 mm (1010) T-slot · cut to length",
+   "brand": "MABEL Robotics",
+   "category": "hardware",
+   "family": "extrusion",
+   "price": 16.99,
+   "priceCad": 24.0,
+   "unit": "per 100 mm",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Imperial 1010-series, for frames that have to bolt to imperial hardware.",
+   "highlights": [
+    "Cut to your length, ±0.5 mm, ends faced square",
+    "6063-T5, clear anodised",
+    "T-slot on every face",
+    "Priced per 100 mm — order the length you need"
+   ],
+   "specs": [
+    {
+     "group": "Profile",
+     "rows": [
+      {
+       "k": "Section",
+       "v": "25.4 × 25.4 mm (1010)"
+      },
+      {
+       "k": "Slot width",
+       "v": "8 mm"
+      },
+      {
+       "k": "Alloy",
+       "v": "6063-T5"
+      },
+      {
+       "k": "Finish",
+       "v": "Clear anodised"
+      }
+     ]
+    },
+    {
+     "group": "Supply",
+     "rows": [
+      {
+       "k": "Cut tolerance",
+       "v": "±0.5 mm"
+      },
+      {
+       "k": "Ends",
+       "v": "Faced square"
+      },
+      {
+       "k": "Priced",
+       "v": "Per 100 mm"
+      },
+      {
+       "k": "Maximum length",
+       "v": "2 000 mm"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "frame",
+    "extrusion"
+   ],
+   "image": "assets/img/products/extrusion-1010.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 12,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "extrusion-2x2",
+   "sku": "MR-HW-2X2",
+   "name": "Aluminium Extrusion, 2×2 in",
+   "tagline": "50.8 × 50.8 mm T-slot · cut to length",
+   "brand": "MABEL Robotics",
+   "category": "hardware",
+   "family": "extrusion",
+   "price": 49.0,
+   "priceCad": 69.0,
+   "unit": "per 100 mm",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "Heavy structural section. MABEL's body frame is built from 2×2 and 2×4 in stock.",
+   "highlights": [
+    "Cut to your length, ±0.5 mm, ends faced square",
+    "6063-T5, clear anodised",
+    "T-slot on every face",
+    "Priced per 100 mm — order the length you need"
+   ],
+   "specs": [
+    {
+     "group": "Profile",
+     "rows": [
+      {
+       "k": "Section",
+       "v": "50.8 × 50.8 mm"
+      },
+      {
+       "k": "Slot width",
+       "v": "8 mm"
+      },
+      {
+       "k": "Alloy",
+       "v": "6063-T5"
+      },
+      {
+       "k": "Finish",
+       "v": "Clear anodised"
+      }
+     ]
+    },
+    {
+     "group": "Supply",
+     "rows": [
+      {
+       "k": "Cut tolerance",
+       "v": "±0.5 mm"
+      },
+      {
+       "k": "Ends",
+       "v": "Faced square"
+      },
+      {
+       "k": "Priced",
+       "v": "Per 100 mm"
+      },
+      {
+       "k": "Maximum length",
+       "v": "2 000 mm"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "frame",
+    "extrusion"
+   ],
+   "image": "assets/img/products/extrusion-2x2.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 34,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "extrusion-brackets",
+   "sku": "MR-HW-BRKT",
+   "name": "Extrusion Bracket Set",
+   "tagline": "Corner brackets, angled plates and T-nuts",
+   "brand": "MABEL Robotics",
+   "category": "hardware",
+   "family": "fastener_set",
+   "price": 39.0,
+   "priceCad": 54.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "Everything that joins one piece of extrusion to another: 90° corner brackets, angled joining plates, and the spring T-nuts that let you add a bracket without taking the frame apart.",
+   "highlights": [
+    "90° corner brackets, gusseted",
+    "Angled joining plates for non-square frames",
+    "Spring T-nuts — drop in anywhere along a slot",
+    "Button-head screws sized to the nuts, included"
+   ],
+   "specs": [
+    {
+     "group": "Contents",
+     "rows": [
+      {
+       "k": "Corner brackets",
+       "v": "20 × 90°, gusseted"
+      },
+      {
+       "k": "Angled plates",
+       "v": "20 × adjustable"
+      },
+      {
+       "k": "T-nuts",
+       "v": "100 × spring-loaded"
+      },
+      {
+       "k": "Screws",
+       "v": "120 × M5 button head"
+      }
+     ]
+    },
+    {
+     "group": "Fitment",
+     "rows": [
+      {
+       "k": "Series",
+       "v": "20-series and 1010"
+      },
+      {
+       "k": "Material",
+       "v": "Die-cast zinc, black"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "frame",
+    "extrusion"
+   ],
+   "image": "assets/img/products/extrusion-brackets.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 26.9,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "bearing-set",
+   "sku": "MR-HW-BRNG",
+   "name": "Deep-Groove Bearing Set",
+   "tagline": "608, 625, 6800, 6805 · sealed",
+   "brand": "MABEL Robotics",
+   "category": "hardware",
+   "family": "bearing",
+   "price": 34.0,
+   "priceCad": 49.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "The four bearing sizes that show up again and again in robot joints, idlers and tensioners, in rubber-sealed ABEC-3 grade. Twenty of each.",
+   "highlights": [
+    "608, 625, 6800 and 6805, twenty of each",
+    "Rubber-sealed — survives a workshop",
+    "ABEC-3, pre-lubricated",
+    "Chrome steel races"
+   ],
+   "specs": [
+    {
+     "group": "Sizes",
+     "rows": [
+      {
+       "k": "608-2RS",
+       "v": "8 × 22 × 7 mm"
+      },
+      {
+       "k": "625-2RS",
+       "v": "5 × 16 × 5 mm"
+      },
+      {
+       "k": "6800-2RS",
+       "v": "10 × 19 × 5 mm"
+      },
+      {
+       "k": "6805-2RS",
+       "v": "25 × 37 × 7 mm"
+      }
+     ]
+    },
+    {
+     "group": "Specification",
+     "rows": [
+      {
+       "k": "Grade",
+       "v": "ABEC-3"
+      },
+      {
+       "k": "Seals",
+       "v": "Rubber, both sides"
+      },
+      {
+       "k": "Material",
+       "v": "GCr15 chrome steel"
+      },
+      {
+       "k": "Quantity",
+       "v": "80 pieces total"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "bearings",
+    "rotation"
+   ],
+   "image": "assets/img/products/bearing-set.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 24,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "thin-section-bearing",
+   "sku": "MR-HW-XSEC",
+   "name": "Crossed-Roller Bearing",
+   "tagline": "Single bearing takes moment, thrust and radial load",
+   "brand": "MABEL Robotics",
+   "category": "hardware",
+   "family": "bearing",
+   "price": 89.0,
+   "priceCad": 129.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "One bearing where a joint would otherwise need three. Rollers alternate at 90°, so a single thin race carries radial load, axial load in both directions, and the overturning moment of a cantilevered link.",
+   "highlights": [
+    "Takes radial, axial and moment load in one race",
+    "Thin section — the joint stays compact",
+    "The standard output bearing for harmonic joints",
+    "Pre-loaded, no shimming needed"
+   ],
+   "specs": [
+    {
+     "group": "Bearing",
+     "rows": [
+      {
+       "k": "Type",
+       "v": "Crossed roller, alternating 90°"
+      },
+      {
+       "k": "Bore",
+       "v": "50 mm"
+      },
+      {
+       "k": "Outer diameter",
+       "v": "80 mm"
+      },
+      {
+       "k": "Width",
+       "v": "15 mm"
+      }
+     ]
+    },
+    {
+     "group": "Rating",
+     "rows": [
+      {
+       "k": "Dynamic load",
+       "v": "12.4 kN"
+      },
+      {
+       "k": "Tilting rigidity",
+       "v": "Pre-loaded, zero clearance"
+      },
+      {
+       "k": "Runout",
+       "v": "≤ 0.01 mm"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "bearings",
+    "joint",
+    "harmonic"
+   ],
+   "image": "assets/img/products/thin-section-bearing.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 64,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "linear-rail-mgn12",
+   "sku": "MR-HW-MGN12",
+   "name": "Linear Rail MGN12 + Carriage",
+   "tagline": "Recirculating-ball linear guide",
+   "brand": "MABEL Robotics",
+   "category": "hardware",
+   "family": "plate",
+   "price": 44.0,
+   "priceCad": 59.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Stiff, low-friction linear motion. Recirculating balls in a hardened steel rail — the guide that makes a printed linear axis behave like a machine tool.",
+   "highlights": [
+    "MGN12H carriage with four ball circuits",
+    "Hardened and ground rail, ±0.02 mm straightness",
+    "Cut to length with mounting holes on 25 mm centres",
+    "Pre-lubricated, with wipers on both ends"
+   ],
+   "specs": [
+    {
+     "group": "Rail",
+     "rows": [
+      {
+       "k": "Series",
+       "v": "MGN12"
+      },
+      {
+       "k": "Width",
+       "v": "12 mm"
+      },
+      {
+       "k": "Height",
+       "v": "8 mm"
+      },
+      {
+       "k": "Hole pitch",
+       "v": "25 mm"
+      },
+      {
+       "k": "Lengths",
+       "v": "200–1 000 mm"
+      }
+     ]
+    },
+    {
+     "group": "Carriage",
+     "rows": [
+      {
+       "k": "Type",
+       "v": "MGN12H, long body"
+      },
+      {
+       "k": "Dynamic load",
+       "v": "3.4 kN"
+      },
+      {
+       "k": "Static load",
+       "v": "5.7 kN"
+      },
+      {
+       "k": "Accuracy",
+       "v": "±0.02 mm straightness"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "linear",
+    "gantry"
+   ],
+   "image": "assets/img/products/linear-rail-mgn12.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 29,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "leadscrew-t8",
+   "sku": "MR-HW-T8",
+   "name": "T8 Lead Screw & Anti-Backlash Nut",
+   "tagline": "8 mm trapezoidal, 2 mm lead",
+   "brand": "MABEL Robotics",
+   "category": "hardware",
+   "family": "plate",
+   "price": 24.0,
+   "priceCad": 34.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Turns rotation into a lift that holds itself up. A 2 mm lead is self-locking, so the axis stays where you left it when the motor is off.",
+   "highlights": [
+    "Self-locking at 2 mm lead — no brake needed",
+    "Spring-loaded anti-backlash nut",
+    "Stainless screw, POM nut",
+    "Cut to length, ends turned for a bearing"
+   ],
+   "specs": [
+    {
+     "group": "Screw",
+     "rows": [
+      {
+       "k": "Diameter",
+       "v": "8 mm"
+      },
+      {
+       "k": "Lead",
+       "v": "2 mm/rev"
+      },
+      {
+       "k": "Thread",
+       "v": "Trapezoidal Tr8"
+      },
+      {
+       "k": "Material",
+       "v": "304 stainless"
+      },
+      {
+       "k": "Lengths",
+       "v": "200–1 000 mm"
+      }
+     ]
+    },
+    {
+     "group": "Nut",
+     "rows": [
+      {
+       "k": "Type",
+       "v": "Anti-backlash, spring preloaded"
+      },
+      {
+       "k": "Material",
+       "v": "POM"
+      },
+      {
+       "k": "Flange",
+       "v": "Ø 22 mm, 3 × M3"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "linear",
+    "lift"
+   ],
+   "image": "assets/img/products/leadscrew-t8.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 17,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "magnet-set",
+   "sku": "MR-HW-MAGN",
+   "name": "Neodymium Magnet Set",
+   "tagline": "N52 discs for panels and covers",
+   "brand": "MABEL Robotics",
+   "category": "hardware",
+   "family": "fastener_set",
+   "price": 16.99,
+   "priceCad": 24.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "How MABEL's covers stay on and still come off in a second. N52 discs in three sizes, sized to press-fit into a printed pocket.",
+   "highlights": [
+    "N52 — the strongest commercial grade",
+    "6, 8 and 10 mm discs, nickel plated",
+    "Press-fit into a 0.1 mm interference pocket",
+    "Comes with steel keeper plates"
+   ],
+   "specs": [
+    {
+     "group": "Magnets",
+     "rows": [
+      {
+       "k": "Grade",
+       "v": "N52 neodymium"
+      },
+      {
+       "k": "Sizes",
+       "v": "6×3 · 8×3 · 10×3 mm"
+      },
+      {
+       "k": "Quantity",
+       "v": "60 pieces"
+      },
+      {
+       "k": "Plating",
+       "v": "Ni-Cu-Ni"
+      }
+     ]
+    },
+    {
+     "group": "Notes",
+     "rows": [
+      {
+       "k": "Max temperature",
+       "v": "80 °C"
+      },
+      {
+       "k": "Pull force",
+       "v": "1.1 kg at 8×3 mm"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "covers"
+   ],
+   "image": "assets/img/products/magnet-set.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 11.99,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "openarm-structure",
+   "sku": "MR-HW-OARM",
+   "name": "OpenArm Structural Set",
+   "tagline": "CNC 7075 aluminium and sheet steel, dual arm",
+   "brand": "MABEL Robotics",
+   "category": "hardware",
+   "family": "plate",
+   "price": 549.0,
+   "priceCad": 759.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "Every structural part for a pair of 7-DOF OpenArm arms, machined from 7075 aluminium with sheet-steel brackets where stiffness matters more than mass. The parts the DAMIAO joints bolt into.",
+   "highlights": [
+    "Complete dual-arm set — links, brackets, covers, hardware",
+    "7075-T6 CNC for the links, sheet steel for the shoulder brackets",
+    "Bores reamed to the joint flanges, no fitting required",
+    "Matches the published OpenArm geometry"
+   ],
+   "specs": [
+    {
+     "group": "Material",
+     "rows": [
+      {
+       "k": "Links",
+       "v": "7075-T6 aluminium, CNC"
+      },
+      {
+       "k": "Brackets",
+       "v": "Sheet steel, laser cut and bent"
+      },
+      {
+       "k": "Finish",
+       "v": "Clear anodised / powder coat"
+      }
+     ]
+    },
+    {
+     "group": "Contents",
+     "rows": [
+      {
+       "k": "Coverage",
+       "v": "Both arms, 7 DOF each"
+      },
+      {
+       "k": "Fasteners",
+       "v": "Included, sized per joint"
+      },
+      {
+       "k": "Bore tolerance",
+       "v": "H7 at every joint flange"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "arm",
+    "openarm",
+    "machined"
+   ],
+   "image": "assets/img/products/openarm-structure.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 387.1,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "mabel-base-lower",
+   "sku": "MR-HW-BASELOWER",
+   "name": "MABEL Base Plate, Lower",
+   "tagline": "Laser-cut sheet metal · Laser cut, no secondary operations",
+   "brand": "MABEL Robotics",
+   "category": "hardware",
+   "family": "plate",
+   "price": 74.0,
+   "priceCad": 109.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "A structural part from MABEL's own build, cut from the same files the robot ships with. Ordered as one part or in the quantity a full robot needs.",
+   "highlights": [
+    "Laser cut, no secondary operations",
+    "Cut from the released MABEL DXF",
+    "Volume pricing from 1 to 1 000 off",
+    "Hardware pressed in before it ships"
+   ],
+   "specs": [
+    {
+     "group": "Manufacture",
+     "rows": [
+      {
+       "k": "Process",
+       "v": "Laser cut sheet metal"
+      },
+      {
+       "k": "Operations",
+       "v": "Laser cut, no secondary operations"
+      },
+      {
+       "k": "Quantity per robot",
+       "v": "1"
+      }
+     ]
+    },
+    {
+     "group": "Material",
+     "rows": [
+      {
+       "k": "Stock",
+       "v": "Aluminium or mild steel, per drawing"
+      },
+      {
+       "k": "Finish",
+       "v": "Mill, anodised or powder coat"
+      },
+      {
+       "k": "Tolerance",
+       "v": "±0.2 mm cut, ±0.5° bend"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "machined",
+    "structure"
+   ],
+   "image": "assets/img/products/mabel-base-lower.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 51.75,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "mabel-base-upper",
+   "sku": "MR-HW-BASEUPPER",
+   "name": "MABEL Base Plate, Upper",
+   "tagline": "Laser-cut sheet metal · 4 bends",
+   "brand": "MABEL Robotics",
+   "category": "hardware",
+   "family": "plate",
+   "price": 279.0,
+   "priceCad": 389.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "A structural part from MABEL's own build, cut from the same files the robot ships with. Ordered as one part or in the quantity a full robot needs.",
+   "highlights": [
+    "4 bends · dimple forming · hardware insertion · tapping",
+    "Cut from the released MABEL DXF",
+    "Volume pricing from 1 to 1 000 off",
+    "Hardware pressed in before it ships"
+   ],
+   "specs": [
+    {
+     "group": "Manufacture",
+     "rows": [
+      {
+       "k": "Process",
+       "v": "Laser cut sheet metal"
+      },
+      {
+       "k": "Operations",
+       "v": "4 bends · dimple forming · hardware insertion · tapping"
+      },
+      {
+       "k": "Quantity per robot",
+       "v": "1"
+      }
+     ]
+    },
+    {
+     "group": "Material",
+     "rows": [
+      {
+       "k": "Stock",
+       "v": "Aluminium or mild steel, per drawing"
+      },
+      {
+       "k": "Finish",
+       "v": "Mill, anodised or powder coat"
+      },
+      {
+       "k": "Tolerance",
+       "v": "±0.2 mm cut, ±0.5° bend"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "machined",
+    "structure"
+   ],
+   "image": "assets/img/products/mabel-base-upper.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 195.36,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "mabel-lift-adapter",
+   "sku": "MR-HW-LIFTADAPTER",
+   "name": "MABEL Lift-to-Torso Adapter",
+   "tagline": "Laser-cut sheet metal · 2 bends",
+   "brand": "MABEL Robotics",
+   "category": "hardware",
+   "family": "plate",
+   "price": 84.0,
+   "priceCad": 119.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "A structural part from MABEL's own build, cut from the same files the robot ships with. Ordered as one part or in the quantity a full robot needs.",
+   "highlights": [
+    "2 bends · dimple forming · hardware insertion · tapping",
+    "Cut from the released MABEL DXF",
+    "Volume pricing from 1 to 1 000 off",
+    "Hardware pressed in before it ships"
+   ],
+   "specs": [
+    {
+     "group": "Manufacture",
+     "rows": [
+      {
+       "k": "Process",
+       "v": "Laser cut sheet metal"
+      },
+      {
+       "k": "Operations",
+       "v": "2 bends · dimple forming · hardware insertion · tapping"
+      },
+      {
+       "k": "Quantity per robot",
+       "v": "1"
+      }
+     ]
+    },
+    {
+     "group": "Material",
+     "rows": [
+      {
+       "k": "Stock",
+       "v": "Aluminium or mild steel, per drawing"
+      },
+      {
+       "k": "Finish",
+       "v": "Mill, anodised or powder coat"
+      },
+      {
+       "k": "Tolerance",
+       "v": "±0.2 mm cut, ±0.5° bend"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "machined",
+    "structure"
+   ],
+   "image": "assets/img/products/mabel-lift-adapter.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 59.26,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "mabel-torso-plate",
+   "sku": "MR-HW-TORSOPLATE",
+   "name": "MABEL Torso Output Plate",
+   "tagline": "Laser-cut sheet metal · 1 bend",
+   "brand": "MABEL Robotics",
+   "category": "hardware",
+   "family": "plate",
+   "price": 79.0,
+   "priceCad": 109.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "A structural part from MABEL's own build, cut from the same files the robot ships with. Ordered as one part or in the quantity a full robot needs.",
+   "highlights": [
+    "1 bend · hardware insertion · tapping",
+    "Cut from the released MABEL DXF",
+    "Volume pricing from 1 to 1 000 off",
+    "Hardware pressed in before it ships"
+   ],
+   "specs": [
+    {
+     "group": "Manufacture",
+     "rows": [
+      {
+       "k": "Process",
+       "v": "Laser cut sheet metal"
+      },
+      {
+       "k": "Operations",
+       "v": "1 bend · hardware insertion · tapping"
+      },
+      {
+       "k": "Quantity per robot",
+       "v": "1"
+      }
+     ]
+    },
+    {
+     "group": "Material",
+     "rows": [
+      {
+       "k": "Stock",
+       "v": "Aluminium or mild steel, per drawing"
+      },
+      {
+       "k": "Finish",
+       "v": "Mill, anodised or powder coat"
+      },
+      {
+       "k": "Tolerance",
+       "v": "±0.2 mm cut, ±0.5° bend"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "machined",
+    "structure"
+   ],
+   "image": "assets/img/products/mabel-torso-plate.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 55.16,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "mabel-body-bottom",
+   "sku": "MR-HW-BODYBOTTOM",
+   "name": "MABEL Body Bottom Plate",
+   "tagline": "Laser-cut sheet metal · 2 bends",
+   "brand": "MABEL Robotics",
+   "category": "hardware",
+   "family": "plate",
+   "price": 49.0,
+   "priceCad": 69.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "A structural part from MABEL's own build, cut from the same files the robot ships with. Ordered as one part or in the quantity a full robot needs.",
+   "highlights": [
+    "2 bends · hardware insertion · tapping",
+    "Cut from the released MABEL DXF",
+    "Volume pricing from 1 to 1 000 off",
+    "Hardware pressed in before it ships"
+   ],
+   "specs": [
+    {
+     "group": "Manufacture",
+     "rows": [
+      {
+       "k": "Process",
+       "v": "Laser cut sheet metal"
+      },
+      {
+       "k": "Operations",
+       "v": "2 bends · hardware insertion · tapping"
+      },
+      {
+       "k": "Quantity per robot",
+       "v": "1"
+      }
+     ]
+    },
+    {
+     "group": "Material",
+     "rows": [
+      {
+       "k": "Stock",
+       "v": "Aluminium or mild steel, per drawing"
+      },
+      {
+       "k": "Finish",
+       "v": "Mill, anodised or powder coat"
+      },
+      {
+       "k": "Tolerance",
+       "v": "±0.2 mm cut, ±0.5° bend"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "machined",
+    "structure"
+   ],
+   "image": "assets/img/products/mabel-body-bottom.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 33.55,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "mabel-arm-plate",
+   "sku": "MR-HW-ARMPLATE",
+   "name": "MABEL Arm Mounting Plate",
+   "tagline": "Laser-cut sheet metal · Hardware insertion",
+   "brand": "MABEL Robotics",
+   "category": "hardware",
+   "family": "plate",
+   "price": 18.99,
+   "priceCad": 29.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "A structural part from MABEL's own build, cut from the same files the robot ships with. Ordered as one part or in the quantity a full robot needs.",
+   "highlights": [
+    "Hardware insertion · tapping",
+    "Cut from the released MABEL DXF",
+    "Volume pricing from 1 to 1 000 off",
+    "Hardware pressed in before it ships"
+   ],
+   "specs": [
+    {
+     "group": "Manufacture",
+     "rows": [
+      {
+       "k": "Process",
+       "v": "Laser cut sheet metal"
+      },
+      {
+       "k": "Operations",
+       "v": "Hardware insertion · tapping"
+      },
+      {
+       "k": "Quantity per robot",
+       "v": "2 (one per arm)"
+      }
+     ]
+    },
+    {
+     "group": "Material",
+     "rows": [
+      {
+       "k": "Stock",
+       "v": "Aluminium or mild steel, per drawing"
+      },
+      {
+       "k": "Finish",
+       "v": "Mill, anodised or powder coat"
+      },
+      {
+       "k": "Tolerance",
+       "v": "±0.2 mm cut, ±0.5° bend"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "machined",
+    "structure"
+   ],
+   "image": "assets/img/products/mabel-arm-plate.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 13.17,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "mabel-neck-plate",
+   "sku": "MR-HW-NECKPLATE",
+   "name": "MABEL Neck Mounting Plate",
+   "tagline": "Laser-cut sheet metal · 2 bends",
+   "brand": "MABEL Robotics",
+   "category": "hardware",
+   "family": "plate",
+   "price": 44.0,
+   "priceCad": 59.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "A structural part from MABEL's own build, cut from the same files the robot ships with. Ordered as one part or in the quantity a full robot needs.",
+   "highlights": [
+    "2 bends",
+    "Cut from the released MABEL DXF",
+    "Volume pricing from 1 to 1 000 off",
+    "Hardware pressed in before it ships"
+   ],
+   "specs": [
+    {
+     "group": "Manufacture",
+     "rows": [
+      {
+       "k": "Process",
+       "v": "Laser cut sheet metal"
+      },
+      {
+       "k": "Operations",
+       "v": "2 bends"
+      },
+      {
+       "k": "Quantity per robot",
+       "v": "1"
+      }
+     ]
+    },
+    {
+     "group": "Material",
+     "rows": [
+      {
+       "k": "Stock",
+       "v": "Aluminium or mild steel, per drawing"
+      },
+      {
+       "k": "Finish",
+       "v": "Mill, anodised or powder coat"
+      },
+      {
+       "k": "Tolerance",
+       "v": "±0.2 mm cut, ±0.5° bend"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "machined",
+    "structure"
+   ],
+   "image": "assets/img/products/mabel-neck-plate.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 29.05,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "orca-hand-kit",
+   "sku": "MR-HW-ORCA",
+   "name": "ORCA Hand Structural Kit",
+   "tagline": "Frames, tendons, pulleys and tensioners",
+   "brand": "MABEL Robotics",
+   "category": "hardware",
+   "family": "hand",
+   "price": 319.0,
+   "priceCad": 439.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "Everything an ORCA hand needs that is not a servo: printed and machined finger frames, the Dyneema tendon, routing pulleys, tensioners, bearings and fingertip pads. One kit builds one 17-DOF hand.",
+   "highlights": [
+    "17 DOF — 16 finger joints plus a wrist",
+    "Dyneema tendon, pre-cut and terminated",
+    "Routing pulleys on bearings, not bushings",
+    "Silicone fingertip pads, moulded"
+   ],
+   "specs": [
+    {
+     "group": "Contents",
+     "rows": [
+      {
+       "k": "Coverage",
+       "v": "One complete hand, less servos"
+      },
+      {
+       "k": "Degrees of freedom",
+       "v": "17 (16 finger + 1 wrist)"
+      },
+      {
+       "k": "Tendon",
+       "v": "Dyneema SK99, 0.8 mm, pre-terminated"
+      },
+      {
+       "k": "Pulleys",
+       "v": "Bearing-mounted, 24 off"
+      }
+     ]
+    },
+    {
+     "group": "Requires",
+     "rows": [
+      {
+       "k": "Servos",
+       "v": "16 × HL3915M + 1 × HL3930M, sold separately"
+      },
+      {
+       "k": "Driver",
+       "v": "ST/SC bus driver board and 5264 splitter"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "orca",
+    "hand",
+    "tendon"
+   ],
+   "image": "assets/img/products/orca-hand-kit.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 225,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "tendon-dyneema",
+   "sku": "MR-HW-TNDN",
+   "name": "Dyneema Tendon Line",
+   "tagline": "SK99, 0.8 mm, 25 m",
+   "brand": "MABEL Robotics",
+   "category": "hardware",
+   "family": "cable_coil",
+   "price": 24.0,
+   "priceCad": 34.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "The line that moves a tendon-driven finger. Dyneema SK99 barely creeps under load, which is what keeps a hand calibrated between sessions.",
+   "highlights": [
+    "SK99 — the lowest-creep grade available",
+    "0.8 mm, 90 kg breaking strain",
+    "Pre-stretched at the factory",
+    "25 m: enough to re-tendon a hand several times"
+   ],
+   "specs": [
+    {
+     "group": "Line",
+     "rows": [
+      {
+       "k": "Material",
+       "v": "Dyneema SK99, 12-strand"
+      },
+      {
+       "k": "Diameter",
+       "v": "0.8 mm"
+      },
+      {
+       "k": "Breaking strain",
+       "v": "90 kg"
+      },
+      {
+       "k": "Length",
+       "v": "25 m"
+      }
+     ]
+    },
+    {
+     "group": "Behaviour",
+     "rows": [
+      {
+       "k": "Creep",
+       "v": "Pre-stretched, minimal"
+      },
+      {
+       "k": "Elongation at break",
+       "v": "< 3.5%"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "orca",
+    "hand",
+    "tendon"
+   ],
+   "image": "assets/img/products/tendon-dyneema.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 16,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "silicone-kit",
+   "sku": "MR-HW-SIL",
+   "name": "Platinum-Cure Silicone Kit",
+   "tagline": "Two-part, Shore A20 · for hand pads and skins",
+   "brand": "MABEL Robotics",
+   "category": "hardware",
+   "family": "silicone_kit",
+   "price": 59.0,
+   "priceCad": 79.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Two-part platinum-cure silicone for fingertip pads, grip skins and compliant covers. Mixes 1:1 by weight, cures without shrinking, and takes pigment.",
+   "highlights": [
+    "Shore A20 — grippy without being sticky",
+    "1:1 mix, no scale gymnastics",
+    "Platinum cure: no shrinkage, no inhibition on PLA",
+    "Includes mixing cups, stirrers and a degassing tip sheet"
+   ],
+   "specs": [
+    {
+     "group": "Material",
+     "rows": [
+      {
+       "k": "Type",
+       "v": "Platinum-cure (addition) silicone"
+      },
+      {
+       "k": "Hardness",
+       "v": "Shore A20"
+      },
+      {
+       "k": "Mix ratio",
+       "v": "1:1 by weight"
+      },
+      {
+       "k": "Pot life",
+       "v": "30 min at 23 °C"
+      },
+      {
+       "k": "Cure time",
+       "v": "6 h at 23 °C, 20 min at 65 °C"
+      }
+     ]
+    },
+    {
+     "group": "Contents",
+     "rows": [
+      {
+       "k": "Quantity",
+       "v": "2 × 500 g"
+      },
+      {
+       "k": "Extras",
+       "v": "Cups, stirrers, gloves"
+      },
+      {
+       "k": "Tensile strength",
+       "v": "3.5 MPa"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "orca",
+    "hand",
+    "silicone",
+    "casting"
+   ],
+   "image": "assets/img/products/silicone-kit.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 42,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "filament-pla-white",
+   "sku": "MR-HW-PLAWHITE",
+   "name": "PLA Basic, Jade White",
+   "tagline": "1.75 mm · 1 kg with spool",
+   "brand": "Bambu Lab",
+   "category": "hardware",
+   "family": "filament",
+   "price": 34.0,
+   "priceCad": 49.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "MABEL's covers, sensor mounts and trim. Prints clean and takes an edge break without splintering.",
+   "highlights": [
+    "1.75 mm, 1 kg on a spool",
+    "Dimensional tolerance ±0.03 mm",
+    "RFID spool, recognised automatically on Bambu printers",
+    "Bulk pricing from four spools"
+   ],
+   "specs": [
+    {
+     "group": "Filament",
+     "rows": [
+      {
+       "k": "Diameter",
+       "v": "1.75 mm ±0.03"
+      },
+      {
+       "k": "Net weight",
+       "v": "1 kg"
+      },
+      {
+       "k": "Nozzle temperature",
+       "v": "190–230 °C"
+      },
+      {
+       "k": "Bed temperature",
+       "v": "35–45 °C"
+      }
+     ]
+    },
+    {
+     "group": "Notes",
+     "rows": [
+      {
+       "k": "Nozzle",
+       "v": "Any"
+      },
+      {
+       "k": "Drying",
+       "v": "Not required"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "3d-printing"
+   ],
+   "image": "assets/img/products/filament-pla-white.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 22.99,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "filament-pla-black",
+   "sku": "MR-HW-PLABLACK",
+   "name": "PLA Basic, Black",
+   "tagline": "1.75 mm · 1 kg with spool",
+   "brand": "Bambu Lab",
+   "category": "hardware",
+   "family": "filament",
+   "price": 34.0,
+   "priceCad": 49.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "The ORCA hand frames — the highest-wear printed parts on the robot.",
+   "highlights": [
+    "1.75 mm, 1 kg on a spool",
+    "Dimensional tolerance ±0.03 mm",
+    "RFID spool, recognised automatically on Bambu printers",
+    "Bulk pricing from four spools"
+   ],
+   "specs": [
+    {
+     "group": "Filament",
+     "rows": [
+      {
+       "k": "Diameter",
+       "v": "1.75 mm ±0.03"
+      },
+      {
+       "k": "Net weight",
+       "v": "1 kg"
+      },
+      {
+       "k": "Nozzle temperature",
+       "v": "190–230 °C"
+      },
+      {
+       "k": "Bed temperature",
+       "v": "35–45 °C"
+      }
+     ]
+    },
+    {
+     "group": "Notes",
+     "rows": [
+      {
+       "k": "Nozzle",
+       "v": "Any"
+      },
+      {
+       "k": "Drying",
+       "v": "Not required"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "3d-printing"
+   ],
+   "image": "assets/img/products/filament-pla-black.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 22.99,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "filament-petg-cf",
+   "sku": "MR-HW-PETGCF",
+   "name": "PETG-CF, Black",
+   "tagline": "1.75 mm · 1 kg with spool",
+   "brand": "MABEL Robotics",
+   "category": "hardware",
+   "family": "filament",
+   "price": 49.0,
+   "priceCad": 69.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Carbon-filled PETG for brackets that see load and heat. Stiffer than PLA and it does not creep at 40 °C.",
+   "highlights": [
+    "1.75 mm, 1 kg on a spool",
+    "Dimensional tolerance ±0.03 mm",
+    "Dried and vacuum sealed at the factory",
+    "Bulk pricing from four spools"
+   ],
+   "specs": [
+    {
+     "group": "Filament",
+     "rows": [
+      {
+       "k": "Diameter",
+       "v": "1.75 mm ±0.03"
+      },
+      {
+       "k": "Net weight",
+       "v": "1 kg"
+      },
+      {
+       "k": "Nozzle temperature",
+       "v": "240–270 °C"
+      },
+      {
+       "k": "Bed temperature",
+       "v": "70–90 °C"
+      }
+     ]
+    },
+    {
+     "group": "Notes",
+     "rows": [
+      {
+       "k": "Nozzle",
+       "v": "Hardened steel required"
+      },
+      {
+       "k": "Drying",
+       "v": "8 h at 65 °C if opened"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "3d-printing"
+   ],
+   "image": "assets/img/products/filament-petg-cf.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 34.99,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "cable-chain",
+   "sku": "MR-HW-DRAG",
+   "name": "Cable Drag Chain",
+   "tagline": "10 × 20 mm, openable links, 2 m",
+   "brand": "MABEL Robotics",
+   "category": "hardware",
+   "family": "cable_coil",
+   "price": 24.0,
+   "priceCad": 34.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Keeps a moving harness from becoming a failed harness. Openable links so you can add a cable later without pulling the whole loom.",
+   "highlights": [
+    "Links open on one side — re-route without disassembly",
+    "10 × 20 mm inner section",
+    "2 m with both end brackets",
+    "Rated to five million cycles"
+   ],
+   "specs": [
+    {
+     "group": "Chain",
+     "rows": [
+      {
+       "k": "Inner section",
+       "v": "10 × 20 mm"
+      },
+      {
+       "k": "Bend radius",
+       "v": "28 mm"
+      },
+      {
+       "k": "Length",
+       "v": "2 m"
+      },
+      {
+       "k": "Material",
+       "v": "Reinforced nylon"
+      }
+     ]
+    },
+    {
+     "group": "Rating",
+     "rows": [
+      {
+       "k": "Cycle life",
+       "v": "5 million"
+      },
+      {
+       "k": "Temperature",
+       "v": "−20 to 100 °C"
+      },
+      {
+       "k": "Ends",
+       "v": "2 mounting brackets included"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "harness",
+    "linear"
+   ],
+   "image": "assets/img/products/cable-chain.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 18,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "damiao-usb2can",
+   "sku": "MR-EL-U2C",
+   "name": "DAMIAO USB-to-CAN Adapter",
+   "tagline": "The bench tool for every CAN joint",
+   "brand": "DAMIAO",
+   "category": "electronics",
+   "family": "pcb",
+   "price": 44.0,
+   "priceCad": 59.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "The first thing you plug in. A USB-CAN bridge that enumerates as a serial port on macOS, Linux and Windows, so you can scan a bus, set a node ID and spin a joint before any of it is bolted to a robot.",
+   "highlights": [
+    "Enumerates as a CDC serial port — no kernel module on macOS",
+    "1 Mbit/s CAN, the rate every DAMIAO and CyberGear joint expects",
+    "Bus-powered, with a switchable 120 Ω termination",
+    "Works with the DAMIAO, CyberGear and CANopen tooling as shipped"
+   ],
+   "specs": [
+    {
+     "group": "Bus",
+     "rows": [
+      {
+       "k": "Protocol",
+       "v": "CAN 2.0A / 2.0B"
+      },
+      {
+       "k": "Bit rate",
+       "v": "Up to 1 Mbit/s"
+      },
+      {
+       "k": "Termination",
+       "v": "Switchable 120 Ω"
+      },
+      {
+       "k": "Isolation",
+       "v": "None (bench tool)"
+      }
+     ]
+    },
+    {
+     "group": "Host",
+     "rows": [
+      {
+       "k": "Interface",
+       "v": "USB 2.0, Type-C"
+      },
+      {
+       "k": "Enumeration",
+       "v": "USB CDC serial"
+      },
+      {
+       "k": "Drivers",
+       "v": "None required on macOS or Linux"
+      },
+      {
+       "k": "Tooling",
+       "v": "DAMIAO debug app, python-can via slcan"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "can",
+    "bench",
+    "usb"
+   ],
+   "image": "assets/img/products/damiao-usb2can.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 32,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "can-hub",
+   "sku": "MR-EL-CANHUB",
+   "name": "CAN Bus Hub",
+   "tagline": "Six-drop splitter with termination",
+   "brand": "DAMIAO",
+   "category": "electronics",
+   "family": "pcb",
+   "price": 18.99,
+   "priceCad": 29.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Turns one CAN run into six short drops, so a six-joint arm is one cable to the controller instead of six daisy chains that fail one connector at a time.",
+   "highlights": [
+    "Six drops from one trunk",
+    "Switchable termination at the end of the bus",
+    "Screw terminals and JST-GH on every drop",
+    "Per-drop activity LED"
+   ],
+   "specs": [
+    {
+     "group": "Bus",
+     "rows": [
+      {
+       "k": "Drops",
+       "v": "6"
+      },
+      {
+       "k": "Bit rate",
+       "v": "Up to 1 Mbit/s"
+      },
+      {
+       "k": "Termination",
+       "v": "Switchable 120 Ω"
+      },
+      {
+       "k": "Connectors",
+       "v": "Screw terminal + JST-GH"
+      }
+     ]
+    },
+    {
+     "group": "Physical",
+     "rows": [
+      {
+       "k": "Supply",
+       "v": "Pass-through 24 V"
+      },
+      {
+       "k": "Indicators",
+       "v": "Per-drop TX/RX LED"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "can",
+    "harness"
+   ],
+   "image": "assets/img/products/can-hub.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 14,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "servo-ttl-driver",
+   "sku": "MR-EL-TTL",
+   "name": "ST/SC Bus Servo Driver Board",
+   "tagline": "USB-UART bridge for TTL servos",
+   "brand": "Feetech",
+   "category": "electronics",
+   "family": "pcb",
+   "price": 4.99,
+   "priceCad": 6.99,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "Puts a whole TTL servo chain on one USB port. One board per ORCA hand drives all seventeen servos at 1 Mbit, and the same board is how you set servo IDs in the first place.",
+   "highlights": [
+    "1 Mbit half-duplex TTL, up to 253 servos on a chain",
+    "USB-UART bridge — appears as a serial port",
+    "The tool for assigning servo IDs during a hand build",
+    "One per ORCA hand"
+   ],
+   "specs": [
+    {
+     "group": "Bus",
+     "rows": [
+      {
+       "k": "Protocol",
+       "v": "Feetech ST/SC half-duplex TTL"
+      },
+      {
+       "k": "Bit rate",
+       "v": "Up to 1 Mbit/s"
+      },
+      {
+       "k": "Devices",
+       "v": "Up to 253 per chain"
+      }
+     ]
+    },
+    {
+     "group": "Host",
+     "rows": [
+      {
+       "k": "Interface",
+       "v": "USB, CDC serial"
+      },
+      {
+       "k": "Servo power",
+       "v": "Separate input, up to 12 V"
+      },
+      {
+       "k": "Compatibility",
+       "v": "STS, SCS and HL series"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "orca",
+    "hand",
+    "ttl"
+   ],
+   "image": "assets/img/products/servo-ttl-driver.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 3.97,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "servo-splitter",
+   "sku": "MR-EL-5264",
+   "name": "Bus Servo Power Splitter",
+   "tagline": "8-way 5264 hub for grouped supply",
+   "brand": "Feetech",
+   "category": "electronics",
+   "family": "pcb",
+   "price": 3.99,
+   "priceCad": 4.99,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "Eight 5264 terminals off one supply, so sixteen finger servos draw from a proper distribution point instead of a chain of pass-through connectors.",
+   "highlights": [
+    "Eight 5264 drops from one input",
+    "Signal passes through, power is star-fed",
+    "Removes the voltage droop at the end of a long servo chain",
+    "One per hand"
+   ],
+   "specs": [
+    {
+     "group": "Distribution",
+     "rows": [
+      {
+       "k": "Drops",
+       "v": "8 × 5264"
+      },
+      {
+       "k": "Input",
+       "v": "5264, up to 12 V"
+      },
+      {
+       "k": "Current",
+       "v": "10 A total"
+      },
+      {
+       "k": "Topology",
+       "v": "Star power, bussed signal"
+      }
+     ]
+    },
+    {
+     "group": "Physical",
+     "rows": [
+      {
+       "k": "Mounting",
+       "v": "4 × M2"
+      },
+      {
+       "k": "Size",
+       "v": "48 × 32 mm"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "orca",
+    "hand",
+    "power"
+   ],
+   "image": "assets/img/products/servo-splitter.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 2.58,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "buck-24-12",
+   "sku": "MR-EL-BUCK2412",
+   "name": "Buck Converter, 24 V → 12 V",
+   "tagline": "10 A synchronous step-down",
+   "brand": "MABEL Robotics",
+   "category": "electronics",
+   "family": "pcb",
+   "price": 29.0,
+   "priceCad": 39.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "Feeds the 12 V rail every bus servo and camera hub wants from the robot's 24 V pack.",
+   "highlights": [
+    "Synchronous rectification — runs cool at load",
+    "Screw terminals, not barrel jacks",
+    "Adjustable output, factory set",
+    "Fits the MABEL power tray"
+   ],
+   "specs": [
+    {
+     "group": "Electrical",
+     "rows": [
+      {
+       "k": "Input",
+       "v": "18–36 V DC"
+      },
+      {
+       "k": "Output",
+       "v": "12 V, 10 A"
+      },
+      {
+       "k": "Efficiency",
+       "v": "96% typical"
+      },
+      {
+       "k": "Protection",
+       "v": "Over-current, over-temperature, reverse polarity"
+      }
+     ]
+    },
+    {
+     "group": "Physical",
+     "rows": [
+      {
+       "k": "Terminals",
+       "v": "Screw, 12 AWG"
+      },
+      {
+       "k": "Cooling",
+       "v": "Anodised heatsink body"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "power"
+   ],
+   "image": "assets/img/products/buck-24-12.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 18.99,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "buck-24-5",
+   "sku": "MR-EL-BUCK245",
+   "name": "Buck Converter, 24 V → 5 V",
+   "tagline": "8 A for logic and USB",
+   "brand": "MABEL Robotics",
+   "category": "electronics",
+   "family": "pcb",
+   "price": 19.0,
+   "priceCad": 29.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "The logic rail. Enough headroom to run a Pi, a hub and the sensor boards without sag.",
+   "highlights": [
+    "Synchronous rectification — runs cool at load",
+    "Screw terminals, not barrel jacks",
+    "Adjustable output, factory set",
+    "Fits the MABEL power tray"
+   ],
+   "specs": [
+    {
+     "group": "Electrical",
+     "rows": [
+      {
+       "k": "Input",
+       "v": "18–36 V DC"
+      },
+      {
+       "k": "Output",
+       "v": "5 V, 8 A"
+      },
+      {
+       "k": "Efficiency",
+       "v": "94% typical"
+      },
+      {
+       "k": "Protection",
+       "v": "Over-current, over-temperature"
+      }
+     ]
+    },
+    {
+     "group": "Physical",
+     "rows": [
+      {
+       "k": "Terminals",
+       "v": "Screw, 12 AWG"
+      },
+      {
+       "k": "Cooling",
+       "v": "Anodised heatsink body"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "power"
+   ],
+   "image": "assets/img/products/buck-24-5.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 14.99,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "power-distribution",
+   "sku": "MR-EL-PDB",
+   "name": "Power Distribution Board",
+   "tagline": "Fused 24 V distribution with per-rail sense",
+   "brand": "MABEL Robotics",
+   "category": "electronics",
+   "family": "pcb",
+   "price": 59.0,
+   "priceCad": 79.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "One board between the battery and everything else. Eight individually fused outputs, current sense on each, and an e-stop input that cuts actuator power without cutting the computer — so the robot stops but the log keeps writing.",
+   "highlights": [
+    "Eight fused outputs, blade fuses, per-rail LED",
+    "Actuator rails drop on e-stop; the compute rail does not",
+    "Current sense on every rail, readable over I²C",
+    "Bolt-down XT60 input, ring terminals on the load side"
+   ],
+   "specs": [
+    {
+     "group": "Distribution",
+     "rows": [
+      {
+       "k": "Input",
+       "v": "24 V DC, XT60, 60 A"
+      },
+      {
+       "k": "Outputs",
+       "v": "8, individually fused"
+      },
+      {
+       "k": "Fuses",
+       "v": "Blade, 5–30 A"
+      },
+      {
+       "k": "Sense",
+       "v": "INA219 per rail, I²C"
+      }
+     ]
+    },
+    {
+     "group": "Safety",
+     "rows": [
+      {
+       "k": "E-stop",
+       "v": "Hardware latch, actuator rails only"
+      },
+      {
+       "k": "Compute rail",
+       "v": "Always on, separately fused"
+      },
+      {
+       "k": "Indicators",
+       "v": "Per-rail LED, blown-fuse detect"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "power",
+    "safety"
+   ],
+   "image": "assets/img/products/power-distribution.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 44,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "estop-kit",
+   "sku": "MR-EL-ESTOP",
+   "name": "Hardware E-Stop Kit",
+   "tagline": "Latching mushroom, contactor and harness",
+   "brand": "MABEL Robotics",
+   "category": "electronics",
+   "family": "pcb",
+   "price": 79.0,
+   "priceCad": 109.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "An e-stop that works when the software does not. A latching mushroom head drives a contactor that de-energises the actuator bus in hardware — no firmware, no CAN, no host involved.",
+   "highlights": [
+    "De-energises actuators independently of the host",
+    "Latching mushroom head, twist to release",
+    "Normally-closed contacts: a broken wire stops the robot",
+    "Pre-made harness, no crimping"
+   ],
+   "specs": [
+    {
+     "group": "Switch",
+     "rows": [
+      {
+       "k": "Type",
+       "v": "Latching mushroom, twist release"
+      },
+      {
+       "k": "Contacts",
+       "v": "2 × NC"
+      },
+      {
+       "k": "Rating",
+       "v": "10 A at 250 V AC / 24 V DC"
+      }
+     ]
+    },
+    {
+     "group": "Contactor",
+     "rows": [
+      {
+       "k": "Coil",
+       "v": "24 V DC"
+      },
+      {
+       "k": "Switching",
+       "v": "60 A DC"
+      },
+      {
+       "k": "Fail-safe",
+       "v": "Normally open — loss of coil power stops the robot"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "safety",
+    "power"
+   ],
+   "image": "assets/img/products/estop-kit.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 58,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "fuse-box",
+   "sku": "MR-EL-FUSE",
+   "name": "Blade Fuse Distribution Box",
+   "tagline": "12-way with LED blown-fuse indication",
+   "brand": "MABEL Robotics",
+   "category": "electronics",
+   "family": "pcb",
+   "price": 24.0,
+   "priceCad": 34.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "Twelve fused circuits with an LED on each holder that lights when the fuse is gone. The five-dollar part that saves an hour of continuity testing.",
+   "highlights": [
+    "12 circuits, standard ATO/ATC blade fuses",
+    "LED per holder lights on a blown fuse",
+    "Bus bar input, ring terminal outputs",
+    "Transparent cover, gasket sealed"
+   ],
+   "specs": [
+    {
+     "group": "Distribution",
+     "rows": [
+      {
+       "k": "Circuits",
+       "v": "12"
+      },
+      {
+       "k": "Fuse type",
+       "v": "ATO/ATC blade"
+      },
+      {
+       "k": "Max per circuit",
+       "v": "30 A"
+      },
+      {
+       "k": "Total",
+       "v": "100 A"
+      }
+     ]
+    },
+    {
+     "group": "Physical",
+     "rows": [
+      {
+       "k": "Cover",
+       "v": "Transparent, gasketed"
+      },
+      {
+       "k": "Input",
+       "v": "M6 stud"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "power"
+   ],
+   "image": "assets/img/products/fuse-box.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 15.99,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "connector-xt",
+   "sku": "MR-EL-XT",
+   "name": "XT60 / XT30 Connector Kit",
+   "tagline": "Power connectors with heatshrink",
+   "brand": "MABEL Robotics",
+   "category": "electronics",
+   "family": "fastener_set",
+   "price": 29.0,
+   "priceCad": 39.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "The power connectors that do not melt. Gold-plated bullets in a nylon shell, in both sizes a robot uses.",
+   "highlights": [
+    "10 pairs XT60, 10 pairs XT30",
+    "Gold-plated contacts",
+    "Pre-cut heatshrink included",
+    "Keyed shells — cannot be plugged in reversed"
+   ],
+   "specs": [
+    {
+     "group": "Contents",
+     "rows": [
+      {
+       "k": "Housings",
+       "v": "120"
+      },
+      {
+       "k": "Contacts",
+       "v": "600"
+      },
+      {
+       "k": "Tool",
+       "v": "Heatshrink set"
+      }
+     ]
+    },
+    {
+     "group": "Rating",
+     "rows": [
+      {
+       "k": "Current",
+       "v": "60 A (XT60) / 30 A (XT30)"
+      },
+      {
+       "k": "Plating",
+       "v": "Gold"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "harness",
+    "connectors"
+   ],
+   "image": "assets/img/products/connector-xt.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 19,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "connector-jst",
+   "sku": "MR-EL-JST",
+   "name": "JST-GH / JST-XH Connector Kit",
+   "tagline": "Signal connectors with a crimper",
+   "brand": "MABEL Robotics",
+   "category": "electronics",
+   "family": "fastener_set",
+   "price": 49.0,
+   "priceCad": 69.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Signal connectors and the tool that makes them. JST-GH for anything that moves, XH for anything that does not.",
+   "highlights": [
+    "JST-GH 1.25 mm, 2–6 pin",
+    "JST-XH 2.54 mm, 2–6 pin",
+    "Ratcheting crimper included",
+    "600 contacts, 120 housings"
+   ],
+   "specs": [
+    {
+     "group": "Contents",
+     "rows": [
+      {
+       "k": "Housings",
+       "v": "120"
+      },
+      {
+       "k": "Contacts",
+       "v": "600"
+      },
+      {
+       "k": "Tool",
+       "v": "Ratcheting crimper"
+      }
+     ]
+    },
+    {
+     "group": "Rating",
+     "rows": [
+      {
+       "k": "Current",
+       "v": "3 A per contact"
+      },
+      {
+       "k": "Plating",
+       "v": "Gold"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "harness",
+    "connectors"
+   ],
+   "image": "assets/img/products/connector-jst.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 34,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "harness-arm",
+   "sku": "MR-EL-HRNA",
+   "name": "Arm Harness Set",
+   "tagline": "Loom, hub, e-stop, adapter board and PSU",
+   "brand": "MABEL Robotics",
+   "category": "electronics",
+   "family": "cable_coil",
+   "price": 179.0,
+   "priceCad": 249.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "The wiring for a dual-arm build, made up and tested: the loom itself, a CAN hub, an e-stop, a power adapter board and the supply. It is an evening of crimping you do not have to do, and one fewer intermittent fault to chase.",
+   "highlights": [
+    "Complete loom for both arms, labelled at both ends",
+    "CAN hub and power adapter board included",
+    "E-stop in line",
+    "Continuity and hi-pot tested before it ships"
+   ],
+   "specs": [
+    {
+     "group": "Contents",
+     "rows": [
+      {
+       "k": "Loom",
+       "v": "Both arms, 7 DOF each"
+      },
+      {
+       "k": "Hub",
+       "v": "CAN, 6 drops"
+      },
+      {
+       "k": "Safety",
+       "v": "In-line e-stop"
+      },
+      {
+       "k": "Supply",
+       "v": "24 V PSU included"
+      }
+     ]
+    },
+    {
+     "group": "Build",
+     "rows": [
+      {
+       "k": "Labelling",
+       "v": "Both ends of every conductor"
+      },
+      {
+       "k": "Sleeving",
+       "v": "Braided, heat-shrunk terminations"
+      },
+      {
+       "k": "Test",
+       "v": "Continuity and insulation tested"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "arm",
+    "harness",
+    "power"
+   ],
+   "image": "assets/img/products/harness-arm.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 124.06,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "usb-hub",
+   "sku": "MR-EL-HUB",
+   "name": "Powered USB 3 Hub",
+   "tagline": "7-port, externally powered",
+   "brand": "MABEL Robotics",
+   "category": "electronics",
+   "family": "switch",
+   "price": 109.0,
+   "priceCad": 149.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "Cameras are demanding USB citizens. An externally powered hub keeps four global-shutter streams alive without browning out when they all start at once.",
+   "highlights": [
+    "Seven USB 3 ports, externally powered",
+    "Per-port power switching",
+    "Metal case, DIN or flat mount",
+    "Feeds MABEL's whole camera tree"
+   ],
+   "specs": [
+    {
+     "group": "Ports",
+     "rows": [
+      {
+       "k": "Downstream",
+       "v": "7 × USB 3.0, 5 Gbit/s"
+      },
+      {
+       "k": "Upstream",
+       "v": "USB-B 3.0"
+      },
+      {
+       "k": "Per-port current",
+       "v": "0.9 A"
+      }
+     ]
+    },
+    {
+     "group": "Power",
+     "rows": [
+      {
+       "k": "Supply",
+       "v": "External 12 V, 4 A"
+      },
+      {
+       "k": "Switching",
+       "v": "Per port"
+      },
+      {
+       "k": "Case",
+       "v": "Aluminium"
+      }
+     ]
+    }
+   ],
+   "note": "USB bandwidth contention on this tree is a known source of camera latency — see the MABEL camera notes before hanging four streams off one controller.",
+   "tags": [
+    "mabel",
+    "cameras",
+    "usb"
+   ],
+   "image": "assets/img/products/usb-hub.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 74.99,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "net-switch",
+   "sku": "MR-EL-SW25",
+   "name": "2.5 GbE Managed Switch",
+   "tagline": "4 × 2.5G + 2 × 10G SFP+",
+   "brand": "MABEL Robotics",
+   "category": "electronics",
+   "family": "switch",
+   "price": 69.0,
+   "priceCad": 94.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "The onboard network spine. Four 2.5 GbE copper ports for the compute and sensors, two 10 G SFP+ cages for the link off the robot.",
+   "highlights": [
+    "4 × 2.5G BASE-T, 2 × 10G SFP+",
+    "Managed: VLANs, port mirroring, LACP",
+    "Fanless",
+    "12 V input — runs straight off the robot's rail"
+   ],
+   "specs": [
+    {
+     "group": "Ports",
+     "rows": [
+      {
+       "k": "Copper",
+       "v": "4 × 2.5G BASE-T"
+      },
+      {
+       "k": "Fibre/DAC",
+       "v": "2 × 10G SFP+"
+      },
+      {
+       "k": "Switching capacity",
+       "v": "60 Gbit/s"
+      }
+     ]
+    },
+    {
+     "group": "Management",
+     "rows": [
+      {
+       "k": "Features",
+       "v": "VLAN, port mirroring, LACP, QoS"
+      },
+      {
+       "k": "Cooling",
+       "v": "Fanless"
+      },
+      {
+       "k": "Supply",
+       "v": "12 V DC"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "network"
+   ],
+   "image": "assets/img/products/net-switch.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 49.99,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "battery-pack",
+   "sku": "MR-EL-BATT",
+   "name": "24 V Li-ion Battery Pack",
+   "tagline": "24 V · 20 Ah · BMS and XT60",
+   "brand": "MABEL Robotics",
+   "category": "electronics",
+   "family": "battery",
+   "price": 64.0,
+   "priceCad": 89.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "The pack that lets the robot leave the bench. Integrated BMS with cell balancing, over-current and over-discharge cut-out, and a fuel gauge you can read over the wire.",
+   "highlights": [
+    "24 V nominal, 20 Ah — around 90 minutes of mixed driving and manipulation",
+    "BMS with balancing and over-discharge protection",
+    "XT60 output, standard barrel charge input",
+    "Two fit MABEL's base tray"
+   ],
+   "specs": [
+    {
+     "group": "Cells",
+     "rows": [
+      {
+       "k": "Chemistry",
+       "v": "Li-ion 18650"
+      },
+      {
+       "k": "Configuration",
+       "v": "7S"
+      },
+      {
+       "k": "Nominal voltage",
+       "v": "25.9 V"
+      },
+      {
+       "k": "Capacity",
+       "v": "20 Ah / 518 Wh"
+      }
+     ]
+    },
+    {
+     "group": "Protection",
+     "rows": [
+      {
+       "k": "BMS",
+       "v": "Balancing, OCP, OVP, UVP, short circuit"
+      },
+      {
+       "k": "Continuous discharge",
+       "v": "30 A"
+      },
+      {
+       "k": "Charge",
+       "v": "29.4 V, 5 A max"
+      },
+      {
+       "k": "Output",
+       "v": "XT60"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "power"
+   ],
+   "image": "assets/img/products/battery-pack.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 46.81,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "pico",
+   "sku": "MR-EL-PICO",
+   "name": "Raspberry Pi Pico",
+   "tagline": "RP2040 microcontroller",
+   "brand": "MABEL Robotics",
+   "category": "electronics",
+   "family": "pcb",
+   "price": 24.0,
+   "priceCad": 34.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "The small brain for a single loop. MABEL runs the lift leadscrew from one.",
+   "highlights": [
+    "Dual Cortex-M0+ at 133 MHz",
+    "Programmable I/O — bit-bang any protocol",
+    "MicroPython or C SDK",
+    "Runs MABEL's lift control loop"
+   ],
+   "specs": [
+    {
+     "group": "Specification",
+     "rows": [
+      {
+       "k": "MCU",
+       "v": "RP2040, dual Cortex-M0+ at 133 MHz"
+      },
+      {
+       "k": "Memory",
+       "v": "264 kB SRAM, 2 MB flash"
+      },
+      {
+       "k": "I/O",
+       "v": "26 GPIO, 3 × ADC, 2 × PIO blocks"
+      },
+      {
+       "k": "Interface",
+       "v": "Micro-USB"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "compute",
+    "control"
+   ],
+   "image": "assets/img/products/pico.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 15.95,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "teensy41",
+   "sku": "MR-EL-TEENSY41",
+   "name": "Teensy 4.1",
+   "tagline": "600 MHz real-time controller",
+   "brand": "MABEL Robotics",
+   "category": "electronics",
+   "family": "pcb",
+   "price": 44.0,
+   "priceCad": 59.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "When the loop has to close at 500 Hz across three CAN buses, this is the board that does it. MABEL uses two — one for the base, one for the arms, torso and neck.",
+   "highlights": [
+    "Cortex-M7 at 600 MHz",
+    "Three CAN buses, two of them CAN FD",
+    "Ethernet with the add-on kit",
+    "Two run MABEL's low-level control"
+   ],
+   "specs": [
+    {
+     "group": "Specification",
+     "rows": [
+      {
+       "k": "MCU",
+       "v": "i.MX RT1062, Cortex-M7 at 600 MHz"
+      },
+      {
+       "k": "Memory",
+       "v": "1 MB RAM, 8 MB flash"
+      },
+      {
+       "k": "Buses",
+       "v": "3 × CAN (2 × CAN FD), 8 × serial, 3 × SPI, 3 × I²C"
+      },
+      {
+       "k": "Timing",
+       "v": "Hardware-timed loops to 500 Hz+"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "compute",
+    "control"
+   ],
+   "image": "assets/img/products/teensy41.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 31.5,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "bts7960",
+   "sku": "MR-EL-BTS7960",
+   "name": "BTS7960 Motor Driver",
+   "tagline": "43 A H-bridge for brushed DC",
+   "brand": "MABEL Robotics",
+   "category": "electronics",
+   "family": "pcb",
+   "price": 13.99,
+   "priceCad": 18.99,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "A big, dumb, reliable H-bridge. Drives the lift column's brushed motor from a Pico.",
+   "highlights": [
+    "43 A continuous, brushed DC",
+    "Isolated logic side",
+    "Current sense output",
+    "Drives MABEL's lift column"
+   ],
+   "specs": [
+    {
+     "group": "Specification",
+     "rows": [
+      {
+       "k": "Topology",
+       "v": "Dual half-bridge (BTS7960B)"
+      },
+      {
+       "k": "Current",
+       "v": "43 A continuous"
+      },
+      {
+       "k": "Supply",
+       "v": "5.5–27 V"
+      },
+      {
+       "k": "Control",
+       "v": "PWM, up to 25 kHz"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "compute",
+    "control"
+   ],
+   "image": "assets/img/products/bts7960.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 9.99,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "cable-usb-c-a",
+   "sku": "MR-EL-USBCA",
+   "name": "USB-C to USB-A Cable, 4-pack",
+   "tagline": "USB 3, 1 m, right-angle option",
+   "brand": "MABEL Robotics",
+   "category": "electronics",
+   "family": "cable_coil",
+   "price": 9.99,
+   "priceCad": 13.99,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "Four cameras, four cables. USB 3 rated, short enough not to coil, with a right-angle end so a wrist camera does not fight its own cable.",
+   "highlights": [
+    "USB 3.0, 5 Gbit/s — enough for a global-shutter stream",
+    "1 m: no coil to manage",
+    "Right-angle end available",
+    "Head cam, two wrist cams and the base cam"
+   ],
+   "specs": [
+    {
+     "group": "Cable",
+     "rows": [
+      {
+       "k": "Standard",
+       "v": "USB 3.0, 5 Gbit/s"
+      },
+      {
+       "k": "Length",
+       "v": "1 m"
+      },
+      {
+       "k": "Connectors",
+       "v": "USB-C to USB-A"
+      },
+      {
+       "k": "Shielding",
+       "v": "Braided + foil"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "cameras",
+    "usb"
+   ],
+   "image": "assets/img/products/cable-usb-c-a.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 6.99,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "sleeving",
+   "sku": "MR-EL-SLV",
+   "name": "Braided Cable Sleeving Set",
+   "tagline": "6 mm and 12 mm, self-closing",
+   "brand": "MABEL Robotics",
+   "category": "electronics",
+   "family": "cable_coil",
+   "price": 11.99,
+   "priceCad": 15.99,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "Self-closing braid in the two sizes a robot loom needs. Wraps an existing bundle without unplugging anything.",
+   "highlights": [
+    "Self-closing — wrap a finished loom",
+    "6 mm and 12 mm, 5 m of each",
+    "Cut with a hot knife, no fraying",
+    "Abrasion resistant at joint pass-throughs"
+   ],
+   "specs": [
+    {
+     "group": "Sleeving",
+     "rows": [
+      {
+       "k": "Sizes",
+       "v": "6 mm and 12 mm"
+      },
+      {
+       "k": "Length",
+       "v": "5 m of each"
+      },
+      {
+       "k": "Type",
+       "v": "Self-closing PET braid"
+      },
+      {
+       "k": "Temperature",
+       "v": "−50 to 150 °C"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "harness"
+   ],
+   "image": "assets/img/products/sleeving.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 8.99,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "led-eyes",
+   "sku": "MR-EL-EYES",
+   "name": "LED Matrix Eye Panels",
+   "tagline": "A pair of animated 32 × 16 displays",
+   "brand": "MABEL Robotics",
+   "category": "electronics",
+   "family": "pcb",
+   "price": 54.0,
+   "priceCad": 74.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "What makes a robot read as alive rather than switched on. A matched pair of LED matrices with a diffuser, driven over one SPI link, with the blink and saccade animations already written.",
+   "highlights": [
+    "Matched pair, 32 × 16 each",
+    "Cast acrylic diffuser — pixels become an eye",
+    "One SPI link drives both",
+    "Open animation set: blink, saccade, squint, sleep"
+   ],
+   "specs": [
+    {
+     "group": "Display",
+     "rows": [
+      {
+       "k": "Resolution",
+       "v": "32 × 16 per eye"
+      },
+      {
+       "k": "Colour",
+       "v": "Single colour, 8-bit dim"
+      },
+      {
+       "k": "Refresh",
+       "v": "200 Hz"
+      },
+      {
+       "k": "Diffuser",
+       "v": "Cast acrylic, 2 mm"
+      }
+     ]
+    },
+    {
+     "group": "Interface",
+     "rows": [
+      {
+       "k": "Bus",
+       "v": "SPI, both panels on one chain"
+      },
+      {
+       "k": "Supply",
+       "v": "5 V, 1.2 A peak"
+      },
+      {
+       "k": "Library",
+       "v": "Open source, Python and C"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "hri",
+    "head"
+   ],
+   "image": "assets/img/products/led-eyes.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 39,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "realsense-d405",
+   "sku": "MR-SEN-D405",
+   "name": "Intel RealSense D405",
+   "tagline": "Short-range metric depth for the wrist",
+   "brand": "Intel",
+   "category": "sensors",
+   "family": "depth_camera",
+   "price": 349.0,
+   "priceCad": 479.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "A depth camera focused where manipulation actually happens: 7 to 50 cm from the gripper. Global shutter on both imagers, so a moving wrist does not smear the geometry it is about to grasp.",
+   "highlights": [
+    "Metric depth from 7 cm — most depth cameras start past the grasp",
+    "Global shutter stereo pair at 1280 × 720, 90 fps",
+    "No projector needed at close range",
+    "Two of these are MABEL's maximum-tier wrist option"
+   ],
+   "specs": [
+    {
+     "group": "Imaging",
+     "rows": [
+      {
+       "k": "Depth resolution",
+       "v": "1280 × 720"
+      },
+      {
+       "k": "Depth frame rate",
+       "v": "Up to 90 fps"
+      },
+      {
+       "k": "Shutter",
+       "v": "Global"
+      },
+      {
+       "k": "Range",
+       "v": "7–50 cm"
+      },
+      {
+       "k": "Depth accuracy",
+       "v": "< 2% at 50 cm"
+      }
+     ]
+    },
+    {
+     "group": "Optics",
+     "rows": [
+      {
+       "k": "Field of view",
+       "v": "87° × 58°"
+      },
+      {
+       "k": "RGB",
+       "v": "From the same stereo pair"
+      },
+      {
+       "k": "Baseline",
+       "v": "18 mm"
+      }
+     ]
+    },
+    {
+     "group": "Interface",
+     "rows": [
+      {
+       "k": "Connection",
+       "v": "USB 3.1 Gen 1, Type-C"
+      },
+      {
+       "k": "SDK",
+       "v": "librealsense2, ROS 2 wrapper"
+      },
+      {
+       "k": "Mass",
+       "v": "62 g"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "wrist",
+    "depth",
+    "global-shutter"
+   ],
+   "image": "assets/img/products/realsense-d405.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 288,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "realsense-d435i",
+   "sku": "MR-SEN-D435I",
+   "name": "Intel RealSense D435i",
+   "tagline": "Wide-field depth with an onboard IMU",
+   "brand": "Intel",
+   "category": "sensors",
+   "family": "depth_camera",
+   "price": 389.0,
+   "priceCad": 539.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "The general-purpose depth camera. Wide field of view, an IMU on the same clock as the imagers, and the range to see a room rather than a workspace.",
+   "highlights": [
+    "Depth to 10 m, 87° × 58° field of view",
+    "Onboard IMU, hardware-synchronised to the frames",
+    "IR projector for texture-poor surfaces",
+    "MABEL's optional base camera for overhangs and table edges"
+   ],
+   "specs": [
+    {
+     "group": "Imaging",
+     "rows": [
+      {
+       "k": "Depth resolution",
+       "v": "1280 × 720"
+      },
+      {
+       "k": "Depth frame rate",
+       "v": "Up to 90 fps"
+      },
+      {
+       "k": "Shutter",
+       "v": "Global (depth), rolling (RGB)"
+      },
+      {
+       "k": "Range",
+       "v": "0.3–10 m"
+      }
+     ]
+    },
+    {
+     "group": "Optics",
+     "rows": [
+      {
+       "k": "Depth FOV",
+       "v": "87° × 58°"
+      },
+      {
+       "k": "RGB",
+       "v": "1920 × 1080 at 30 fps"
+      },
+      {
+       "k": "Projector",
+       "v": "IR pattern"
+      }
+     ]
+    },
+    {
+     "group": "Interface",
+     "rows": [
+      {
+       "k": "IMU",
+       "v": "6-axis, frame-synchronised"
+      },
+      {
+       "k": "Connection",
+       "v": "USB 3.1 Gen 1, Type-C"
+      },
+      {
+       "k": "SDK",
+       "v": "librealsense2"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "head",
+    "base",
+    "depth",
+    "imu"
+   ],
+   "image": "assets/img/products/realsense-d435i.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 319.72,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "realsense-d455",
+   "sku": "MR-SEN-D455",
+   "name": "Intel RealSense D455",
+   "tagline": "Long-baseline depth for navigation",
+   "brand": "Intel",
+   "category": "sensors",
+   "family": "depth_camera",
+   "price": 509.0,
+   "priceCad": 699.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Twice the baseline of a D435i, so depth error at range falls by roughly a factor of four. The one to fit when the robot has to plan across a room.",
+   "highlights": [
+    "95 mm baseline — accurate depth out to 6 m",
+    "RGB and depth share a field of view, so they align without a warp",
+    "Onboard IMU",
+    "Depth error under 2% at 4 m"
+   ],
+   "specs": [
+    {
+     "group": "Imaging",
+     "rows": [
+      {
+       "k": "Depth resolution",
+       "v": "1280 × 720"
+      },
+      {
+       "k": "Frame rate",
+       "v": "Up to 90 fps"
+      },
+      {
+       "k": "Range",
+       "v": "0.6–6 m"
+      },
+      {
+       "k": "Depth error",
+       "v": "< 2% at 4 m"
+      }
+     ]
+    },
+    {
+     "group": "Optics",
+     "rows": [
+      {
+       "k": "Baseline",
+       "v": "95 mm"
+      },
+      {
+       "k": "FOV",
+       "v": "87° × 58°, matched RGB and depth"
+      },
+      {
+       "k": "RGB",
+       "v": "1280 × 800 global shutter"
+      }
+     ]
+    },
+    {
+     "group": "Interface",
+     "rows": [
+      {
+       "k": "IMU",
+       "v": "6-axis"
+      },
+      {
+       "k": "Connection",
+       "v": "USB 3.1 Gen 1, Type-C"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "navigation",
+    "depth",
+    "imu"
+   ],
+   "image": "assets/img/products/realsense-d455.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 419,
+   "_costSrc": "vendor"
+  },
+  {
+   "id": "wrist-cam-720",
+   "sku": "MR-SEN-WR720",
+   "name": "Wrist Camera, 720p Global Shutter",
+   "tagline": "AR0144 · 60 fps · 170° fisheye",
+   "brand": "MABEL Robotics",
+   "category": "sensors",
+   "family": "cam_module",
+   "price": 59.0,
+   "priceCad": 79.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "Eye-in-hand vision on a budget. A global-shutter AR0144 behind a 170° fisheye sees the whole grasp region from a wrist mount, and does not smear when the arm moves.",
+   "highlights": [
+    "Global shutter — the reason a moving wrist camera is usable at all",
+    "170° fisheye keeps the object in frame through the approach",
+    "UVC class: no driver, no SDK, opens as a webcam",
+    "MABEL's essential-tier wrist camera"
+   ],
+   "specs": [
+    {
+     "group": "Imaging",
+     "rows": [
+      {
+       "k": "Sensor",
+       "v": "onsemi AR0144, 1/4 in"
+      },
+      {
+       "k": "Resolution",
+       "v": "1280 × 720"
+      },
+      {
+       "k": "Frame rate",
+       "v": "60 fps"
+      },
+      {
+       "k": "Shutter",
+       "v": "Global"
+      },
+      {
+       "k": "Field of view",
+       "v": "170° diagonal"
+      }
+     ]
+    },
+    {
+     "group": "Interface",
+     "rows": [
+      {
+       "k": "Connection",
+       "v": "USB 2.0, UVC class"
+      },
+      {
+       "k": "Driver",
+       "v": "None — UVC"
+      },
+      {
+       "k": "Mount",
+       "v": "M12 lens, 2 × M2 board mounts"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "wrist",
+    "global-shutter",
+    "imitation-learning"
+   ],
+   "image": "assets/img/products/wrist-cam-720.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 48.99,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "wrist-cam-1200",
+   "sku": "MR-SEN-WR1200",
+   "name": "Wrist Camera, 1200p Global Shutter",
+   "tagline": "AR0144 · 90 fps · the recommended wrist",
+   "brand": "MABEL Robotics",
+   "category": "sensors",
+   "family": "cam_module",
+   "price": 99.0,
+   "priceCad": 139.0,
+   "unit": "",
+   "badge": "Recommended",
+   "stock": "in-stock",
+   "summary": "The same board and sensor as the 720p camera, run at its full 1600 × 1200 and 90 fps. MABEL's build guide calls the step up to this camera the highest-value upgrade in the whole robot: wrist views carry the fine detail a manipulation policy learns from.",
+   "highlights": [
+    "1600 × 1200 at 90 fps, global shutter",
+    "The detail a policy actually trains on",
+    "Identical mounting and cabling to the 720p version",
+    "UVC class — no driver"
+   ],
+   "specs": [
+    {
+     "group": "Imaging",
+     "rows": [
+      {
+       "k": "Sensor",
+       "v": "onsemi AR0144, 1/4 in"
+      },
+      {
+       "k": "Resolution",
+       "v": "1600 × 1200"
+      },
+      {
+       "k": "Frame rate",
+       "v": "90 fps"
+      },
+      {
+       "k": "Shutter",
+       "v": "Global"
+      },
+      {
+       "k": "Field of view",
+       "v": "170° diagonal"
+      }
+     ]
+    },
+    {
+     "group": "Interface",
+     "rows": [
+      {
+       "k": "Connection",
+       "v": "USB 2.0, UVC class"
+      },
+      {
+       "k": "Driver",
+       "v": "None — UVC"
+      },
+      {
+       "k": "Mount",
+       "v": "M12 lens, 2 × M2 board mounts"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "wrist",
+    "global-shutter",
+    "imitation-learning"
+   ],
+   "image": "assets/img/products/wrist-cam-1200.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 82.99,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "head-cam-stereo",
+   "sku": "MR-SEN-HEAD",
+   "name": "Stereo Head Camera, 1200p",
+   "tagline": "Synchronised pair · 112° HFOV · 60 fps",
+   "brand": "MABEL Robotics",
+   "category": "sensors",
+   "family": "depth_camera",
+   "price": 119.0,
+   "priceCad": 169.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "A hardware-synchronised global-shutter stereo pair that hands you raw frames and leaves the matching to you. On a robot where the policy wants images rather than point clouds, that is the right trade.",
+   "highlights": [
+    "3200 × 1200 combined, 60 fps, hardware-synchronised",
+    "112° horizontal field of view",
+    "Global shutter on both imagers",
+    "Matching runs on the host — costs memory, buys flexibility"
+   ],
+   "specs": [
+    {
+     "group": "Imaging",
+     "rows": [
+      {
+       "k": "Resolution",
+       "v": "3200 × 1200 combined"
+      },
+      {
+       "k": "Frame rate",
+       "v": "60 fps"
+      },
+      {
+       "k": "Shutter",
+       "v": "Global, both imagers"
+      },
+      {
+       "k": "Synchronisation",
+       "v": "Hardware"
+      }
+     ]
+    },
+    {
+     "group": "Optics",
+     "rows": [
+      {
+       "k": "Field of view",
+       "v": "112° horizontal"
+      },
+      {
+       "k": "Baseline",
+       "v": "60 mm"
+      }
+     ]
+    },
+    {
+     "group": "Interface",
+     "rows": [
+      {
+       "k": "Connection",
+       "v": "USB 3.0, UVC"
+      },
+      {
+       "k": "Depth",
+       "v": "Host-side matching"
+      }
+     ]
+    }
+   ],
+   "note": "Stereo matching on the host costs memory on a smaller Jetson. Budget for it on an 8 GB module.",
+   "tags": [
+    "mabel",
+    "head",
+    "stereo",
+    "global-shutter"
+   ],
+   "image": "assets/img/products/head-cam-stereo.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 97.99,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "ego-camera-rig",
+   "sku": "MR-SEN-EGO",
+   "name": "Egocentric Capture Rig",
+   "tagline": "Head-mounted camera for human demonstrations",
+   "brand": "MABEL Robotics",
+   "category": "sensors",
+   "family": "ego_camera",
+   "price": 209.0,
+   "priceCad": 289.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Record demonstrations from the human's point of view, then train on them. A global-shutter wide-angle camera on an adjustable head mount, with a timestamped recorder that stays in sync with a gripper or glove.",
+   "highlights": [
+    "Human-perspective data collection — the UMI-style pipeline",
+    "Global shutter, 1600 × 1200 at 60 fps, 150° field of view",
+    "Hardware timestamps, so frames align with action logs",
+    "Adjustable head mount that survives a full session"
+   ],
+   "specs": [
+    {
+     "group": "Imaging",
+     "rows": [
+      {
+       "k": "Resolution",
+       "v": "1600 × 1200"
+      },
+      {
+       "k": "Frame rate",
+       "v": "60 fps"
+      },
+      {
+       "k": "Shutter",
+       "v": "Global"
+      },
+      {
+       "k": "Field of view",
+       "v": "150° diagonal"
+      }
+     ]
+    },
+    {
+     "group": "Capture",
+     "rows": [
+      {
+       "k": "Timestamps",
+       "v": "Hardware, µs resolution"
+      },
+      {
+       "k": "Storage",
+       "v": "Host-side, USB 3.0"
+      },
+      {
+       "k": "Sync",
+       "v": "Trigger in/out for gripper and glove logs"
+      }
+     ]
+    },
+    {
+     "group": "Mount",
+     "rows": [
+      {
+       "k": "Type",
+       "v": "Adjustable head harness"
+      },
+      {
+       "k": "Mass",
+       "v": "210 g with mount"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "teleop",
+    "data-collection",
+    "imitation-learning",
+    "umi"
+   ],
+   "image": "assets/img/products/ego-camera-rig.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 169,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "lidar-c1",
+   "sku": "MR-SEN-C1",
+   "name": "RPLIDAR C1",
+   "tagline": "DTOF 2-D scanner · 12 m · 10 Hz",
+   "brand": "Slamtec",
+   "category": "sensors",
+   "family": "lidar",
+   "price": 119.0,
+   "priceCad": 169.0,
+   "unit": "",
+   "badge": "Recommended",
+   "stock": "in-stock",
+   "summary": "Direct time-of-flight, so accuracy holds at range instead of falling off the way triangulation does. This is the scanner MABEL's build guide recommends for mapping and Nav2.",
+   "highlights": [
+    "Direct time-of-flight — accurate at 12 m, not just at 3",
+    "5 000 samples/s at 10 Hz",
+    "Works in 40 klux — daylight through a window",
+    "ROS 2 driver, maintained"
+   ],
+   "specs": [
+    {
+     "group": "Scanning",
+     "rows": [
+      {
+       "k": "Range",
+       "v": "0.05–12 m"
+      },
+      {
+       "k": "Sample rate",
+       "v": "5 000 /s"
+      },
+      {
+       "k": "Scan rate",
+       "v": "8–12 Hz"
+      },
+      {
+       "k": "Method",
+       "v": "Direct time-of-flight"
+      },
+      {
+       "k": "Angular resolution",
+       "v": "0.72°"
+      }
+     ]
+    },
+    {
+     "group": "Environment",
+     "rows": [
+      {
+       "k": "Ambient light",
+       "v": "40 klux"
+      },
+      {
+       "k": "Mass",
+       "v": "110 g"
+      },
+      {
+       "k": "Interface",
+       "v": "UART / USB adapter"
+      },
+      {
+       "k": "Supply",
+       "v": "5 V"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "navigation",
+    "slam",
+    "2d-lidar"
+   ],
+   "image": "assets/img/products/lidar-c1.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 99,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "lidar-ld19",
+   "sku": "MR-SEN-LD19",
+   "name": "FHL-LD19 Lidar",
+   "tagline": "DTOF · 12 m · 50 g · the value pick",
+   "brand": "youyeetoo",
+   "category": "sensors",
+   "family": "lidar",
+   "price": 84.0,
+   "priceCad": 119.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "A third of the price of the scanners it competes with, and direct time-of-flight rather than triangulation, so it holds accuracy at range better than its price suggests. Fifty grams.",
+   "highlights": [
+    "12 m DTOF for well under a hundred dollars",
+    "50 g — mount it anywhere",
+    "4 500 samples/s at 10 Hz",
+    "ROS 2 SDK"
+   ],
+   "specs": [
+    {
+     "group": "Scanning",
+     "rows": [
+      {
+       "k": "Range",
+       "v": "0.02–12 m"
+      },
+      {
+       "k": "Sample rate",
+       "v": "4 500 /s"
+      },
+      {
+       "k": "Scan rate",
+       "v": "10 Hz"
+      },
+      {
+       "k": "Method",
+       "v": "Direct time-of-flight"
+      }
+     ]
+    },
+    {
+     "group": "Environment",
+     "rows": [
+      {
+       "k": "Ambient light",
+       "v": "30 klux"
+      },
+      {
+       "k": "Mass",
+       "v": "50 g"
+      },
+      {
+       "k": "Interface",
+       "v": "UART"
+      },
+      {
+       "k": "Supply",
+       "v": "5 V"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "navigation",
+    "slam",
+    "2d-lidar",
+    "budget"
+   ],
+   "image": "assets/img/products/lidar-ld19.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 69,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "lidar-mid360",
+   "sku": "MR-SEN-M360",
+   "name": "Livox Mid-360",
+   "tagline": "360° × 59° 3-D lidar with built-in IMU",
+   "brand": "Livox",
+   "category": "sensors",
+   "family": "lidar",
+   "price": 959.0,
+   "priceCad": 1399.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Full 3-D coverage around the robot in one small dome. Non-repetitive scanning means coverage keeps filling in the longer you dwell, which suits a robot that stops to work.",
+   "highlights": [
+    "360° horizontal, 59° vertical",
+    "Non-repetitive scan — coverage improves with dwell time",
+    "Built-in IMU for tightly-coupled odometry",
+    "40 m range at 10% reflectivity"
+   ],
+   "specs": [
+    {
+     "group": "Scanning",
+     "rows": [
+      {
+       "k": "Field of view",
+       "v": "360° × 59°"
+      },
+      {
+       "k": "Range",
+       "v": "40 m at 10% reflectivity"
+      },
+      {
+       "k": "Point rate",
+       "v": "200 000 points/s"
+      },
+      {
+       "k": "Pattern",
+       "v": "Non-repetitive"
+      }
+     ]
+    },
+    {
+     "group": "Integration",
+     "rows": [
+      {
+       "k": "IMU",
+       "v": "Built in, 200 Hz"
+      },
+      {
+       "k": "Interface",
+       "v": "Ethernet"
+      },
+      {
+       "k": "Supply",
+       "v": "9–27 V"
+      },
+      {
+       "k": "Mass",
+       "v": "265 g"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "navigation",
+    "slam",
+    "3d-lidar"
+   ],
+   "image": "assets/img/products/lidar-mid360.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 799,
+   "_costSrc": "vendor"
+  },
+  {
+   "id": "imu-bno085",
+   "sku": "MR-SEN-BNO",
+   "name": "BNO085 9-DOF IMU",
+   "tagline": "Sensor fusion on the chip",
+   "brand": "MABEL Robotics",
+   "category": "sensors",
+   "family": "imu",
+   "price": 29.0,
+   "priceCad": 39.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "An IMU that hands you an orientation instead of three raw vectors. The fusion runs on the sensor, so the host gets a stable quaternion at 100 Hz without spending a core on a filter.",
+   "highlights": [
+    "On-chip fusion — quaternion out, not raw counts",
+    "Accelerometer, gyroscope and magnetometer",
+    "Automatic gyro calibration in the background",
+    "I²C, SPI or UART-RVC"
+   ],
+   "specs": [
+    {
+     "group": "Sensing",
+     "rows": [
+      {
+       "k": "Axes",
+       "v": "9 — accel, gyro, magnetometer"
+      },
+      {
+       "k": "Output rate",
+       "v": "100 Hz fused"
+      },
+      {
+       "k": "Orientation accuracy",
+       "v": "2.0° dynamic, 1.0° static"
+      },
+      {
+       "k": "Gyro range",
+       "v": "±2 000 °/s"
+      }
+     ]
+    },
+    {
+     "group": "Interface",
+     "rows": [
+      {
+       "k": "Buses",
+       "v": "I²C · SPI · UART-RVC"
+      },
+      {
+       "k": "Supply",
+       "v": "3.3 V"
+      },
+      {
+       "k": "Reports",
+       "v": "Rotation vector, linear accel, gravity, step, tap"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "imu",
+    "orientation"
+   ],
+   "image": "assets/img/products/imu-bno085.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 22,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "imu-tactical",
+   "sku": "MR-SEN-IMUT",
+   "name": "Industrial-Grade IMU",
+   "tagline": "0.5 °/h bias stability · for state estimation",
+   "brand": "MABEL Robotics",
+   "category": "sensors",
+   "family": "imu",
+   "price": 1499.0,
+   "priceCad": 2099.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "When drift is the thing limiting your odometry, the fix is not a better filter — it is a better gyro. Two orders of magnitude less bias instability than a consumer part.",
+   "highlights": [
+    "0.5 °/h in-run bias stability",
+    "Factory temperature-calibrated over the full range",
+    "Aligned and characterised axes, with the coefficients on the unit",
+    "Fits a tightly-coupled lidar-inertial stack"
+   ],
+   "specs": [
+    {
+     "group": "Performance",
+     "rows": [
+      {
+       "k": "Gyro bias instability",
+       "v": "0.5 °/h"
+      },
+      {
+       "k": "Angular random walk",
+       "v": "0.15 °/√h"
+      },
+      {
+       "k": "Accel bias instability",
+       "v": "15 µg"
+      },
+      {
+       "k": "Output rate",
+       "v": "Up to 1 kHz"
+      }
+     ]
+    },
+    {
+     "group": "Interface",
+     "rows": [
+      {
+       "k": "Buses",
+       "v": "RS-422 · SPI"
+      },
+      {
+       "k": "Supply",
+       "v": "5 V"
+      },
+      {
+       "k": "Calibration",
+       "v": "Factory, −40 to 85 °C, coefficients on unit"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "imu",
+    "navigation",
+    "slam"
+   ],
+   "image": "assets/img/products/imu-tactical.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 1180,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "ft-sensor",
+   "sku": "MR-SEN-FT6",
+   "name": "6-Axis Force/Torque Sensor",
+   "tagline": "Wrist-mounted, 1 kHz",
+   "brand": "MABEL Robotics",
+   "category": "sensors",
+   "family": "imu",
+   "price": 1799.0,
+   "priceCad": 2499.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Three forces and three torques at the wrist, a thousand times a second. What turns position control into force control, and a rigid arm into one that can lean on something without breaking it.",
+   "highlights": [
+    "Fx, Fy, Fz, Tx, Ty, Tz at 1 kHz",
+    "Temperature compensated in hardware",
+    "Overload stops built into the structure",
+    "Mounts between the arm flange and the hand"
+   ],
+   "specs": [
+    {
+     "group": "Ranges",
+     "rows": [
+      {
+       "k": "Fx, Fy",
+       "v": "±200 N"
+      },
+      {
+       "k": "Fz",
+       "v": "±400 N"
+      },
+      {
+       "k": "Tx, Ty",
+       "v": "±10 N·m"
+      },
+      {
+       "k": "Tz",
+       "v": "±10 N·m"
+      },
+      {
+       "k": "Resolution",
+       "v": "0.05 N / 0.002 N·m"
+      }
+     ]
+    },
+    {
+     "group": "Interface",
+     "rows": [
+      {
+       "k": "Output rate",
+       "v": "1 kHz"
+      },
+      {
+       "k": "Bus",
+       "v": "EtherCAT · CAN · RS-485"
+      },
+      {
+       "k": "Supply",
+       "v": "24 V"
+      },
+      {
+       "k": "Overload",
+       "v": "Mechanical stops at 300% range"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "force",
+    "manipulation",
+    "contact"
+   ],
+   "image": "assets/img/products/ft-sensor.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 1450,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "tactile-fingertip",
+   "sku": "MR-SEN-TACT",
+   "name": "Tactile Fingertip Sensor",
+   "tagline": "Normal and shear sensing under a silicone pad",
+   "brand": "MABEL Robotics",
+   "category": "sensors",
+   "family": "imu",
+   "price": 299.0,
+   "priceCad": 409.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Contact sensing where contact happens. A magnetic taxel array under a cast silicone pad reads normal and shear force across the fingertip — enough to detect the moment an object starts to slip.",
+   "highlights": [
+    "Normal and shear across a 4 × 4 taxel array",
+    "Slip detection at 200 Hz",
+    "Silicone pad is a wear part — replaceable",
+    "Fits the ORCA fingertip"
+   ],
+   "specs": [
+    {
+     "group": "Sensing",
+     "rows": [
+      {
+       "k": "Array",
+       "v": "4 × 4 taxels"
+      },
+      {
+       "k": "Axes per taxel",
+       "v": "Normal + 2 shear"
+      },
+      {
+       "k": "Range",
+       "v": "0–10 N normal"
+      },
+      {
+       "k": "Resolution",
+       "v": "0.01 N"
+      },
+      {
+       "k": "Output rate",
+       "v": "200 Hz"
+      }
+     ]
+    },
+    {
+     "group": "Physical",
+     "rows": [
+      {
+       "k": "Pad",
+       "v": "Cast silicone, Shore A20, replaceable"
+      },
+      {
+       "k": "Interface",
+       "v": "I²C"
+      },
+      {
+       "k": "Fitment",
+       "v": "ORCA fingertip"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "tactile",
+    "orca",
+    "hand",
+    "manipulation"
+   ],
+   "image": "assets/img/products/tactile-fingertip.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 248,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "encoder-as5047",
+   "sku": "MR-SEN-AS5047",
+   "name": "AS5047P Magnetic Encoder",
+   "tagline": "14-bit on-axis absolute",
+   "brand": "MABEL Robotics",
+   "category": "sensors",
+   "family": "imu",
+   "price": 16.99,
+   "priceCad": 24.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "The encoder inside most home-built FOC drives. Fourteen bits of absolute angle at up to 28 000 rpm, with the magnet and mount included so the air gap is right.",
+   "highlights": [
+    "14-bit absolute — 16 384 counts per revolution",
+    "Dynamic angle error compensation up to 28 000 rpm",
+    "SPI, ABI or PWM output",
+    "Diametric magnet and spacer included"
+   ],
+   "specs": [
+    {
+     "group": "Sensing",
+     "rows": [
+      {
+       "k": "Resolution",
+       "v": "14-bit absolute"
+      },
+      {
+       "k": "Max speed",
+       "v": "28 000 rpm"
+      },
+      {
+       "k": "Air gap",
+       "v": "0.5–2.5 mm"
+      },
+      {
+       "k": "Accuracy",
+       "v": "±0.17° with compensation"
+      }
+     ]
+    },
+    {
+     "group": "Interface",
+     "rows": [
+      {
+       "k": "Outputs",
+       "v": "SPI · ABI incremental · PWM · UVW"
+      },
+      {
+       "k": "Supply",
+       "v": "3.3 or 5 V"
+      },
+      {
+       "k": "Includes",
+       "v": "Diametric magnet, mount"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "encoder",
+    "foc",
+    "joint"
+   ],
+   "image": "assets/img/products/encoder-as5047.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 14,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "jetson-orin-nano",
+   "sku": "MR-CMP-ORINNANO",
+   "name": "Jetson Orin Nano Super",
+   "tagline": "8 GB · 67 TOPS · developer kit",
+   "brand": "NVIDIA",
+   "category": "compute",
+   "family": "compute",
+   "price": 459.0,
+   "priceCad": 629.0,
+   "unit": "",
+   "badge": "In MABEL",
+   "stock": "in-stock",
+   "summary": "The entry point, and the module MABEL's essential build uses. The carrier also accepts Orin NX modules, so it is a route to 16 GB later rather than a dead end.",
+   "highlights": [
+    "67 TOPS at 8 GB",
+    "Carrier accepts Orin NX modules — upgrade without a new board",
+    "15–25 W",
+    "MABEL's essential-tier compute"
+   ],
+   "specs": [
+    {
+     "group": "Compute",
+     "rows": [
+      {
+       "k": "Module",
+       "v": "Jetson Orin Nano 8 GB"
+      },
+      {
+       "k": "AI performance",
+       "v": "67 TOPS (INT8)"
+      },
+      {
+       "k": "GPU",
+       "v": "1 024-core Ampere, 32 tensor cores"
+      },
+      {
+       "k": "CPU",
+       "v": "6-core Arm Cortex-A78AE"
+      },
+      {
+       "k": "Memory",
+       "v": "8 GB LPDDR5, 102 GB/s"
+      },
+      {
+       "k": "Power",
+       "v": "7–25 W"
+      }
+     ]
+    },
+    {
+     "group": "I/O",
+     "rows": [
+      {
+       "k": "Networking",
+       "v": "1 × GbE (2.5 GbE on AGX)"
+      },
+      {
+       "k": "Storage",
+       "v": "M.2 NVMe"
+      },
+      {
+       "k": "USB",
+       "v": "USB 3.2 Type-A and Type-C"
+      },
+      {
+       "k": "Camera",
+       "v": "MIPI CSI-2"
+      }
+     ]
+    }
+   ],
+   "note": "NVIDIA raised Jetson prices on 22 July 2026. This is the current price, not the figure in older bills of materials.",
+   "tags": [
+    "mabel",
+    "jetson",
+    "edge-ai"
+   ],
+   "image": "assets/img/products/jetson-orin-nano.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 399,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "jetson-orin-nx16",
+   "sku": "MR-CMP-ORINNX16",
+   "name": "Jetson Orin NX 16 GB + Carrier",
+   "tagline": "16 GB · 157 TOPS · recommended",
+   "brand": "NVIDIA",
+   "category": "compute",
+   "family": "compute",
+   "price": 1499.0,
+   "priceCad": 2099.0,
+   "unit": "",
+   "badge": "Recommended",
+   "stock": "in-stock",
+   "summary": "Memory, not TOPS, is what binds a robot's compute. The policy, the visual SLAM front end, the planner and every camera stream have to be resident at once — and the module is soldered, so you choose this on day one or you buy it twice.",
+   "highlights": [
+    "16 GB — the constraint that actually binds",
+    "157 TOPS",
+    "Carrier included",
+    "MABEL's recommended tier"
+   ],
+   "specs": [
+    {
+     "group": "Compute",
+     "rows": [
+      {
+       "k": "Module",
+       "v": "Jetson Orin NX 16 GB"
+      },
+      {
+       "k": "AI performance",
+       "v": "157 TOPS (INT8)"
+      },
+      {
+       "k": "GPU",
+       "v": "1 024-core Ampere, 32 tensor cores"
+      },
+      {
+       "k": "CPU",
+       "v": "8-core Arm Cortex-A78AE"
+      },
+      {
+       "k": "Memory",
+       "v": "16 GB LPDDR5, 102 GB/s"
+      },
+      {
+       "k": "Power",
+       "v": "10–25 W"
+      }
+     ]
+    },
+    {
+     "group": "I/O",
+     "rows": [
+      {
+       "k": "Networking",
+       "v": "1 × GbE (2.5 GbE on AGX)"
+      },
+      {
+       "k": "Storage",
+       "v": "M.2 NVMe"
+      },
+      {
+       "k": "USB",
+       "v": "USB 3.2 Type-A and Type-C"
+      },
+      {
+       "k": "Camera",
+       "v": "MIPI CSI-2"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "jetson",
+    "edge-ai"
+   ],
+   "image": "assets/img/products/jetson-orin-nx16.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 1249,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "jetson-agx-orin",
+   "sku": "MR-CMP-AGXORIN",
+   "name": "Jetson AGX Orin 64 GB",
+   "tagline": "64 GB · 275 TOPS · developer kit",
+   "brand": "NVIDIA",
+   "category": "compute",
+   "family": "compute",
+   "price": 3999.0,
+   "priceCad": 5499.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "The development machine that emulates every smaller Orin module, so you can profile on it and deploy down. Sixty watts, which on a battery-powered robot means a power system designed for it.",
+   "highlights": [
+    "64 GB and 275 TOPS",
+    "Emulates every Orin module for profiling",
+    "60 W — plan the power system around it",
+    "12 lanes of camera input"
+   ],
+   "specs": [
+    {
+     "group": "Compute",
+     "rows": [
+      {
+       "k": "Module",
+       "v": "Jetson AGX Orin 64 GB"
+      },
+      {
+       "k": "AI performance",
+       "v": "275 TOPS (INT8)"
+      },
+      {
+       "k": "GPU",
+       "v": "2 048-core Ampere, 64 tensor cores"
+      },
+      {
+       "k": "CPU",
+       "v": "12-core Arm Cortex-A78AE"
+      },
+      {
+       "k": "Memory",
+       "v": "64 GB LPDDR5, 204.8 GB/s"
+      },
+      {
+       "k": "Power",
+       "v": "15–60 W"
+      }
+     ]
+    },
+    {
+     "group": "I/O",
+     "rows": [
+      {
+       "k": "Networking",
+       "v": "1 × GbE (2.5 GbE on AGX)"
+      },
+      {
+       "k": "Storage",
+       "v": "M.2 NVMe"
+      },
+      {
+       "k": "USB",
+       "v": "USB 3.2 Type-A and Type-C"
+      },
+      {
+       "k": "Camera",
+       "v": "MIPI CSI-2"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "jetson",
+    "edge-ai"
+   ],
+   "image": "assets/img/products/jetson-agx-orin.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 3499,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "jetson-thor",
+   "sku": "MR-CMP-THOR",
+   "name": "Jetson AGX Thor",
+   "tagline": "128 GB · 2 070 TFLOPS · developer kit",
+   "brand": "NVIDIA",
+   "category": "compute",
+   "family": "compute",
+   "price": 6299.0,
+   "priceCad": 8699.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Blackwell-class compute on a robot. This is what running a large vision-language-action model on board actually costs — and on MABEL's own bill of materials, this single line is the difference between an $8.5k robot and a $15k one.",
+   "highlights": [
+    "2 070 TFLOPS (FP4) — VLA models on board",
+    "128 GB unified memory",
+    "Blackwell GPU architecture",
+    "The maximum tier, and priced like it"
+   ],
+   "specs": [
+    {
+     "group": "Compute",
+     "rows": [
+      {
+       "k": "Module",
+       "v": "Jetson AGX Thor"
+      },
+      {
+       "k": "AI performance",
+       "v": "2 070 TFLOPS (FP4)"
+      },
+      {
+       "k": "GPU",
+       "v": "Blackwell architecture"
+      },
+      {
+       "k": "CPU",
+       "v": "14-core Arm Neoverse-V3AE"
+      },
+      {
+       "k": "Memory",
+       "v": "128 GB LPDDR5X, 273 GB/s"
+      },
+      {
+       "k": "Power",
+       "v": "40–130 W"
+      }
+     ]
+    },
+    {
+     "group": "I/O",
+     "rows": [
+      {
+       "k": "Networking",
+       "v": "1 × GbE (2.5 GbE on AGX)"
+      },
+      {
+       "k": "Storage",
+       "v": "M.2 NVMe"
+      },
+      {
+       "k": "USB",
+       "v": "USB 3.2 Type-A and Type-C"
+      },
+      {
+       "k": "Camera",
+       "v": "MIPI CSI-2"
+      }
+     ]
+    }
+   ],
+   "note": "NVIDIA raised Jetson prices on 22 July 2026. This is the current price, not the figure in older bills of materials.",
+   "tags": [
+    "mabel",
+    "jetson",
+    "edge-ai"
+   ],
+   "image": "assets/img/products/jetson-thor.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 5499,
+   "_costSrc": "bom"
+  },
+  {
+   "id": "pi5",
+   "sku": "MR-CMP-PI5",
+   "name": "Raspberry Pi 5, 8 GB",
+   "tagline": "For the parts of the robot that are not the policy",
+   "brand": "Raspberry Pi",
+   "category": "compute",
+   "family": "compute",
+   "price": 94.0,
+   "priceCad": 129.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Not the machine that runs the policy — the one that runs the screen, the audio, the housekeeping and the web interface, so the Jetson's memory stays where it belongs.",
+   "highlights": [
+    "Quad Cortex-A76 at 2.4 GHz",
+    "PCIe 2.0 for NVMe",
+    "Two 4Kp60 display outputs",
+    "Offloads HRI and housekeeping from the Jetson"
+   ],
+   "specs": [
+    {
+     "group": "Compute",
+     "rows": [
+      {
+       "k": "CPU",
+       "v": "Quad-core Cortex-A76 at 2.4 GHz"
+      },
+      {
+       "k": "Memory",
+       "v": "8 GB LPDDR4X"
+      },
+      {
+       "k": "GPU",
+       "v": "VideoCore VII"
+      }
+     ]
+    },
+    {
+     "group": "I/O",
+     "rows": [
+      {
+       "k": "Networking",
+       "v": "Gigabit Ethernet, Wi-Fi 5"
+      },
+      {
+       "k": "USB",
+       "v": "2 × USB 3.0, 2 × USB 2.0"
+      },
+      {
+       "k": "Expansion",
+       "v": "PCIe 2.0 ×1, 40-pin GPIO"
+      },
+      {
+       "k": "Display",
+       "v": "2 × micro-HDMI 4Kp60"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "compute",
+    "aux"
+   ],
+   "image": "assets/img/products/pi5.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 80,
+   "_costSrc": "vendor"
+  },
+  {
+   "id": "nvme-2tb",
+   "sku": "MR-CMP-NVME2",
+   "name": "NVMe SSD, 2 TB",
+   "tagline": "For episode data, not for the OS",
+   "brand": "MABEL Robotics",
+   "category": "compute",
+   "family": "compute",
+   "price": 139.0,
+   "priceCad": 189.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Demonstration data fills a disk faster than anyone expects — four camera streams plus joint states is roughly a gigabyte a minute. This is the drive that keeps a session going.",
+   "highlights": [
+    "2 TB, PCIe 4.0",
+    "7 000 MB/s read, 6 000 MB/s write",
+    "Fits the Jetson carrier's M.2 slot",
+    "Around 30 hours of four-camera episodes"
+   ],
+   "specs": [
+    {
+     "group": "Drive",
+     "rows": [
+      {
+       "k": "Capacity",
+       "v": "2 TB"
+      },
+      {
+       "k": "Interface",
+       "v": "PCIe 4.0 ×4, NVMe 1.4"
+      },
+      {
+       "k": "Sequential read",
+       "v": "7 000 MB/s"
+      },
+      {
+       "k": "Sequential write",
+       "v": "6 000 MB/s"
+      },
+      {
+       "k": "Endurance",
+       "v": "1 200 TBW"
+      },
+      {
+       "k": "Form factor",
+       "v": "M.2 2280"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "storage",
+    "data-collection"
+   ],
+   "image": "assets/img/products/nvme-2tb.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 118,
+   "_costSrc": "vendor"
+  },
+  {
+   "id": "training-workstation",
+   "sku": "MR-CMP-WS",
+   "name": "Training Workstation",
+   "tagline": "RTX 5090 · 128 GB · built for policy training",
+   "brand": "MABEL Robotics",
+   "category": "compute",
+   "family": "compute",
+   "price": 6199.0,
+   "priceCad": 8499.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "The other half of the robot. Built and burned in for visuomotor policy training — enough VRAM for large batches of image observations, enough system memory to keep a dataset in page cache, and quiet enough to sit in a lab.",
+   "highlights": [
+    "RTX 5090, 32 GB VRAM",
+    "128 GB ECC system memory",
+    "4 TB NVMe scratch plus 8 TB dataset storage",
+    "Ships with CUDA, PyTorch and the MABEL training stack installed"
+   ],
+   "specs": [
+    {
+     "group": "Compute",
+     "rows": [
+      {
+       "k": "GPU",
+       "v": "NVIDIA RTX 5090, 32 GB GDDR7"
+      },
+      {
+       "k": "CPU",
+       "v": "16-core, 5.4 GHz boost"
+      },
+      {
+       "k": "Memory",
+       "v": "128 GB DDR5 ECC"
+      }
+     ]
+    },
+    {
+     "group": "Storage",
+     "rows": [
+      {
+       "k": "Scratch",
+       "v": "4 TB NVMe PCIe 5.0"
+      },
+      {
+       "k": "Dataset",
+       "v": "8 TB NVMe"
+      }
+     ]
+    },
+    {
+     "group": "Software",
+     "rows": [
+      {
+       "k": "Preinstalled",
+       "v": "Ubuntu 24.04, CUDA, PyTorch, MABEL training stack"
+      },
+      {
+       "k": "Warranty",
+       "v": "3 years, parts and labour"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "training",
+    "workstation"
+   ],
+   "image": "assets/img/products/training-workstation.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 5400,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "hoto-precision-24",
+   "sku": "MR-TL-PRECI",
+   "name": "HOTO 24-in-1 Precision Screwdriver",
+   "tagline": "Aluminium body · S2 steel bits",
+   "brand": "HOTO",
+   "category": "tools",
+   "family": "tool_kit",
+   "price": 34.0,
+   "priceCad": 49.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "The driver that lives on the bench. A knurled aluminium handle with a spinning cap, and twenty-four S2 bits in the sizes small robots actually use.",
+   "highlights": [
+    "24 S2 steel bits, magnetised",
+    "Spinning end cap for fine work",
+    "Aluminium handle, knurled",
+    "Magnetic bit storage in the base"
+   ],
+   "specs": [
+    {
+     "group": "Specification",
+     "rows": [
+      {
+       "k": "Bits",
+       "v": "24, S2 tool steel"
+      },
+      {
+       "k": "Sizes",
+       "v": "PH, SL, TRX, HEX, Y, U, pentalobe"
+      },
+      {
+       "k": "Handle",
+       "v": "CNC aluminium, knurled"
+      },
+      {
+       "k": "Torque",
+       "v": "Up to 3 N·m by hand"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "tools",
+    "assembly"
+   ],
+   "image": "assets/img/products/hoto-precision-24.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 26,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "hoto-electric-driver",
+   "sku": "MR-TL-ELECT",
+   "name": "HOTO Electric Precision Screwdriver",
+   "tagline": "3 torque settings · 60 bits",
+   "brand": "HOTO",
+   "category": "tools",
+   "family": "tool_kit",
+   "price": 69.0,
+   "priceCad": 94.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Assembling a robot means several hundred M3 screws. This does them at a consistent torque without wearing out your wrist, and still turns by hand for the last quarter turn.",
+   "highlights": [
+    "Three torque settings, 0.1–0.3 N·m",
+    "60-bit set included",
+    "Manual override — finish by feel",
+    "USB-C, 2 hours to full"
+   ],
+   "specs": [
+    {
+     "group": "Specification",
+     "rows": [
+      {
+       "k": "Torque settings",
+       "v": "3 (0.1 / 0.2 / 0.3 N·m)"
+      },
+      {
+       "k": "Speed",
+       "v": "200 rpm"
+      },
+      {
+       "k": "Battery",
+       "v": "350 mAh, USB-C"
+      },
+      {
+       "k": "Bits",
+       "v": "60, S2 steel"
+      },
+      {
+       "k": "Light",
+       "v": "Dual LED ring"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "tools",
+    "assembly"
+   ],
+   "image": "assets/img/products/hoto-electric-driver.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 54,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "hoto-ratchet-48",
+   "sku": "MR-TL-RATCH",
+   "name": "HOTO 48-in-1 Ratchet Wrench Set",
+   "tagline": "72-tooth ratchet · sockets and bits",
+   "brand": "HOTO",
+   "category": "tools",
+   "family": "tool_kit",
+   "price": 54.0,
+   "priceCad": 74.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "For everything larger than a precision driver: extrusion bolts, wheel hubs, battery terminals. A 72-tooth ratchet needs only five degrees of swing, which matters inside a frame.",
+   "highlights": [
+    "72-tooth ratchet — 5° working swing",
+    "Sockets and bits, 48 pieces",
+    "Chrome-vanadium",
+    "Moulded case that closes when a piece is missing"
+   ],
+   "specs": [
+    {
+     "group": "Specification",
+     "rows": [
+      {
+       "k": "Ratchet",
+       "v": "72 tooth, 5° swing, 1/4 in drive"
+      },
+      {
+       "k": "Pieces",
+       "v": "48"
+      },
+      {
+       "k": "Material",
+       "v": "Chrome-vanadium steel"
+      },
+      {
+       "k": "Sockets",
+       "v": "4–14 mm"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "tools",
+    "assembly"
+   ],
+   "image": "assets/img/products/hoto-ratchet-48.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 42,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "hoto-laser-measure",
+   "sku": "MR-TL-LASER",
+   "name": "HOTO Laser Distance Meter",
+   "tagline": "40 m · ±2 mm",
+   "brand": "HOTO",
+   "category": "tools",
+   "family": "tool_kit",
+   "price": 49.0,
+   "priceCad": 69.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Laying out a workspace, checking a mount height, measuring a room before you map it.",
+   "highlights": [
+    "40 m range, ±2 mm",
+    "Area and volume modes",
+    "Backlit display",
+    "USB-C charging"
+   ],
+   "specs": [
+    {
+     "group": "Specification",
+     "rows": [
+      {
+       "k": "Range",
+       "v": "0.05–40 m"
+      },
+      {
+       "k": "Accuracy",
+       "v": "±2 mm"
+      },
+      {
+       "k": "Modes",
+       "v": "Distance, area, volume, continuous"
+      },
+      {
+       "k": "Battery",
+       "v": "USB-C rechargeable"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "tools",
+    "assembly"
+   ],
+   "image": "assets/img/products/hoto-laser-measure.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 38,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "crimper-kit",
+   "sku": "MR-TL-KIT",
+   "name": "Ratcheting Crimp Tool Kit",
+   "tagline": "JST, Dupont, ferrule jaws",
+   "brand": "MABEL Robotics",
+   "category": "tools",
+   "family": "tool_kit",
+   "price": 79.0,
+   "priceCad": 109.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Three jaw sets and one ratcheting frame. A crimp that is not ratcheted is a crimp that will come apart in a cable chain six months from now.",
+   "highlights": [
+    "Ratcheting frame — consistent, complete crimps",
+    "Jaws for JST-GH, JST-XH/Dupont and ferrules",
+    "Adjustable crimp depth",
+    "Case with room for the contacts"
+   ],
+   "specs": [
+    {
+     "group": "Specification",
+     "rows": [
+      {
+       "k": "Frame",
+       "v": "Ratcheting, releasable"
+      },
+      {
+       "k": "Jaws",
+       "v": "3 sets — JST-GH, XH/Dupont, ferrule"
+      },
+      {
+       "k": "Range",
+       "v": "0.03–6 mm²"
+      },
+      {
+       "k": "Adjustment",
+       "v": "Crimp depth, 4 positions"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "tools",
+    "assembly"
+   ],
+   "image": "assets/img/products/crimper-kit.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 62,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "caliper-digital",
+   "sku": "MR-TL-DIGIT",
+   "name": "Digital Calipers, 150 mm",
+   "tagline": "±0.02 mm · IP54",
+   "brand": "MABEL Robotics",
+   "category": "tools",
+   "family": "tool_kit",
+   "price": 44.0,
+   "priceCad": 59.0,
+   "unit": "",
+   "badge": "",
+   "stock": "in-stock",
+   "summary": "Measuring a bore before you order a bearing. Stainless jaws, absolute encoder, and it does not lose zero when you close it.",
+   "highlights": [
+    "±0.02 mm over 150 mm",
+    "Absolute encoder — no re-zero at power-on",
+    "IP54, survives swarf and coolant",
+    "Metric and imperial, with a fraction mode"
+   ],
+   "specs": [
+    {
+     "group": "Specification",
+     "rows": [
+      {
+       "k": "Range",
+       "v": "0–150 mm"
+      },
+      {
+       "k": "Resolution",
+       "v": "0.01 mm"
+      },
+      {
+       "k": "Accuracy",
+       "v": "±0.02 mm"
+      },
+      {
+       "k": "Protection",
+       "v": "IP54"
+      },
+      {
+       "k": "Material",
+       "v": "Hardened stainless"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "tools",
+    "assembly"
+   ],
+   "image": "assets/img/products/caliper-digital.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "vendor",
+   "_costUsd": 34,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "mabel-kit",
+   "sku": "MR-ROB-KIT",
+   "name": "MABEL Developer Kit",
+   "tagline": "Every part, every file, and the build guide",
+   "brand": "MABEL Robotics",
+   "category": "robots",
+   "family": "mabel",
+   "price": 15000,
+   "priceCad": 20599.0,
+   "unit": "",
+   "badge": "Build it yourself",
+   "stock": "made-to-order",
+   "summary": "A complete mobile bimanual research robot, in parts. Every actuator, every machined and printed component, every cable and connector, the compute, the sensors — sorted into labelled subsystem boxes and shipped with the build guide, the CAD, the firmware and the simulation model. You assemble it, and in doing so you learn the machine well enough to modify it.",
+   "highlights": [
+    "Every part for a 56-DOF mobile bimanual robot, sorted by subsystem",
+    "Illustrated build guide, plus CAD, firmware, ROS 2 stack and MuJoCo twin",
+    "Structural parts arrive machined and printed — no fabrication needed",
+    "Swerve modules ship assembled and tested; you build the rest",
+    "Two build sessions of remote support included"
+   ],
+   "specs": [
+    {
+     "group": "Mobility",
+     "rows": [
+      {
+       "k": "Base",
+       "v": "3 × independent swerve modules"
+      },
+      {
+       "k": "Motion",
+       "v": "Holonomic — any heading, any facing, simultaneously"
+      },
+      {
+       "k": "Top speed",
+       "v": "1.5 m/s"
+      },
+      {
+       "k": "Payload on base",
+       "v": "20 kg above the drive plate"
+      }
+     ]
+    },
+    {
+     "group": "Manipulation",
+     "rows": [
+      {
+       "k": "Arms",
+       "v": "2 × 7-DOF, OpenArm-derived"
+      },
+      {
+       "k": "Hands",
+       "v": "2 × 17-DOF ORCA, tendon driven"
+      },
+      {
+       "k": "Actuators",
+       "v": "DAMIAO DM8009P, DM4340 and DM-J4310 joints"
+      },
+      {
+       "k": "Hand actuators",
+       "v": "34 × Feetech HL-series bus servos"
+      },
+      {
+       "k": "Total functional DOF",
+       "v": "56"
+      },
+      {
+       "k": "Motors on board",
+       "v": "59"
+      }
+     ]
+    },
+    {
+     "group": "Workspace",
+     "rows": [
+      {
+       "k": "Lift column",
+       "v": "0–635 mm, three stage"
+      },
+      {
+       "k": "Torso pitch",
+       "v": "DAMIAO DM10422P, 400 N·m"
+      },
+      {
+       "k": "Reach",
+       "v": "Floor to counter height"
+      }
+     ]
+    },
+    {
+     "group": "Perception",
+     "rows": [
+      {
+       "k": "Head",
+       "v": "3-DOF active mount, global-shutter stereo pair, 112° HFOV"
+      },
+      {
+       "k": "Wrists",
+       "v": "2 × global-shutter eye-in-hand cameras"
+      },
+      {
+       "k": "Navigation",
+       "v": "2-D DTOF lidar, 12 m"
+      },
+      {
+       "k": "Proprioception",
+       "v": "Dual encoders on every arm joint"
+      }
+     ]
+    },
+    {
+     "group": "Compute & buses",
+     "rows": [
+      {
+       "k": "Onboard compute",
+       "v": "NVIDIA Jetson, Orin Nano through AGX Thor"
+      },
+      {
+       "k": "Real-time control",
+       "v": "2 × Teensy 4.1 at 500 Hz"
+      },
+      {
+       "k": "Actuator buses",
+       "v": "3 × CAN for arms, torso and neck; TTL per hand"
+      },
+      {
+       "k": "Network",
+       "v": "2.5 GbE onboard spine"
+      },
+      {
+       "k": "Software",
+       "v": "ROS 2 Jazzy, MuJoCo and Isaac Lab twins"
+      }
+     ]
+    },
+    {
+     "group": "Interaction",
+     "rows": [
+      {
+       "k": "Display",
+       "v": "13 in body touchscreen"
+      },
+      {
+       "k": "Expression",
+       "v": "Animated LED-matrix eyes"
+      },
+      {
+       "k": "Audio",
+       "v": "Speaker and microphone"
+      },
+      {
+       "k": "Teleoperation",
+       "v": "Apple Vision Pro spatial app, with automatic episode logging"
+      }
+     ]
+    },
+    {
+     "group": "Power",
+     "rows": [
+      {
+       "k": "Battery",
+       "v": "2 × 24 V Li-ion packs"
+      },
+      {
+       "k": "Runtime",
+       "v": "≈ 90 min mixed driving and manipulation"
+      },
+      {
+       "k": "Safety",
+       "v": "Hardware e-stop, de-energises actuators independently of the host"
+      }
+     ]
+    }
+   ],
+   "note": "Assembly takes roughly 60–80 hours for someone comfortable with mechanical assembly and a soldering iron. Compute tier is chosen at checkout.",
+   "tags": [
+    "mabel",
+    "robot",
+    "kit",
+    "research"
+   ],
+   "image": "assets/img/products/mabel-kit.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 15000,
+   "_costSrc": "quote"
+  },
+  {
+   "id": "mabel-assembled",
+   "sku": "MR-ROB-ASM",
+   "name": "MABEL, Assembled",
+   "tagline": "Built, calibrated, tested — and it drives out of the crate",
+   "brand": "MABEL Robotics",
+   "category": "robots",
+   "family": "mabel",
+   "price": 25000,
+   "priceCad": 34299.0,
+   "unit": "",
+   "badge": "Ready to run",
+   "stock": "made-to-order",
+   "summary": "The same robot, built by the people who designed it. Every joint is calibrated, every camera is intrinsically and extrinsically calibrated, the arms are zeroed against the kinematic model, and the whole machine is run through a driving, manipulation and teleoperation acceptance test before it is crated. Unpack it, charge it, and start collecting data the same day.",
+   "highlights": [
+    "Assembled, wired and calibrated — kinematics, cameras, encoders",
+    "Acceptance-tested: drive, manipulate, teleoperate, record",
+    "Ships in a reusable flight case with the tool roll",
+    "Apple Vision Pro teleoperation app configured to your account",
+    "One year of hardware support, plus a half-day onboarding session"
+   ],
+   "specs": [
+    {
+     "group": "Mobility",
+     "rows": [
+      {
+       "k": "Base",
+       "v": "3 × independent swerve modules"
+      },
+      {
+       "k": "Motion",
+       "v": "Holonomic — any heading, any facing, simultaneously"
+      },
+      {
+       "k": "Top speed",
+       "v": "1.5 m/s"
+      },
+      {
+       "k": "Payload on base",
+       "v": "20 kg above the drive plate"
+      }
+     ]
+    },
+    {
+     "group": "Manipulation",
+     "rows": [
+      {
+       "k": "Arms",
+       "v": "2 × 7-DOF, OpenArm-derived"
+      },
+      {
+       "k": "Hands",
+       "v": "2 × 17-DOF ORCA, tendon driven"
+      },
+      {
+       "k": "Actuators",
+       "v": "DAMIAO DM8009P, DM4340 and DM-J4310 joints"
+      },
+      {
+       "k": "Hand actuators",
+       "v": "34 × Feetech HL-series bus servos"
+      },
+      {
+       "k": "Total functional DOF",
+       "v": "56"
+      },
+      {
+       "k": "Motors on board",
+       "v": "59"
+      }
+     ]
+    },
+    {
+     "group": "Workspace",
+     "rows": [
+      {
+       "k": "Lift column",
+       "v": "0–635 mm, three stage"
+      },
+      {
+       "k": "Torso pitch",
+       "v": "DAMIAO DM10422P, 400 N·m"
+      },
+      {
+       "k": "Reach",
+       "v": "Floor to counter height"
+      }
+     ]
+    },
+    {
+     "group": "Perception",
+     "rows": [
+      {
+       "k": "Head",
+       "v": "3-DOF active mount, global-shutter stereo pair, 112° HFOV"
+      },
+      {
+       "k": "Wrists",
+       "v": "2 × global-shutter eye-in-hand cameras"
+      },
+      {
+       "k": "Navigation",
+       "v": "2-D DTOF lidar, 12 m"
+      },
+      {
+       "k": "Proprioception",
+       "v": "Dual encoders on every arm joint"
+      }
+     ]
+    },
+    {
+     "group": "Compute & buses",
+     "rows": [
+      {
+       "k": "Onboard compute",
+       "v": "NVIDIA Jetson, Orin Nano through AGX Thor"
+      },
+      {
+       "k": "Real-time control",
+       "v": "2 × Teensy 4.1 at 500 Hz"
+      },
+      {
+       "k": "Actuator buses",
+       "v": "3 × CAN for arms, torso and neck; TTL per hand"
+      },
+      {
+       "k": "Network",
+       "v": "2.5 GbE onboard spine"
+      },
+      {
+       "k": "Software",
+       "v": "ROS 2 Jazzy, MuJoCo and Isaac Lab twins"
+      }
+     ]
+    },
+    {
+     "group": "Interaction",
+     "rows": [
+      {
+       "k": "Display",
+       "v": "13 in body touchscreen"
+      },
+      {
+       "k": "Expression",
+       "v": "Animated LED-matrix eyes"
+      },
+      {
+       "k": "Audio",
+       "v": "Speaker and microphone"
+      },
+      {
+       "k": "Teleoperation",
+       "v": "Apple Vision Pro spatial app, with automatic episode logging"
+      }
+     ]
+    },
+    {
+     "group": "Power",
+     "rows": [
+      {
+       "k": "Battery",
+       "v": "2 × 24 V Li-ion packs"
+      },
+      {
+       "k": "Runtime",
+       "v": "≈ 90 min mixed driving and manipulation"
+      },
+      {
+       "k": "Safety",
+       "v": "Hardware e-stop, de-energises actuators independently of the host"
+      }
+     ]
+    }
+   ],
+   "note": "Lead time is 8–10 weeks from order. Compute tier and camera tier are chosen at checkout.",
+   "tags": [
+    "mabel",
+    "robot",
+    "assembled",
+    "research"
+   ],
+   "image": "assets/img/products/mabel-assembled.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "bom",
+   "_costUsd": 25000,
+   "_costSrc": "quote"
+  },
+  {
+   "id": "mabel-arm",
+   "sku": "MR-ROB-ARM",
+   "name": "MABEL Arm",
+   "tagline": "One 7-DOF arm, assembled and calibrated",
+   "brand": "MABEL Robotics",
+   "category": "robots",
+   "family": "hand",
+   "price": 4299,
+   "priceCad": 5899.0,
+   "unit": "",
+   "badge": "",
+   "stock": "made-to-order",
+   "summary": "A single 7-DOF arm from the MABEL platform, on a bench stand. The same joints, the same harness and the same control stack as the full robot — for labs that need manipulation research without the mobile base.",
+   "highlights": [
+    "7 DOF, OpenArm geometry, DAMIAO joints with dual encoders",
+    "Bench stand and 24 V supply included",
+    "Calibrated against the published kinematic model",
+    "Runs the same ROS 2 stack and MuJoCo model as MABEL"
+   ],
+   "specs": [
+    {
+     "group": "Kinematics",
+     "rows": [
+      {
+       "k": "Degrees of freedom",
+       "v": "7"
+      },
+      {
+       "k": "Reach",
+       "v": "0.85 m"
+      },
+      {
+       "k": "Payload",
+       "v": "3 kg at full extension"
+      }
+     ]
+    },
+    {
+     "group": "Actuation",
+     "rows": [
+      {
+       "k": "Shoulder",
+       "v": "2 × DAMIAO DM8009P, 40 N·m"
+      },
+      {
+       "k": "Roll and elbow",
+       "v": "2 × DAMIAO DM4340, 9 N·m"
+      },
+      {
+       "k": "Wrist",
+       "v": "3 × DAMIAO DM-J4310"
+      },
+      {
+       "k": "Feedback",
+       "v": "Dual encoders on every joint"
+      }
+     ]
+    },
+    {
+     "group": "Interfaces",
+     "rows": [
+      {
+       "k": "Bus",
+       "v": "CAN, 1 Mbit/s"
+      },
+      {
+       "k": "Supply",
+       "v": "24 V DC, included"
+      },
+      {
+       "k": "Control",
+       "v": "MIT impedance mode, 500 Hz"
+      },
+      {
+       "k": "Software",
+       "v": "ROS 2 Jazzy, MuJoCo model"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "arm",
+    "openarm",
+    "research"
+   ],
+   "image": "assets/img/products/mabel-arm.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 4200,
+   "_costSrc": "estimate"
+  },
+  {
+   "id": "orca-hand-pair",
+   "sku": "MR-ROB-HAND",
+   "name": "ORCA Hands, Pair",
+   "tagline": "2 × 17-DOF tendon-driven hands, assembled",
+   "brand": "MABEL Robotics",
+   "category": "robots",
+   "family": "hand",
+   "price": 2499,
+   "priceCad": 3499.0,
+   "unit": "",
+   "badge": "",
+   "stock": "made-to-order",
+   "summary": "Two seventeen-degree-of-freedom tendon-driven hands, built, tendoned and tensioned. Building a hand is the fiddliest part of a bimanual robot; this is that job already done, with the tendons run in and the servos addressed.",
+   "highlights": [
+    "17 DOF each — 16 finger joints plus a wrist",
+    "34 Feetech bus servos, addressed and tested",
+    "Dyneema tendons run in and tensioned",
+    "Silicone fingertip pads, replaceable"
+   ],
+   "specs": [
+    {
+     "group": "Kinematics",
+     "rows": [
+      {
+       "k": "Degrees of freedom",
+       "v": "17 per hand"
+      },
+      {
+       "k": "Fingers",
+       "v": "4 + opposed thumb"
+      },
+      {
+       "k": "Actuation",
+       "v": "Tendon driven, Dyneema SK99"
+      }
+     ]
+    },
+    {
+     "group": "Actuation",
+     "rows": [
+      {
+       "k": "Finger servos",
+       "v": "16 × Feetech HL3915M per hand"
+      },
+      {
+       "k": "Wrist servo",
+       "v": "1 × Feetech HL3930M per hand"
+      },
+      {
+       "k": "Bus",
+       "v": "TTL, 1 Mbit/s, one chain per hand"
+      }
+     ]
+    },
+    {
+     "group": "Physical",
+     "rows": [
+      {
+       "k": "Fingertips",
+       "v": "Cast silicone, Shore A20, replaceable"
+      },
+      {
+       "k": "Mount",
+       "v": "MABEL / OpenArm wrist flange"
+      },
+      {
+       "k": "Supply",
+       "v": "12 V per hand"
+      }
+     ]
+    }
+   ],
+   "note": "",
+   "tags": [
+    "mabel",
+    "orca",
+    "hand",
+    "dexterous"
+   ],
+   "image": "assets/img/products/orca-hand-pair.svg",
+   "shopifyVariantId": "",
+   "stripePriceId": "",
+   "_src": "estimate",
+   "_costUsd": 2400,
+   "_costSrc": "estimate"
+  }
+ ]
+}

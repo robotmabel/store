@@ -1,0 +1,62 @@
+name: Build, audit and deploy
+
+on:
+  push: { branches: [main] }
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - uses: actions/setup-node@v4
+        with: { node-version: "22" }
+
+      # The catalogue is generated. If a commit changed tools/catalog.py without
+      # re-running the build, the committed JSON and SVGs are stale — fail here
+      # rather than shipping a store whose prices disagree with its source.
+      - name: Rebuild the catalogue and check it matches what was committed
+        run: |
+          python3 tools/build.py
+          git diff --exit-code --stat -- assets/data assets/img/products dist sitemap.xml docs \
+            || { echo "::error::Generated files are stale. Run 'python3 tools/build.py' and commit."; exit 1; }
+
+      - name: Serve, audit and run the end-to-end flows
+        run: |
+          python3 -m http.server 8788 &
+          for i in $(seq 1 40); do curl -sf http://localhost:8788/index.html >/dev/null && break; sleep 0.25; done
+          node scripts/audit.mjs
+          node scripts/flows.mjs
+        env:
+          BASE: http://localhost:8788
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: audit-report
+          path: scripts/audit-report.json
+
+  deploy:
+    needs: audit
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: "." }
+      - id: deployment
+        uses: actions/deploy-pages@v4

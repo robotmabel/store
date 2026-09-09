@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Account — MABEL Robotics</title>
+<meta name="description" content="Sign in to see your orders, addresses and preferences.">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="assets/img/brand/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://robotmabel.github.io/store/account.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MABEL Robotics">
+<meta property="og:title" content="Account — MABEL Robotics">
+<meta property="og:description" content="Sign in to see your orders, addresses and preferences.">
+<meta property="og:image" content="https://robotmabel.github.io/store/assets/img/products/mabel-assembled.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/store.css">
+</head>
+<body data-page="account" data-root="">
+<a class="skip" href="#main">Skip to content</a>
+<main id="main">
+
+  <div id="authView">
+    <div class="wrap">
+      <div class="auth">
+        <div class="auth-card">
+          <h1 class="t-title center" id="authTitle" style="margin-bottom:22px">Sign in</h1>
+          <div class="auth-tabs" role="tablist">
+            <button class="auth-tab" role="tab" data-mode="signin" aria-selected="true">Sign in</button>
+            <button class="auth-tab" role="tab" data-mode="create" aria-selected="false">Create account</button>
+          </div>
+          <a class="btn btn-block" id="shopifyAuth" hidden href="#">Continue securely</a>
+          <form id="authForm" novalidate>
+            <div class="field" id="nameField" hidden>
+              <label for="authName">Full name</label>
+              <input id="authName" type="text" autocomplete="name">
+              <span class="err"></span>
+            </div>
+            <div class="field">
+              <label for="authEmail">Email</label>
+              <input id="authEmail" type="email" autocomplete="email" inputmode="email" required>
+              <span class="err" id="authErr"></span>
+            </div>
+            <button class="btn btn-block" id="authSubmit" type="submit" style="margin-top:8px">Sign in</button>
+          </form>
+          <p class="t-tiny" style="margin-top:20px" id="localNote">
+            This creates a session in this browser only, so your bag, addresses and order
+            references follow you between visits on this device. No password is checked and
+            nothing is sent anywhere. Connect Shopify Customer Accounts to enable real sign-in.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="acctView" hidden>
+    <div class="wrap">
+      <div class="acct-layout">
+        <div>
+          <h1 class="t-head" style="margin-bottom:4px">Hello, <span id="hi"></span></h1>
+          <p class="t-tiny" id="hiMail" style="margin-bottom:20px"></p>
+          <ul class="acct-nav">
+            <li><button data-go="orders" aria-current="true">Orders</button></li>
+            <li><button data-go="addresses" aria-current="false">Addresses</button></li>
+            <li><button data-go="prefs" aria-current="false">Preferences</button></li>
+          </ul>
+          <p style="margin-top:18px"><button class="btn-text" id="signOut" style="font-size:14px">Sign out</button></p>
+        </div>
+        <div>
+          <section data-panel="orders"><h2 class="t-section" style="margin-bottom:20px">Your orders</h2>
+            <div id="ordersOut"></div></section>
+          <section data-panel="addresses" hidden><h2 class="t-section" style="margin-bottom:20px">Addresses</h2>
+            <div id="addrOut"></div></section>
+          <section data-panel="prefs" hidden><h2 class="t-section" style="margin-bottom:20px">Preferences</h2>
+            <div id="prefOut"></div></section>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/pages.js"></script>
+<script src="assets/js/account.js"></script>\n</body>
+</html>
