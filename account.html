@@ -28,8 +28,10 @@
     <div class="wrap">
       <div class="auth">
         <div class="auth-card">
-          <h1 class="t-title center" id="authTitle" style="margin-bottom:22px">Sign in</h1>
-          <div class="auth-tabs" role="tablist">
+          <h1 class="t-title center" id="authTitle" style="margin-bottom:6px">Sign in</h1>
+          <p class="t-small center" style="margin:0 0 22px">Keep your bag, delivery details and
+            order references on this device.</p>
+          <div class="auth-tabs" role="tablist" aria-label="Sign in or create an account">
             <button class="auth-tab" role="tab" data-mode="signin" aria-selected="true">Sign in</button>
             <button class="auth-tab" role="tab" data-mode="create" aria-selected="false">Create account</button>
           </div>
@@ -37,20 +39,20 @@
           <form id="authForm" novalidate>
             <div class="field" id="nameField" hidden>
               <label for="authName">Full name</label>
-              <input id="authName" type="text" autocomplete="name">
-              <span class="err"></span>
+              <input id="authName" type="text" autocomplete="name" autocapitalize="words">
             </div>
             <div class="field">
               <label for="authEmail">Email</label>
-              <input id="authEmail" type="email" autocomplete="email" inputmode="email" required>
-              <span class="err" id="authErr"></span>
+              <input id="authEmail" type="email" autocomplete="email" inputmode="email"
+                     autocapitalize="none" spellcheck="false" placeholder="you@lab.edu" required>
+              <span class="err" id="authErr" role="alert"></span>
             </div>
-            <button class="btn btn-block" id="authSubmit" type="submit" style="margin-top:8px">Sign in</button>
+            <button class="btn btn-block" id="authSubmit" type="submit">Continue</button>
           </form>
           <p class="t-tiny" style="margin-top:20px" id="localNote">
-            This creates a session in this browser only, so your bag, addresses and order
-            references follow you between visits on this device. No password is checked and
-            nothing is sent anywhere. Connect Shopify Customer Accounts to enable real sign-in.
+            No password, because there is nothing to check it against &mdash; this site is static
+            and has no server. Your session lives in this browser only and nothing is sent
+            anywhere. Connect Shopify Customer Accounts for real sign-in.
           </p>
         </div>
       </div>
@@ -61,8 +63,13 @@
     <div class="wrap">
       <div class="acct-layout">
         <div>
-          <h1 class="t-head" style="margin-bottom:4px">Hello, <span id="hi"></span></h1>
-          <p class="t-tiny" id="hiMail" style="margin-bottom:20px"></p>
+          <div class="acct-me">
+            <span class="acct-avatar" id="hiInitials" aria-hidden="true"></span>
+            <div style="min-width:0">
+              <h1 class="acct-name" id="hi" tabindex="-1"></h1>
+              <p class="t-tiny" id="hiMail" style="margin:2px 0 0"></p>
+            </div>
+          </div>
           <ul class="acct-nav">
             <li><button data-go="orders" aria-current="true">Orders</button></li>
             <li><button data-go="addresses" aria-current="false">Addresses</button></li>

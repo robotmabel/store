@@ -82,6 +82,7 @@ def main() -> int:
             "badge": p.get("badge", ""), "stock": p.get("stock", "in-stock"),
             "summary": p["summary"], "highlights": p["highlights"], "specs": p["specs"],
             "note": p.get("note", ""), "tags": p.get("tags", []),
+            "facets": p.get("facets", {}),
             "image": photo if has_photo else f"assets/img/products/{pid}.svg",
             "illustration": f"assets/img/products/{pid}.svg",
             "photo": photo if has_photo else "",

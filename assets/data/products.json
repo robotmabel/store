@@ -157,6 +157,16 @@
     "can",
     "mit-mode"
    ],
+   "facets": {
+    "nom": 3.5,
+    "peak": 10,
+    "volts": 24,
+    "frame": 43,
+    "gear": "planetary",
+    "bus": "CAN",
+    "mass": 300,
+    "ratio": "10:1"
+   },
    "image": "assets/img/photos/damiao-dm-j4310.webp",
    "illustration": "assets/img/products/damiao-dm-j4310.svg",
    "photo": "assets/img/photos/damiao-dm-j4310.webp",
@@ -252,6 +262,16 @@
     "can",
     "mit-mode"
    ],
+   "facets": {
+    "nom": 9,
+    "peak": 27,
+    "volts": 24,
+    "frame": 43,
+    "gear": "planetary",
+    "bus": "CAN",
+    "mass": null,
+    "ratio": "planetary"
+   },
    "image": "assets/img/photos/damiao-dm4340.webp",
    "illustration": "assets/img/products/damiao-dm4340.svg",
    "photo": "assets/img/photos/damiao-dm4340.webp",
@@ -348,6 +368,16 @@
     "can",
     "mit-mode"
    ],
+   "facets": {
+    "nom": null,
+    "peak": 40,
+    "volts": 24,
+    "frame": 80,
+    "gear": "planetary",
+    "bus": "CAN",
+    "mass": null,
+    "ratio": "planetary"
+   },
    "image": "assets/img/photos/damiao-dm8009p.webp",
    "illustration": "assets/img/products/damiao-dm8009p.svg",
    "photo": "assets/img/photos/damiao-dm8009p.webp",
@@ -435,6 +465,16 @@
     "can",
     "hollow-shaft"
    ],
+   "facets": {
+    "nom": 400,
+    "peak": null,
+    "volts": 48,
+    "frame": 104,
+    "gear": "planetary",
+    "bus": "CAN",
+    "mass": null,
+    "ratio": "hollow-shaft"
+   },
    "image": "assets/img/products/damiao-dm10422p.svg",
    "illustration": "assets/img/products/damiao-dm10422p.svg",
    "photo": "",
@@ -529,6 +569,16 @@
     "qdd",
     "rs485"
    ],
+   "facets": {
+    "nom": null,
+    "peak": 23.7,
+    "volts": 24,
+    "frame": 80,
+    "gear": "planetary",
+    "bus": "RS-485",
+    "mass": 485,
+    "ratio": "6.33:1"
+   },
    "image": "assets/img/photos/unitree-go-m8010-6.webp",
    "illustration": "assets/img/products/unitree-go-m8010-6.svg",
    "photo": "assets/img/photos/unitree-go-m8010-6.webp",
@@ -619,6 +669,16 @@
     "qdd",
     "rs485"
    ],
+   "facets": {
+    "nom": null,
+    "peak": 33.5,
+    "volts": 24,
+    "frame": 88,
+    "gear": "planetary",
+    "bus": "RS-485",
+    "mass": 605,
+    "ratio": "9.1:1"
+   },
    "image": "assets/img/photos/unitree-a1.webp",
    "illustration": "assets/img/products/unitree-a1.svg",
    "photo": "assets/img/photos/unitree-a1.webp",
@@ -713,6 +773,16 @@
     "can",
     "mit-mode"
    ],
+   "facets": {
+    "nom": 4,
+    "peak": 12,
+    "volts": 24,
+    "frame": 60,
+    "gear": "planetary",
+    "bus": "CAN",
+    "mass": 317,
+    "ratio": "7.75:1"
+   },
    "image": "assets/img/photos/xiaomi-cybergear-rs01.webp",
    "illustration": "assets/img/products/xiaomi-cybergear-rs01.svg",
    "photo": "assets/img/photos/xiaomi-cybergear-rs01.webp",
@@ -794,6 +864,16 @@
     "can",
     "mit-mode"
    ],
+   "facets": {
+    "nom": null,
+    "peak": 60,
+    "volts": 48,
+    "frame": 90,
+    "gear": "planetary",
+    "bus": "CAN",
+    "mass": null,
+    "ratio": "planetary"
+   },
    "image": "assets/img/products/xiaomi-cybergear-rs03.svg",
    "illustration": "assets/img/products/xiaomi-cybergear-rs03.svg",
    "photo": "",
@@ -881,6 +961,16 @@
     "zero-backlash",
     "cinema"
    ],
+   "facets": {
+    "nom": null,
+    "peak": null,
+    "volts": 48,
+    "frame": null,
+    "gear": "harmonic",
+    "bus": "CAN",
+    "mass": null,
+    "ratio": "101:1"
+   },
    "image": "assets/img/products/eyou-phu17h-80.svg",
    "illustration": "assets/img/products/eyou-phu17h-80.svg",
    "photo": "",
@@ -964,6 +1054,16 @@
     "zero-backlash",
     "cinema"
    ],
+   "facets": {
+    "nom": null,
+    "peak": null,
+    "volts": 48,
+    "frame": null,
+    "gear": "harmonic",
+    "bus": "CAN",
+    "mass": null,
+    "ratio": "100:1"
+   },
    "image": "assets/img/products/eyou-phu20h-100.svg",
    "illustration": "assets/img/products/eyou-phu20h-100.svg",
    "photo": "",
@@ -1056,6 +1156,16 @@
     "ttl",
     "force-control"
    ],
+   "facets": {
+    "nom": 1.37,
+    "peak": null,
+    "volts": 12,
+    "frame": null,
+    "gear": "planetary",
+    "bus": "TTL",
+    "mass": null,
+    "ratio": "steel gear"
+   },
    "image": "assets/img/photos/feetech-hl3915m.webp",
    "illustration": "assets/img/products/feetech-hl3915m.svg",
    "photo": "assets/img/photos/feetech-hl3915m.webp",
@@ -1144,6 +1254,16 @@
     "wrist",
     "ttl"
    ],
+   "facets": {
+    "nom": 3.43,
+    "peak": null,
+    "volts": 12,
+    "frame": null,
+    "gear": "planetary",
+    "bus": "TTL",
+    "mass": null,
+    "ratio": "metal case"
+   },
    "image": "assets/img/photos/feetech-hl3930m.webp",
    "illustration": "assets/img/products/feetech-hl3930m.svg",
    "photo": "assets/img/photos/feetech-hl3930m.webp",
@@ -1226,6 +1346,16 @@
     "budget",
     "teleop"
    ],
+   "facets": {
+    "nom": 2.94,
+    "peak": null,
+    "volts": 12,
+    "frame": null,
+    "gear": "planetary",
+    "bus": "TTL",
+    "mass": null,
+    "ratio": "metal gear"
+   },
    "image": "assets/img/photos/feetech-sts3215.webp",
    "illustration": "assets/img/products/feetech-sts3215.svg",
    "photo": "assets/img/photos/feetech-sts3215.webp",
@@ -1321,6 +1451,16 @@
     "head",
     "ttl"
    ],
+   "facets": {
+    "nom": 0.92,
+    "peak": null,
+    "volts": 12,
+    "frame": 20,
+    "gear": "planetary",
+    "bus": "TTL",
+    "mass": 23,
+    "ratio": "181:1"
+   },
    "image": "assets/img/photos/dynamixel-xc330.webp",
    "illustration": "assets/img/products/dynamixel-xc330.svg",
    "photo": "assets/img/photos/dynamixel-xc330.webp",
@@ -1420,6 +1560,16 @@
     "lift",
     "linear"
    ],
+   "facets": {
+    "nom": 0.45,
+    "peak": null,
+    "volts": 24,
+    "frame": 42,
+    "gear": "none",
+    "bus": "step/dir",
+    "mass": null,
+    "ratio": "direct"
+   },
    "image": "assets/img/products/nema17-foc.svg",
    "illustration": "assets/img/products/nema17-foc.svg",
    "photo": "",
@@ -1510,6 +1660,16 @@
     "foc",
     "gantry"
    ],
+   "facets": {
+    "nom": 1.9,
+    "peak": null,
+    "volts": 48,
+    "frame": 57,
+    "gear": "none",
+    "bus": "step/dir",
+    "mass": null,
+    "ratio": "direct"
+   },
    "image": "assets/img/products/nema23-foc.svg",
    "illustration": "assets/img/products/nema23-foc.svg",
    "photo": "",
@@ -1596,6 +1756,16 @@
     "torso",
     "linear"
    ],
+   "facets": {
+    "nom": null,
+    "peak": null,
+    "volts": 24,
+    "frame": null,
+    "gear": "leadscrew",
+    "bus": null,
+    "mass": null,
+    "ratio": "3-stage"
+   },
    "image": "assets/img/products/lift-column.svg",
    "illustration": "assets/img/products/lift-column.svg",
    "photo": "",
@@ -1672,6 +1842,16 @@
     "gearbox",
     "stepper"
    ],
+   "facets": {
+    "nom": 3,
+    "peak": null,
+    "volts": null,
+    "frame": 42,
+    "gear": "planetary",
+    "bus": null,
+    "mass": 260,
+    "ratio": "5:1 / 10:1 / 27:1"
+   },
    "image": "assets/img/products/planetary-gearbox-n17.svg",
    "illustration": "assets/img/products/planetary-gearbox-n17.svg",
    "photo": "",
@@ -1767,6 +1947,7 @@
     "holonomic",
     "swerve"
    ],
+   "facets": {},
    "image": "assets/img/products/swerve-module.svg",
    "illustration": "assets/img/products/swerve-module.svg",
    "photo": "",
@@ -1837,6 +2018,7 @@
     "foc",
     "base"
    ],
+   "facets": {},
    "image": "assets/img/products/hexfellow-swerve-motor.svg",
    "illustration": "assets/img/products/hexfellow-swerve-motor.svg",
    "photo": "",
@@ -1906,6 +2088,7 @@
     "encoder",
     "base"
    ],
+   "facets": {},
    "image": "assets/img/products/azimuth-encoder-kit.svg",
    "illustration": "assets/img/products/azimuth-encoder-kit.svg",
    "photo": "",
@@ -1978,6 +2161,7 @@
     "base",
     "traction"
    ],
+   "facets": {},
    "image": "assets/img/products/wheel-traction-3.svg",
    "illustration": "assets/img/products/wheel-traction-3.svg",
    "photo": "",
@@ -2050,6 +2234,7 @@
     "base",
     "traction"
    ],
+   "facets": {},
    "image": "assets/img/products/wheel-traction-6.svg",
    "illustration": "assets/img/products/wheel-traction-6.svg",
    "photo": "",
@@ -2122,6 +2307,7 @@
     "base",
     "omni"
    ],
+   "facets": {},
    "image": "assets/img/products/wheel-omni-100.svg",
    "illustration": "assets/img/products/wheel-omni-100.svg",
    "photo": "",
@@ -2194,6 +2380,7 @@
     "base",
     "mecanum"
    ],
+   "facets": {},
    "image": "assets/img/products/wheel-mecanum-152.svg",
    "illustration": "assets/img/products/wheel-mecanum-152.svg",
    "photo": "",
@@ -2266,6 +2453,7 @@
     "base",
     "differential"
    ],
+   "facets": {},
    "image": "assets/img/products/hub-motor-8.svg",
    "illustration": "assets/img/products/hub-motor-8.svg",
    "photo": "",
@@ -2338,6 +2526,7 @@
     "base",
     "transmission"
    ],
+   "facets": {},
    "image": "assets/img/products/belt-pulley-set.svg",
    "illustration": "assets/img/products/belt-pulley-set.svg",
    "photo": "",
@@ -2415,6 +2604,7 @@
     "fasteners",
     "stainless"
    ],
+   "facets": {},
    "image": "assets/img/products/screw-set-metric.svg",
    "illustration": "assets/img/products/screw-set-metric.svg",
    "photo": "",
@@ -2483,6 +2673,7 @@
     "3d-printing",
     "fasteners"
    ],
+   "facets": {},
    "image": "assets/img/products/heatset-insert-kit.svg",
    "illustration": "assets/img/products/heatset-insert-kit.svg",
    "photo": "",
@@ -2563,6 +2754,7 @@
     "frame",
     "extrusion"
    ],
+   "facets": {},
    "image": "assets/img/products/extrusion-2020.svg",
    "illustration": "assets/img/products/extrusion-2020.svg",
    "photo": "",
@@ -2643,6 +2835,7 @@
     "frame",
     "extrusion"
    ],
+   "facets": {},
    "image": "assets/img/products/extrusion-2040.svg",
    "illustration": "assets/img/products/extrusion-2040.svg",
    "photo": "",
@@ -2723,6 +2916,7 @@
     "frame",
     "extrusion"
    ],
+   "facets": {},
    "image": "assets/img/products/extrusion-1010.svg",
    "illustration": "assets/img/products/extrusion-1010.svg",
    "photo": "",
@@ -2804,6 +2998,7 @@
     "frame",
     "extrusion"
    ],
+   "facets": {},
    "image": "assets/img/products/extrusion-2x2.svg",
    "illustration": "assets/img/products/extrusion-2x2.svg",
    "photo": "",
@@ -2877,6 +3072,7 @@
     "frame",
     "extrusion"
    ],
+   "facets": {},
    "image": "assets/img/products/extrusion-brackets.svg",
    "illustration": "assets/img/products/extrusion-brackets.svg",
    "photo": "",
@@ -2957,6 +3153,7 @@
     "bearings",
     "rotation"
    ],
+   "facets": {},
    "image": "assets/img/products/bearing-set.svg",
    "illustration": "assets/img/products/bearing-set.svg",
    "photo": "",
@@ -3034,6 +3231,7 @@
     "joint",
     "harmonic"
    ],
+   "facets": {},
    "image": "assets/img/products/thin-section-bearing.svg",
    "illustration": "assets/img/products/thin-section-bearing.svg",
    "photo": "",
@@ -3118,6 +3316,7 @@
     "linear",
     "gantry"
    ],
+   "facets": {},
    "image": "assets/img/products/linear-rail-mgn12.svg",
    "illustration": "assets/img/products/linear-rail-mgn12.svg",
    "photo": "",
@@ -3198,6 +3397,7 @@
     "linear",
     "lift"
    ],
+   "facets": {},
    "image": "assets/img/products/leadscrew-t8.svg",
    "illustration": "assets/img/products/leadscrew-t8.svg",
    "photo": "",
@@ -3270,6 +3470,7 @@
     "mabel",
     "covers"
    ],
+   "facets": {},
    "image": "assets/img/products/magnet-set.svg",
    "illustration": "assets/img/products/magnet-set.svg",
    "photo": "",
@@ -3344,6 +3545,7 @@
     "openarm",
     "machined"
    ],
+   "facets": {},
    "image": "assets/img/products/openarm-structure.svg",
    "illustration": "assets/img/products/openarm-structure.svg",
    "photo": "",
@@ -3417,6 +3619,7 @@
     "machined",
     "structure"
    ],
+   "facets": {},
    "image": "assets/img/products/mabel-base-lower.svg",
    "illustration": "assets/img/products/mabel-base-lower.svg",
    "photo": "",
@@ -3490,6 +3693,7 @@
     "machined",
     "structure"
    ],
+   "facets": {},
    "image": "assets/img/products/mabel-base-upper.svg",
    "illustration": "assets/img/products/mabel-base-upper.svg",
    "photo": "",
@@ -3563,6 +3767,7 @@
     "machined",
     "structure"
    ],
+   "facets": {},
    "image": "assets/img/products/mabel-lift-adapter.svg",
    "illustration": "assets/img/products/mabel-lift-adapter.svg",
    "photo": "",
@@ -3636,6 +3841,7 @@
     "machined",
     "structure"
    ],
+   "facets": {},
    "image": "assets/img/products/mabel-torso-plate.svg",
    "illustration": "assets/img/products/mabel-torso-plate.svg",
    "photo": "",
@@ -3709,6 +3915,7 @@
     "machined",
     "structure"
    ],
+   "facets": {},
    "image": "assets/img/products/mabel-body-bottom.svg",
    "illustration": "assets/img/products/mabel-body-bottom.svg",
    "photo": "",
@@ -3782,6 +3989,7 @@
     "machined",
     "structure"
    ],
+   "facets": {},
    "image": "assets/img/products/mabel-arm-plate.svg",
    "illustration": "assets/img/products/mabel-arm-plate.svg",
    "photo": "",
@@ -3855,6 +4063,7 @@
     "machined",
     "structure"
    ],
+   "facets": {},
    "image": "assets/img/products/mabel-neck-plate.svg",
    "illustration": "assets/img/products/mabel-neck-plate.svg",
    "photo": "",
@@ -3929,6 +4138,7 @@
     "hand",
     "tendon"
    ],
+   "facets": {},
    "image": "assets/img/products/orca-hand-kit.svg",
    "illustration": "assets/img/products/orca-hand-kit.svg",
    "photo": "",
@@ -4002,6 +4212,7 @@
     "hand",
     "tendon"
    ],
+   "facets": {},
    "image": "assets/img/products/tendon-dyneema.svg",
    "illustration": "assets/img/products/tendon-dyneema.svg",
    "photo": "",
@@ -4084,6 +4295,7 @@
     "silicone",
     "casting"
    ],
+   "facets": {},
    "image": "assets/img/products/silicone-kit.svg",
    "illustration": "assets/img/products/silicone-kit.svg",
    "photo": "",
@@ -4156,6 +4368,7 @@
     "mabel",
     "3d-printing"
    ],
+   "facets": {},
    "image": "assets/img/products/filament-pla-white.svg",
    "illustration": "assets/img/products/filament-pla-white.svg",
    "photo": "",
@@ -4228,6 +4441,7 @@
     "mabel",
     "3d-printing"
    ],
+   "facets": {},
    "image": "assets/img/products/filament-pla-black.svg",
    "illustration": "assets/img/products/filament-pla-black.svg",
    "photo": "",
@@ -4300,6 +4514,7 @@
     "mabel",
     "3d-printing"
    ],
+   "facets": {},
    "image": "assets/img/products/filament-petg-cf.svg",
    "illustration": "assets/img/products/filament-petg-cf.svg",
    "photo": "",
@@ -4376,6 +4591,7 @@
     "harness",
     "linear"
    ],
+   "facets": {},
    "image": "assets/img/products/cable-chain.svg",
    "illustration": "assets/img/products/cable-chain.svg",
    "photo": "",
@@ -4458,6 +4674,7 @@
     "bench",
     "usb"
    ],
+   "facets": {},
    "image": "assets/img/products/damiao-usb2can.svg",
    "illustration": "assets/img/products/damiao-usb2can.svg",
    "photo": "",
@@ -4530,6 +4747,7 @@
     "can",
     "harness"
    ],
+   "facets": {},
    "image": "assets/img/products/can-hub.svg",
    "illustration": "assets/img/products/can-hub.svg",
    "photo": "",
@@ -4604,6 +4822,7 @@
     "hand",
     "ttl"
    ],
+   "facets": {},
    "image": "assets/img/products/servo-ttl-driver.svg",
    "illustration": "assets/img/products/servo-ttl-driver.svg",
    "photo": "",
@@ -4678,6 +4897,7 @@
     "hand",
     "power"
    ],
+   "facets": {},
    "image": "assets/img/products/servo-splitter.svg",
    "illustration": "assets/img/products/servo-splitter.svg",
    "photo": "",
@@ -4750,6 +4970,7 @@
     "mabel",
     "power"
    ],
+   "facets": {},
    "image": "assets/img/products/buck-24-12.svg",
    "illustration": "assets/img/products/buck-24-12.svg",
    "photo": "",
@@ -4822,6 +5043,7 @@
     "mabel",
     "power"
    ],
+   "facets": {},
    "image": "assets/img/products/buck-24-5.svg",
    "illustration": "assets/img/products/buck-24-5.svg",
    "photo": "",
@@ -4899,6 +5121,7 @@
     "power",
     "safety"
    ],
+   "facets": {},
    "image": "assets/img/products/power-distribution.svg",
    "illustration": "assets/img/products/power-distribution.svg",
    "photo": "",
@@ -4971,6 +5194,7 @@
     "safety",
     "power"
    ],
+   "facets": {},
    "image": "assets/img/products/estop-kit.svg",
    "illustration": "assets/img/products/estop-kit.svg",
    "photo": "",
@@ -5043,6 +5267,7 @@
     "mabel",
     "power"
    ],
+   "facets": {},
    "image": "assets/img/products/fuse-box.svg",
    "illustration": "assets/img/products/fuse-box.svg",
    "photo": "",
@@ -5111,6 +5336,7 @@
     "harness",
     "connectors"
    ],
+   "facets": {},
    "image": "assets/img/products/connector-xt.svg",
    "illustration": "assets/img/products/connector-xt.svg",
    "photo": "",
@@ -5179,6 +5405,7 @@
     "harness",
     "connectors"
    ],
+   "facets": {},
    "image": "assets/img/products/connector-jst.svg",
    "illustration": "assets/img/products/connector-jst.svg",
    "photo": "",
@@ -5257,6 +5484,7 @@
     "harness",
     "power"
    ],
+   "facets": {},
    "image": "assets/img/products/harness-arm.svg",
    "illustration": "assets/img/products/harness-arm.svg",
    "photo": "",
@@ -5330,6 +5558,7 @@
     "cameras",
     "usb"
    ],
+   "facets": {},
    "image": "assets/img/products/usb-hub.svg",
    "illustration": "assets/img/products/usb-hub.svg",
    "photo": "",
@@ -5402,6 +5631,7 @@
     "mabel",
     "network"
    ],
+   "facets": {},
    "image": "assets/img/products/net-switch.svg",
    "illustration": "assets/img/products/net-switch.svg",
    "photo": "",
@@ -5482,6 +5712,7 @@
     "mabel",
     "power"
    ],
+   "facets": {},
    "image": "assets/img/products/battery-pack.svg",
    "illustration": "assets/img/products/battery-pack.svg",
    "photo": "",
@@ -5542,6 +5773,7 @@
     "compute",
     "control"
    ],
+   "facets": {},
    "image": "assets/img/products/pico.svg",
    "illustration": "assets/img/products/pico.svg",
    "photo": "",
@@ -5602,6 +5834,7 @@
     "compute",
     "control"
    ],
+   "facets": {},
    "image": "assets/img/photos/teensy41.webp",
    "illustration": "assets/img/products/teensy41.svg",
    "photo": "assets/img/photos/teensy41.webp",
@@ -5662,6 +5895,7 @@
     "compute",
     "control"
    ],
+   "facets": {},
    "image": "assets/img/products/bts7960.svg",
    "illustration": "assets/img/products/bts7960.svg",
    "photo": "",
@@ -5722,6 +5956,7 @@
     "cameras",
     "usb"
    ],
+   "facets": {},
    "image": "assets/img/products/cable-usb-c-a.svg",
    "illustration": "assets/img/products/cable-usb-c-a.svg",
    "photo": "",
@@ -5781,6 +6016,7 @@
     "mabel",
     "harness"
    ],
+   "facets": {},
    "image": "assets/img/products/sleeving.svg",
    "illustration": "assets/img/products/sleeving.svg",
    "photo": "",
@@ -5858,6 +6094,7 @@
     "hri",
     "head"
    ],
+   "facets": {},
    "image": "assets/img/products/led-eyes.svg",
    "illustration": "assets/img/products/led-eyes.svg",
    "photo": "",
@@ -5957,6 +6194,7 @@
     "depth",
     "global-shutter"
    ],
+   "facets": {},
    "image": "assets/img/photos/realsense-d405.webp",
    "illustration": "assets/img/products/realsense-d405.svg",
    "photo": "assets/img/photos/realsense-d405.webp",
@@ -6052,6 +6290,7 @@
     "depth",
     "imu"
    ],
+   "facets": {},
    "image": "assets/img/photos/realsense-d435i.webp",
    "illustration": "assets/img/products/realsense-d435i.svg",
    "photo": "assets/img/photos/realsense-d435i.webp",
@@ -6142,6 +6381,7 @@
     "depth",
     "imu"
    ],
+   "facets": {},
    "image": "assets/img/photos/realsense-d455.webp",
    "illustration": "assets/img/products/realsense-d455.svg",
    "photo": "assets/img/photos/realsense-d455.webp",
@@ -6224,6 +6464,7 @@
     "global-shutter",
     "imitation-learning"
    ],
+   "facets": {},
    "image": "assets/img/products/wrist-cam-720.svg",
    "illustration": "assets/img/products/wrist-cam-720.svg",
    "photo": "",
@@ -6306,6 +6547,7 @@
     "global-shutter",
     "imitation-learning"
    ],
+   "facets": {},
    "image": "assets/img/products/wrist-cam-1200.svg",
    "illustration": "assets/img/products/wrist-cam-1200.svg",
    "photo": "",
@@ -6393,6 +6635,7 @@
     "stereo",
     "global-shutter"
    ],
+   "facets": {},
    "image": "assets/img/products/head-cam-stereo.svg",
    "illustration": "assets/img/products/head-cam-stereo.svg",
    "photo": "",
@@ -6484,6 +6727,7 @@
     "imitation-learning",
     "umi"
    ],
+   "facets": {},
    "image": "assets/img/products/ego-camera-rig.svg",
    "illustration": "assets/img/products/ego-camera-rig.svg",
    "photo": "",
@@ -6570,6 +6814,7 @@
     "slam",
     "2d-lidar"
    ],
+   "facets": {},
    "image": "assets/img/products/lidar-c1.svg",
    "illustration": "assets/img/products/lidar-c1.svg",
    "photo": "",
@@ -6652,6 +6897,7 @@
     "2d-lidar",
     "budget"
    ],
+   "facets": {},
    "image": "assets/img/products/lidar-ld19.svg",
    "illustration": "assets/img/products/lidar-ld19.svg",
    "photo": "",
@@ -6733,6 +6979,7 @@
     "slam",
     "3d-lidar"
    ],
+   "facets": {},
    "image": "assets/img/products/lidar-mid360.svg",
    "illustration": "assets/img/products/lidar-mid360.svg",
    "photo": "",
@@ -6809,6 +7056,7 @@
     "imu",
     "orientation"
    ],
+   "facets": {},
    "image": "assets/img/products/imu-bno085.svg",
    "illustration": "assets/img/products/imu-bno085.svg",
    "photo": "",
@@ -6886,6 +7134,7 @@
     "navigation",
     "slam"
    ],
+   "facets": {},
    "image": "assets/img/products/imu-tactical.svg",
    "illustration": "assets/img/products/imu-tactical.svg",
    "photo": "",
@@ -6971,6 +7220,7 @@
     "manipulation",
     "contact"
    ],
+   "facets": {},
    "image": "assets/img/products/ft-sensor.svg",
    "illustration": "assets/img/products/ft-sensor.svg",
    "photo": "",
@@ -7053,6 +7303,7 @@
     "hand",
     "manipulation"
    ],
+   "facets": {},
    "image": "assets/img/products/tactile-fingertip.svg",
    "illustration": "assets/img/products/tactile-fingertip.svg",
    "photo": "",
@@ -7130,6 +7381,7 @@
     "foc",
     "joint"
    ],
+   "facets": {},
    "image": "assets/img/products/encoder-as5047.svg",
    "illustration": "assets/img/products/encoder-as5047.svg",
    "photo": "",
@@ -7219,6 +7471,7 @@
     "jetson",
     "edge-ai"
    ],
+   "facets": {},
    "image": "assets/img/products/jetson-orin-nano.svg",
    "illustration": "assets/img/products/jetson-orin-nano.svg",
    "photo": "",
@@ -7308,6 +7561,7 @@
     "jetson",
     "edge-ai"
    ],
+   "facets": {},
    "image": "assets/img/products/jetson-orin-nx16.svg",
    "illustration": "assets/img/products/jetson-orin-nx16.svg",
    "photo": "",
@@ -7397,6 +7651,7 @@
     "jetson",
     "edge-ai"
    ],
+   "facets": {},
    "image": "assets/img/products/jetson-agx-orin.svg",
    "illustration": "assets/img/products/jetson-agx-orin.svg",
    "photo": "",
@@ -7486,6 +7741,7 @@
     "jetson",
     "edge-ai"
    ],
+   "facets": {},
    "image": "assets/img/products/jetson-thor.svg",
    "illustration": "assets/img/products/jetson-thor.svg",
    "photo": "",
@@ -7562,6 +7818,7 @@
     "compute",
     "aux"
    ],
+   "facets": {},
    "image": "assets/img/photos/pi5.webp",
    "illustration": "assets/img/products/pi5.svg",
    "photo": "assets/img/photos/pi5.webp",
@@ -7629,6 +7886,7 @@
     "storage",
     "data-collection"
    ],
+   "facets": {},
    "image": "assets/img/products/nvme-2tb.svg",
    "illustration": "assets/img/products/nvme-2tb.svg",
    "photo": "",
@@ -7710,6 +7968,7 @@
     "training",
     "workstation"
    ],
+   "facets": {},
    "image": "assets/img/products/training-workstation.svg",
    "illustration": "assets/img/products/training-workstation.svg",
    "photo": "",
@@ -7769,6 +8028,7 @@
     "tools",
     "assembly"
    ],
+   "facets": {},
    "image": "assets/img/products/hoto-precision-24.svg",
    "illustration": "assets/img/products/hoto-precision-24.svg",
    "photo": "",
@@ -7832,6 +8092,7 @@
     "tools",
     "assembly"
    ],
+   "facets": {},
    "image": "assets/img/products/hoto-electric-driver.svg",
    "illustration": "assets/img/products/hoto-electric-driver.svg",
    "photo": "",
@@ -7891,6 +8152,7 @@
     "tools",
     "assembly"
    ],
+   "facets": {},
    "image": "assets/img/products/hoto-ratchet-48.svg",
    "illustration": "assets/img/products/hoto-ratchet-48.svg",
    "photo": "",
@@ -7950,6 +8212,7 @@
     "tools",
     "assembly"
    ],
+   "facets": {},
    "image": "assets/img/products/hoto-laser-measure.svg",
    "illustration": "assets/img/products/hoto-laser-measure.svg",
    "photo": "",
@@ -8009,6 +8272,7 @@
     "tools",
     "assembly"
    ],
+   "facets": {},
    "image": "assets/img/products/crimper-kit.svg",
    "illustration": "assets/img/products/crimper-kit.svg",
    "photo": "",
@@ -8072,6 +8336,7 @@
     "tools",
     "assembly"
    ],
+   "facets": {},
    "image": "assets/img/products/caliper-digital.svg",
    "illustration": "assets/img/products/caliper-digital.svg",
    "photo": "",
@@ -8264,6 +8529,7 @@
     "kit",
     "research"
    ],
+   "facets": {},
    "image": "assets/img/photos/mabel-kit.webp",
    "illustration": "assets/img/products/mabel-kit.svg",
    "photo": "assets/img/photos/mabel-kit.webp",
@@ -8456,6 +8722,7 @@
     "assembled",
     "research"
    ],
+   "facets": {},
    "image": "assets/img/photos/mabel-assembled.webp",
    "illustration": "assets/img/products/mabel-assembled.svg",
    "photo": "assets/img/photos/mabel-assembled.webp",
@@ -8555,6 +8822,7 @@
     "openarm",
     "research"
    ],
+   "facets": {},
    "image": "assets/img/photos/mabel-arm.webp",
    "illustration": "assets/img/products/mabel-arm.svg",
    "photo": "assets/img/photos/mabel-arm.webp",
@@ -8646,6 +8914,7 @@
     "hand",
     "dexterous"
    ],
+   "facets": {},
    "image": "assets/img/photos/orca-hand-pair.webp",
    "illustration": "assets/img/products/orca-hand-pair.svg",
    "photo": "assets/img/photos/orca-hand-pair.webp",

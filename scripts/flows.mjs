@@ -350,13 +350,108 @@ await js(`document.getElementById('authEmail').value='jerry@lab.ca';
           document.getElementById('authForm').dispatchEvent(new Event('submit'))`);
 await sleep(400);
 check("signed-in view shown", await js(`!document.getElementById('acctView').hidden`), true);
+check("the name is derived from the address", await js(`document.getElementById('hi').textContent`), "jerry");
+check("initials are shown on the avatar", await js(`document.getElementById('hiInitials').textContent`), "J");
+check("the nav shows the signed-in initials",
+  await js(`document.querySelector('#navAccount .nav-initials')?.textContent`), "J");
+check("the nav announces who is signed in",
+  await js(`document.getElementById('navAccount').getAttribute('aria-label')`), v => /signed in as jerry/i.test(v));
 check("the earlier order appears", await js(`document.querySelectorAll('#ordersOut .order').length`), 1);
+check("the order lists its items", await js(`document.querySelectorAll('#ordersOut .order-line').length`), n => n >= 1);
 await js(`document.querySelector('.acct-nav [data-go="prefs"]').click()`);
-await sleep(200);
+await sleep(220);
 check("preferences panel switches", await js(`!document.querySelector('[data-panel="prefs"]').hidden`), true);
+check("the orders panel is hidden with it", await js(`document.querySelector('[data-panel="orders"]').hidden`), true);
+check("the url tracks the panel", await js(`location.hash`), "#prefs");
+await js(`document.querySelector('#prefOut [data-set-theme="dark"]').click()`);
+await sleep(220);
+check("the dark theme applies", await js(`document.documentElement.getAttribute('data-theme')`), "dark");
+check("the theme choice persists", await js(`JSON.parse(localStorage.getItem('mabel.theme.v1'))`), "dark");
+await js(`document.querySelector('#prefOut [data-set-theme="system"]').click()`); await sleep(200);
+check("system theme clears the override", await js(`document.documentElement.getAttribute('data-theme')`), null);
+// the theme control must not attach itself to <html>, which [data-theme] also matches
+check("no stray theme listener on the document element", await js(`
+  document.querySelectorAll('#prefOut [data-set-theme]').length === 3`), true);
+await js(`document.querySelector('.acct-nav [data-go="addresses"]').click()`); await sleep(200);
+check("the saved checkout address shows up",
+  await js(`/Sterling Road/.test(document.getElementById('addrOut').textContent)`), true);
 await js(`document.getElementById('signOut').click()`);
-await sleep(300);
+await sleep(320);
 check("sign out returns to the form", await js(`!document.getElementById('authView').hidden`), true);
+check("sign out clears the session", await js(`localStorage.getItem('mabel.account.v1')`), null);
+check("the nav reverts to the generic icon",
+  await js(`!document.querySelector('#navAccount .nav-initials')`), true);
+check("signing back in restores the same orders", await js(`(async () => {
+  document.getElementById('authEmail').value = 'jerry@lab.ca';
+  document.getElementById('authForm').dispatchEvent(new Event('submit'));
+  await new Promise(r => setTimeout(r, 500));
+  return document.querySelectorAll('#ordersOut .order').length;
+})()`, true), 1);
+
+/* ------------------------------------------------------------------ 6b --- */
+group("Actuator finder");
+await go("/actuators.html", 1700);
+check("all actuators are listed", await js(`document.querySelectorAll('.card').length`), 18);
+check("the count reads correctly", await js(`document.getElementById('count').textContent`), "18 of 18 actuators");
+check("facet groups were built", await js(`document.querySelectorAll('#facets .filter-g').length`), n => n >= 6);
+
+await js(`(() => { const i=document.getElementById('torque-min'); i.value='20'; i.dispatchEvent(new Event('input',{bubbles:true})); })()`);
+await sleep(350);
+check("a torque floor narrows the field", await js(`document.querySelectorAll('.card').length`), n => n > 0 && n < 18);
+check("everything left really is above the floor", await js(`(() => {
+  const names = [...document.querySelectorAll('.card-name')].map(e => e.textContent);
+  return names.includes('DAMIAO DM8009P') && !names.includes('Dynamixel XC330-T181-T');
+})()`), true);
+
+await js(`document.getElementById('torque-min').value=''; document.getElementById('torque-min').dispatchEvent(new Event('input',{bubbles:true}))`);
+await sleep(300);
+check("clearing the floor restores everything", await js(`document.querySelectorAll('.card').length`), 18);
+
+await js(`(() => [...document.querySelectorAll('[data-facet="gear"]')].find(x=>x.value==='harmonic').click())()`);
+await sleep(320);
+check("the harmonic filter finds exactly the two EYou joints",
+  await js(`[...document.querySelectorAll('.card-name')].map(e=>e.textContent).sort().join('|')`),
+  "EYou PHU17H-80|EYou PHU20H-100");
+
+await js(`document.getElementById('resetAll').click()`); await sleep(320);
+check("reset clears every facet", await js(`document.querySelectorAll('.card').length`), 18);
+
+await js(`(() => [...document.querySelectorAll('[data-facet="bus"]')].find(x=>x.value==='TTL').click())()`);
+await sleep(320);
+check("the TTL bus filter finds exactly the four bus servos", await js(`document.querySelectorAll('.card').length`), 4);
+await js(`document.getElementById('resetAll').click()`); await sleep(300);
+
+await js(`document.querySelector('[data-view="table"]').click()`); await sleep(320);
+check("table view renders", await js(`!!document.querySelector('table.cmp')`), true);
+check("the table has a row per actuator", await js(`document.querySelectorAll('table.cmp tbody tr').length`), 18);
+check("unpublished figures show as an em dash, not zero", await js(`(() => {
+  const row = [...document.querySelectorAll('table.cmp tbody tr')]
+    .find(r => r.querySelector('th').textContent.includes('EYou PHU17H-80'));
+  return row.children[1].textContent.trim();
+})()`), "—");
+check("a peak-only figure is labelled peak", await js(`(() => {
+  const row = [...document.querySelectorAll('table.cmp tbody tr')]
+    .find(r => r.querySelector('th').textContent.includes('DM8009P'));
+  return /peak/.test(row.children[1].textContent);
+})()`), true);
+check("the table scrolls inside its own box, not the page", await js(`
+  document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1`), true);
+
+// Setting aside products with unpublished figures must be visible, not silent.
+// The switch only bites once a numeric axis is actually narrowed — with no
+// range set, nothing is being compared and nothing can be set aside.
+await js(`document.querySelector('[data-view="grid"]').click()`); await sleep(250);
+await js(`(() => { const i=document.getElementById('torque-min'); i.value='1'; i.dispatchEvent(new Event('input',{bubbles:true})); })()`);
+await sleep(320);
+check("with a floor set, unpublished-torque actuators are still included by default",
+  await js(`[...document.querySelectorAll('.card-name')].some(e=>/PHU17H/.test(e.textContent))`), true);
+await js(`document.getElementById('unspec').click()`); await sleep(320);
+check("turning it off drops them", await js(`
+  [...document.querySelectorAll('.card-name')].some(e=>/PHU17H/.test(e.textContent))`), false);
+check("turning off unspecified figures says how many were set aside",
+  await js(`/hidden\\s+because we do not publish/.test(document.getElementById('unspecNote').textContent)`), true);
+await js(`document.getElementById('showUnspec').click()`); await sleep(320);
+check("and one click brings them back", await js(`document.getElementById('unspec').checked`), true);
 
 /* ------------------------------------------------------------------ 7 ---- */
 group("Currency");

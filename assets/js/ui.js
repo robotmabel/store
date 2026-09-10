@@ -10,7 +10,7 @@
 
   const NAV = [
     { id: "store",       label: "Store",       href: "store.html" },
-    { id: "actuators",   label: "Actuators",   href: "store.html?c=actuators" },
+    { id: "actuators",   label: "Actuators",   href: "actuators.html" },
     { id: "wheels",      label: "Wheels",      href: "store.html?c=wheels" },
     { id: "hardware",    label: "Hardware",    href: "store.html?c=hardware" },
     { id: "electronics", label: "Electronics", href: "store.html?c=electronics" },
@@ -49,7 +49,7 @@
         <div class="nav-links" id="navLinks">${links}</div>
         <div class="nav-tools">
           <button class="nav-icon" id="navSearch" aria-label="Search the store">${ICON.search}</button>
-          <a class="nav-icon" href="${h("account.html")}" aria-label="Account">${ICON.user}</a>
+          <a class="nav-icon" id="navAccount" href="${h("account.html")}" aria-label="Account">${ICON.user}</a>
           <button class="nav-icon" id="navBag" data-bag-label aria-label="Bag, empty" aria-haspopup="dialog">
             ${ICON.bag}<span class="nav-count" data-bag-count>0</span>
           </button>
@@ -85,6 +85,22 @@
       else location.href = h("store.html#q");
     });
     el.querySelector("#navBag").addEventListener("click", openDrawer);
+
+    const acct = el.querySelector("#navAccount");
+    function paintAccount() {
+      const me = M.Session.get();
+      if (me) {
+        acct.innerHTML = `<span class="nav-initials" aria-hidden="true">${esc(M.Session.initials())}</span>`;
+        acct.setAttribute("aria-label", `Account — signed in as ${me.name}`);
+        acct.title = me.email;
+      } else {
+        acct.innerHTML = ICON.user;
+        acct.setAttribute("aria-label", "Sign in");
+        acct.removeAttribute("title");
+      }
+    }
+    paintAccount();
+    document.addEventListener("mabel:session", paintAccount);
   }
 
   /* ------------------------------------------------------- bag drawer ---- */

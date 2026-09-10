@@ -18,15 +18,20 @@ publishes it. Everything a shopper sees is generated from one Python file.
 | **Real photography** | 19 products carry a real photograph — 4 shot on our own build, 15 from the manufacturer. The rest use a generated SVG, and the product page says which is which |
 | **107 generated figures** | One parametric SVG per product, as the fallback and the diagram |
 | **Full commerce flow** | Bag, drawer, four-step checkout, accounts, order history |
+| **Actuator finder** | 18 joints filtered by torque, supply, frame, gearbox and bus, in a grid or a spec table |
+| **Order email** | Web3Forms / Formspree / EmailJS / your own endpoint — see `docs/EMAIL.md` |
 | **Shopify + Stripe ready** | Both wired behind placeholder keys; see `docs/COMMERCE.md` |
-| **0 errors, 0 warnings** | 13 pages × 3 viewports, audited in real Chrome — see below |
+| **0 errors, 0 warnings** | 15 pages × 4 viewports, audited in real Chrome — see below |
 
 ```
 index.html store.html product.html mabel.html      the shop
+actuators.html                                     faceted actuator finder
 bag.html checkout.html account.html                the flow
 about.html support.html 404.html                   the rest
+setup.html                                         what is connected, what is not
 assets/css/store.css        one stylesheet, all tokens
-assets/js/                  config · store · ui · commerce · pages · checkout · account · mabel
+assets/js/                  config · store · ui · commerce · notify · pages
+                            checkout · account · mabel · actuators · setup
 assets/data/products.json   generated — do not edit
 assets/img/products/*.svg   generated illustrations — do not edit
 assets/img/photos/*.webp    normalised photographs — from tools/photos.py
@@ -138,16 +143,30 @@ Puppeteer, no install step, Node's built-in WebSocket is enough. For every page
 at 390 / 768 / 1440 px it checks:
 
 console errors · failed requests · horizontal overflow (and names the offending
-element) · WCAG 2.2 target sizes · AA colour contrast against the real painted
-background · alt text and broken images · heading order · duplicate ids ·
-accessible names on every control · visible focus · and that the catalogue
-actually rendered rather than leaving a skeleton on screen.
+element) · **content clipped by an overflow-hidden ancestor**, which a
+scrollWidth check cannot see · **images letterboxed** by a missing `height:auto`
+· stray template escapes rendering as text · WCAG 2.2 target sizes · AA colour
+contrast against the real painted background · alt text and broken images ·
+heading order · duplicate ids · accessible names on every control · visible
+focus · and that the catalogue actually rendered rather than leaving a skeleton
+on screen.
+
+Each of those last four was added after a real defect got past the suite. When
+one slips through, the fix is the check as well as the bug.
 
 ```
-0 errors, 0 warnings across 39 page/viewport combinations
+0 errors, 0 warnings across 60 page/viewport combinations
+119 flow assertions passed
 ```
 
 Keep it that way. It runs in CI on every push.
+
+## Is it live?
+
+Open **`/setup.html`** — it reads `assets/js/config.js` and reports exactly what
+is switched on. Payment and order email both need accounts only you can open;
+until then the store records orders and says so rather than pretending.
+[`docs/GO-LIVE.md`](docs/GO-LIVE.md) is the checklist.
 
 ## Payments
 

@@ -1618,3 +1618,47 @@ add(id="orca-hand-pair", sku="MR-ROB-HAND", cat="robots", brand="MABEL Robotics"
             ("Physical", [("Fingertips", "Cast silicone, Shore A20, replaceable"),
                           ("Mount", "MABEL / OpenArm wrist flange"),
                           ("Supply", "12 V per hand")])))
+
+
+# ================================================================== FACETS ===
+# Machine-readable attributes for the actuator finder (actuators.html). The
+# prose specs above are for reading; these are for filtering, and they must
+# agree with them.
+#
+# `None` means WE HAVE NOT PUBLISHED THAT FIGURE — not zero, and not "any". The
+# finder shows those as "—" and tells you how many products it had to set aside
+# when you narrow that axis, rather than quietly dropping them. Several of these
+# are peak-only because the vendor publishes peak only; inventing a nominal
+# figure to fill a column is exactly the kind of thing this catalogue does not do.
+#
+#   nom     rated / continuous torque, N·m
+#   peak    peak torque, N·m
+#   volts   nominal supply, V DC
+#   frame   outer diameter or NEMA frame across flats, mm
+#   gear    planetary | harmonic | none | leadscrew
+#   bus     CAN | RS-485 | TTL | step/dir
+#   mass    g
+FACETS = {
+    "damiao-dm-j4310":      dict(nom=3.5,  peak=10,   volts=24, frame=43,  gear="planetary", bus="CAN",      mass=300,  ratio="10:1"),
+    "damiao-dm4340":        dict(nom=9,    peak=27,   volts=24, frame=43,  gear="planetary", bus="CAN",      mass=None, ratio="planetary"),
+    "damiao-dm8009p":       dict(nom=None, peak=40,   volts=24, frame=80,  gear="planetary", bus="CAN",      mass=None, ratio="planetary"),
+    "damiao-dm10422p":      dict(nom=400,  peak=None, volts=48, frame=104, gear="planetary", bus="CAN",      mass=None, ratio="hollow-shaft"),
+    "unitree-go-m8010-6":   dict(nom=None, peak=23.7, volts=24, frame=80,  gear="planetary", bus="RS-485",   mass=485,  ratio="6.33:1"),
+    "unitree-a1":           dict(nom=None, peak=33.5, volts=24, frame=88,  gear="planetary", bus="RS-485",   mass=605,  ratio="9.1:1"),
+    "xiaomi-cybergear-rs01":dict(nom=4,    peak=12,   volts=24, frame=60,  gear="planetary", bus="CAN",      mass=317,  ratio="7.75:1"),
+    "xiaomi-cybergear-rs03":dict(nom=None, peak=60,   volts=48, frame=90,  gear="planetary", bus="CAN",      mass=None, ratio="planetary"),
+    "eyou-phu17h-80":       dict(nom=None, peak=None, volts=48, frame=None,gear="harmonic",  bus="CAN",      mass=None, ratio="101:1"),
+    "eyou-phu20h-100":      dict(nom=None, peak=None, volts=48, frame=None,gear="harmonic",  bus="CAN",      mass=None, ratio="100:1"),
+    # Bus servos are specified in kg·cm; 1 kg·cm = 0.0981 N·m.
+    "feetech-hl3915m":      dict(nom=1.37, peak=None, volts=12, frame=None,gear="planetary", bus="TTL",      mass=None, ratio="steel gear"),
+    "feetech-hl3930m":      dict(nom=3.43, peak=None, volts=12, frame=None,gear="planetary", bus="TTL",      mass=None, ratio="metal case"),
+    "feetech-sts3215":      dict(nom=2.94, peak=None, volts=12, frame=None,gear="planetary", bus="TTL",      mass=None, ratio="metal gear"),
+    "dynamixel-xc330":      dict(nom=0.92, peak=None, volts=12, frame=20,  gear="planetary", bus="TTL",      mass=23,   ratio="181:1"),
+    "nema17-foc":           dict(nom=0.45, peak=None, volts=24, frame=42,  gear="none",      bus="step/dir", mass=None, ratio="direct"),
+    "nema23-foc":           dict(nom=1.9,  peak=None, volts=48, frame=57,  gear="none",      bus="step/dir", mass=None, ratio="direct"),
+    "lift-column":          dict(nom=None, peak=None, volts=24, frame=None,gear="leadscrew", bus=None,       mass=None, ratio="3-stage"),
+    "planetary-gearbox-n17":dict(nom=3,    peak=None, volts=None,frame=42, gear="planetary", bus=None,       mass=260,  ratio="5:1 / 10:1 / 27:1"),
+}
+
+for _p in P:
+    _p["facets"] = FACETS.get(_p["id"], {})

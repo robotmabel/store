@@ -246,6 +246,18 @@
     $("#crumbCat").href = h(`store.html?c=${p.category}`);
     $("#crumbName").textContent = p.name;
 
+    const GLANCE = [
+      ["nom", v => `${v} N·m rated`], ["peak", v => `${v} N·m peak`],
+      ["volts", v => `${v} V`], ["frame", v => `${v} mm frame`],
+      ["gear", v => ({ planetary: "Planetary", harmonic: "Harmonic", none: "Direct drive",
+                       leadscrew: "Lead screw" }[v] || v)],
+      ["bus", v => v], ["mass", v => `${v} g`],
+    ];
+    const glance = Object.keys(p.facets || {}).length
+      ? GLANCE.filter(([k]) => p.facets[k] !== null && p.facets[k] !== undefined)
+              .map(([k, f]) => `<span class="glance-i">${esc(f(p.facets[k]))}</span>`).join("")
+      : "";
+
     const stockLabel = { "in-stock": "In stock — ships in 1–2 business days",
                          "preorder": "Available to pre-order",
                          "made-to-order": "Made to order" }[p.stock] || "";
@@ -265,6 +277,7 @@
         ${p.badge ? `<p class="t-eyebrow">${esc(p.badge)}</p>` : ""}
         <h1 class="t-title">${esc(p.name)}</h1>
         <p class="t-sub" style="margin:8px 0 0">${esc(p.tagline)}</p>
+        ${glance ? `<div class="glance">${glance}</div>` : ""}
         <div class="price-row">
           <span class="price-now">${M.money(p.price)}</span>
           ${p.unit ? `<span class="t-small">${esc(p.unit)}</span>` : ""}
@@ -308,12 +321,40 @@
     $("#qDec").addEventListener("click", () => { qty.value = Math.max(1, (+qty.value || 1) - 1); });
     qty.addEventListener("change", clamp);
     qty.addEventListener("blur", clamp);
-    $("#addBtn").addEventListener("click", () => {
+    const add = () => {
       clamp();
       M.Bag.add(p.id, +qty.value);
       M.toast(`Added ${qty.value} × ${p.name}`);
       M.ui.openDrawer();
-    });
+    };
+    $("#addBtn").addEventListener("click", add);
+
+    // Sticky buy bar: on a phone the Add to Bag button is off screen for most
+    // of the page, and a product page you have to scroll back up to buy from
+    // is a product page that loses the sale.
+    const bar = document.createElement("div");
+    bar.className = "buybar";
+    bar.setAttribute("aria-hidden", "true");
+    bar.innerHTML = `
+      <div class="buybar-in">
+        <div class="buybar-t">
+          <b>${esc(p.name)}</b>
+          <span>${M.money(p.price)}${p.unit ? " " + esc(p.unit) : ""}</span>
+        </div>
+        <button class="btn btn-sm" id="barAdd" tabindex="-1">Add to Bag</button>
+      </div>`;
+    document.body.appendChild(bar);
+    $("#barAdd").addEventListener("click", add);
+
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(([e]) => {
+        const show = !e.isIntersecting && e.boundingClientRect.top < 0;
+        bar.classList.toggle("on", show);
+        bar.setAttribute("aria-hidden", String(!show));
+        $("#barAdd").tabIndex = show ? 0 : -1;
+      }, { threshold: 0 });
+      io.observe($("#addBtn"));
+    }
 
     /* tech specs */
     $("#specs").innerHTML = p.specs.map(g => `

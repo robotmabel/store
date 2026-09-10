@@ -469,6 +469,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); margin: 0; font-weight: 600; 
 /* ----------------------------------------------------- 12. store / grid -- */
 .store-head { padding: clamp(30px, 5vw, 56px) 0 22px; }
 .store-layout { display: grid; grid-template-columns: 226px 1fr; gap: 40px; align-items: start; }
+.store-layout > * { min-width: 0; }
 .filters { position: sticky; top: calc(var(--nav-h) + 20px); }
 .filter-g + .filter-g { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line-soft); }
 .filter-g h2 { font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 12px; }
@@ -510,6 +511,45 @@ h1, h2, h3, h4 { font-family: var(--font-display); margin: 0; font-weight: 600; 
 }
 .f-tag span { font-size: 15px; line-height: 1; color: var(--ink-2); }
 
+/* ------------------------------------------- 12b. finder: ranges, table -- */
+.range-row { display: flex; align-items: center; gap: 8px; }
+.range-in {
+  width: 100%; min-width: 0; padding: 9px 10px; font-size: 14px;
+  border: 1px solid var(--line); border-radius: var(--r-sm); background: var(--bg);
+  -moz-appearance: textfield;
+}
+.range-in::-webkit-outer-spin-button, .range-in::-webkit-inner-spin-button {
+  -webkit-appearance: none; margin: 0;
+}
+.range-in:focus { outline: none; border-color: var(--key);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--key) 22%, transparent); }
+
+.seg { display: inline-flex; background: var(--bg-3); border-radius: var(--r-pill); padding: 3px; }
+.seg-b {
+  min-height: 34px; padding: 6px 16px; border: 0; border-radius: var(--r-pill);
+  background: none; font-size: 13px; cursor: pointer; color: var(--ink-2);
+  transition: background var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+}
+.seg-b[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: var(--sh-1); }
+
+/* A spec table is the one place horizontal scrolling is right: nine columns of
+   numbers must not be reflowed into something unreadable. It scrolls inside its
+   own box, never the page. */
+.tbl-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: var(--r-lg); }
+.cmp { width: 100%; border-collapse: collapse; min-width: 760px; font-size: 14px; }
+.cmp thead th {
+  position: sticky; top: 0; z-index: 1;
+  background: var(--bg-2); text-align: left; font-size: 12px; font-weight: 600;
+  letter-spacing: .02em; text-transform: uppercase; color: var(--ink-2);
+  padding: 12px 14px; white-space: nowrap;
+}
+.cmp tbody tr { border-top: 1px solid var(--line-soft); }
+.cmp tbody tr:hover { background: var(--bg-2); }
+.cmp th[scope="row"] { text-align: left; font-weight: 600; padding: 13px 14px; min-width: 210px; }
+.cmp td { padding: 13px 14px; white-space: nowrap; vertical-align: middle; }
+.cmp-brand { display: block; font-size: 11px; font-weight: 400; color: var(--ink-3); }
+.cmp-note { font-size: 11px; color: var(--ink-3); }
+
 /* --------------------------------------------------- 13. product detail -- */
 .pdp { display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: start;
        padding: clamp(26px, 4vw, 48px) 0 clamp(40px, 6vw, 72px); }
@@ -528,6 +568,39 @@ h1, h2, h3, h4 { font-family: var(--font-display); margin: 0; font-weight: 600; 
 .pdp-buy .t-title { margin-bottom: 6px; }
 .price-now { font-size: 26px; font-weight: 600; letter-spacing: -.02em; }
 .price-row { display: flex; align-items: baseline; gap: 10px; margin: 18px 0 4px; }
+/* At-a-glance figures, straight from the filterable facets. */
+.glance { display: flex; flex-wrap: wrap; gap: 7px; margin: 14px 0 0; }
+.glance-i {
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: -.02em;
+  padding: 5px 10px; border-radius: var(--r-sm);
+  background: var(--bg-2); color: var(--ink-2); white-space: nowrap;
+}
+
+/* Sticky buy bar — phones only, and only once the real button is above you. */
+.buybar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
+  background: var(--nav-bg);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-top: 1px solid var(--nav-line);
+  transform: translateY(105%);
+  transition: transform var(--t) var(--ease-out);
+  padding-bottom: env(safe-area-inset-bottom);
+  display: none;
+}
+.buybar.on { transform: none; }
+.buybar-in {
+  display: flex; align-items: center; gap: 14px;
+  max-width: var(--max); margin: 0 auto; padding: 10px var(--gutter);
+}
+.buybar-t { min-width: 0; flex: 1; }
+.buybar-t b {
+  display: block; font-size: 14px; font-weight: 600; letter-spacing: -.01em;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.buybar-t span { display: block; font-size: 13px; color: var(--ink-2); }
+@media (max-width: 940px) { .buybar { display: block; } }
+
 .hl { list-style: none; margin: 22px 0 0; padding: 0; }
 .hl li { position: relative; padding-left: 26px; margin-bottom: 11px; font-size: 15px; line-height: 1.45; }
 .hl li::before {
@@ -699,8 +772,38 @@ h1, h2, h3, h4 { font-family: var(--font-display); margin: 0; font-weight: 600; 
   transition: background var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
 }
 .auth-tab[aria-selected="true"] { background: var(--surface); color: var(--ink); box-shadow: var(--sh-1); }
-.acct-layout { display: grid; grid-template-columns: 210px 1fr; gap: 44px; align-items: start;
+.acct-layout { display: grid; grid-template-columns: 230px 1fr; gap: 44px; align-items: start;
                padding: clamp(28px, 4vw, 48px) 0 80px; }
+.acct-me { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; }
+.acct-avatar {
+  width: 46px; height: 46px; flex: none; border-radius: 50%;
+  background: var(--key); color: var(--key-fg);
+  display: grid; place-items: center;
+  font-size: 16px; font-weight: 600; letter-spacing: .01em;
+}
+.acct-name {
+  font-size: 19px; font-weight: 600; letter-spacing: -.012em; margin: 0;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.acct-name:focus { outline: none; }
+.nav-initials {
+  display: grid; place-items: center;
+  width: 25px; height: 25px; border-radius: 50%;
+  background: var(--key); color: var(--key-fg);
+  font-size: 10px; font-weight: 700; letter-spacing: .02em;
+}
+.order-line {
+  display: grid; grid-template-columns: 34px 1fr auto auto; gap: 10px;
+  align-items: baseline; padding: 9px 0; border-top: 1px solid var(--line-soft);
+}
+.order-line:first-child { border-top: 0; }
+.order-qty { color: var(--ink-3); font-size: 13px; }
+.order-name { font-size: 14px; font-weight: 500; }
+.order-amt { font-size: 14px; font-weight: 600; }
+@media (max-width: 760px) {
+  .order-line { grid-template-columns: 30px 1fr auto; }
+  .order-line .t-tiny { display: none; }
+}
 .acct-nav { list-style: none; margin: 0; padding: 0; position: sticky; top: calc(var(--nav-h) + 20px); }
 .acct-nav button {
   width: 100%; text-align: left; padding: 10px 13px; border: 0; border-radius: var(--r-sm);
@@ -824,6 +927,19 @@ h1, h2, h3, h4 { font-family: var(--font-display); margin: 0; font-weight: 600; 
   .drawer { width: 100vw; }
   .spec-t th { width: 46%; padding-right: 14px; font-size: 14px; }
   .spec-t td { font-size: 14px; }
+  /* Concision on a phone: less air, smaller stage, and room at the bottom of
+     the page so the sticky buy bar never covers the last line. */
+  .pdp { gap: 24px; padding-top: 14px; }
+  .pdp-stage { padding: 18px; border-radius: var(--r-lg); }
+  .pdp-buy .t-title { font-size: 27px; }
+  .price-row { margin: 14px 0 2px; }
+  .price-now { font-size: 23px; }
+  .hl { margin-top: 16px; }
+  .hl li { margin-bottom: 9px; font-size: 14px; }
+  .assure { margin-top: 18px; padding-top: 16px; }
+  .assure li { font-size: 12px; margin-bottom: 10px; }
+  .spec-g + .spec-g { margin-top: 30px; }
+  main { padding-bottom: 76px; }
 }
 @media (max-width: 400px) {
   .cards { grid-template-columns: 1fr; }

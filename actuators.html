@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Actuator finder — MABEL Robotics</title>
+<meta name="description" content="Filter 18 robot joint actuators by torque, supply voltage, frame size, gearbox type, interface and price. DAMIAO, Unitree, Xiaomi, EYou, Feetech, Robotis and closed-loop steppers.">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="assets/img/brand/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://robotmabel.github.io/store/actuators.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MABEL Robotics">
+<meta property="og:title" content="MABEL Robotics — Robot parts and complete robots, from Toronto">
+<meta property="og:description" content="Actuators, swerve drives, sensors, compute and structural hardware for research robots — plus MABEL, a 56-DOF mobile bimanual robot as a $15,000 kit or a $25,000 assembled machine. Shipped from Toronto.">
+<meta property="og:image" content="https://robotmabel.github.io/store/assets/img/products/mabel-assembled.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/store.css">
+</head>
+<body data-page="actuators" data-root="">
+<a class="skip" href="#main">Skip to content</a>
+<main id="main">
+  <div class="wrap">
+    <header class="store-head">
+      <p class="t-eyebrow">Actuators</p>
+      <h1 class="t-title">Find the right joint.</h1>
+      <p class="t-sub" style="max-width:640px;margin-top:10px">Every actuator we hold, on one
+        page, filtered by the numbers that decide it: torque, supply, frame, gearbox and bus.
+        Switch to the table to read the whole field at once.</p>
+    </header>
+
+    <div class="store-layout">
+      <aside class="filters" aria-label="Filter actuators">
+        <div class="spread" style="margin-bottom:14px">
+          <span class="t-tiny" id="count" aria-live="polite"></span>
+          <button class="btn-text" id="resetAll" style="font-size:13px">Reset</button>
+        </div>
+        <div id="facets"></div>
+      </aside>
+
+      <div>
+        <div class="toolbar">
+          <label class="vh" for="aq">Search actuators</label>
+          <input class="search-in" id="aq" type="search" placeholder="Search actuators"
+                 autocomplete="off" spellcheck="false">
+          <div class="row">
+            <div class="seg" role="group" aria-label="View">
+              <button class="seg-b" data-view="grid" aria-pressed="true">Grid</button>
+              <button class="seg-b" data-view="table" aria-pressed="false">Table</button>
+            </div>
+            <label class="vh" for="asort">Sort by</label>
+            <select class="sel" id="asort">
+              <option value="torque-desc">Torque: high to low</option>
+              <option value="torque-asc">Torque: low to high</option>
+              <option value="price-asc">Price: low to high</option>
+              <option value="price-desc">Price: high to low</option>
+              <option value="name-asc">Name: A to Z</option>
+            </select>
+          </div>
+        </div>
+        <div id="unspecNote"></div>
+        <div id="results"></div>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/pages.js"></script>
+<script src="assets/js/actuators.js"></script>
+</body>
+</html>

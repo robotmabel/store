@@ -211,9 +211,45 @@
     els.forEach(el => io.observe(el));
   }
 
+  /* --------------------------------------------------------- session ----- */
+  // A local session, and honest about it: there is no server here to check a
+  // password against, so nothing pretends to. It exists so a returning visitor
+  // keeps their bag, address and order references on this device, and so the
+  // nav can greet them. Shopify Customer Accounts replaces it wholesale when
+  // shopify.customerAccountsUrl is set.
+  const SESSION_KEY = "mabel.account.v1";
+
+  const Session = {
+    get() { return store.get(SESSION_KEY, null); },
+    signedIn() { return Boolean(Session.get()); },
+    signIn(email, name) {
+      const me = {
+        email: String(email).trim(),
+        name: (name || "").trim() || String(email).split("@")[0],
+        since: new Date().toISOString(),
+      };
+      store.set(SESSION_KEY, me);
+      document.dispatchEvent(new CustomEvent("mabel:session"));
+      return me;
+    },
+    signOut() {
+      store.del(SESSION_KEY);
+      document.dispatchEvent(new CustomEvent("mabel:session"));
+    },
+    initials() {
+      const me = Session.get();
+      if (!me) return "";
+      const parts = me.name.split(/[\s._-]+/).filter(Boolean);
+      return ((parts[0]?.[0] || "") + (parts.length > 1 ? parts[parts.length - 1][0] : ""))
+        .toUpperCase().slice(0, 2);
+    },
+  };
+
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
   window.MABEL = {
     CFG, store, catalogue, Bag, money, setCurrency, toast, esc, href, root,
-    trap, lockScroll, reveal, paintCount,
+    trap, lockScroll, reveal, paintCount, Session, EMAIL_RE,
     get currency() { return currency; },
   };
 })();

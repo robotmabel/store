@@ -1,10 +1,14 @@
 /* ============================================================================
-   account.js — sign in, create account, orders, addresses.
+   account.js — sign in, sign out, orders, addresses, preferences.
 
-   This is a *local* session, and it says so on the page. A static site cannot
-   authenticate anyone: there is no server to check a password against. When
-   Shopify Customer Accounts is configured in config.js, the sign-in button
-   hands off to Shopify's real, hosted login instead of this local mode.
+   This is a LOCAL session and the page says so in plain words. A static site
+   has no server to check a password against, so nothing here pretends to: no
+   password field, no fake authentication, no security theatre. What it does do
+   is keep your bag, delivery details and order references on this device, and
+   greet you by name.
+
+   When shopify.customerAccountsUrl is set in config.js the whole thing steps
+   aside and hands off to Shopify's real, hosted sign-in.
    ========================================================================== */
 (() => {
   "use strict";
@@ -12,34 +16,30 @@
   const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
   if ((document.body.dataset.page || "") !== "account") return;
 
-  const KEY = "mabel.account.v1";
-  let me = M.store.get(KEY, null);
-
+  const PANELS = ["orders", "addresses", "prefs"];
   const shopifyAuth = () => M.CFG.shopify.customerAccountsUrl;
+  const orders = () => M.store.get("mabel.orders.v1", []) || [];
 
-  /* ------------------------------------------------------------ signed in */
-  function orders() { return M.store.get("mabel.orders.v1", []); }
+  const dateFmt = iso => new Date(iso).toLocaleDateString("en-CA",
+    { year: "numeric", month: "long", day: "numeric" });
 
-  function paintAccount() {
-    $("#authView").hidden = true;
-    $("#acctView").hidden = false;
-    $("#hi").textContent = me.name || me.email;
-    $("#hiMail").textContent = me.email;
-
+  /* ------------------------------------------------------------ signed in -- */
+  function paintOrders() {
     const os = orders();
     $("#ordersOut").innerHTML = os.length ? os.map(o => `
       <article class="order">
         <div class="order-h">
           <div><span>Order</span><b class="t-num">${esc(o.ref)}</b></div>
-          <div><span>Placed</span><b>${new Date(o.placed).toLocaleDateString("en-CA",
-            { year: "numeric", month: "short", day: "numeric" })}</b></div>
+          <div><span>Placed</span><b>${esc(dateFmt(o.placed))}</b></div>
           <div><span>Total</span><b>${M.money(o.total)}</b></div>
-          <div><span>Status</span><b>${esc(o.status)}</b></div>
+          <div><span>Status</span><b>${esc(o.status || "Received")}</b></div>
         </div>
         <div class="order-b">
-          ${o.lines.map(l => `<div class="line-item" style="padding:12px 0">
-            <div class="li-b"><div class="li-name" style="font-size:14px">${esc(l.name)}</div>
-            <div class="li-meta">${esc(l.sku)} · Qty ${l.qty} · ${M.money(l.unitUsd * l.qty)}</div></div>
+          ${o.lines.map(l => `<div class="order-line">
+            <span class="order-qty t-num">${l.qty}&times;</span>
+            <span class="order-name">${esc(l.name)}</span>
+            <span class="t-tiny">${esc(l.sku)}</span>
+            <span class="order-amt t-num">${M.money(l.unitUsd * l.qty)}</span>
           </div>`).join("")}
         </div>
       </article>`).join("")
@@ -48,82 +48,159 @@
            <p class="t-small">Orders you place will appear here with their reference and status.</p>
            <p style="margin-top:18px"><a class="btn btn-sm" href="${h("store.html")}">Shop the store</a></p>
          </div>`;
+  }
 
-    const addr = M.store.get("mabel.checkout.v1", {});
-    $("#addrOut").innerHTML = addr.address1
-      ? `<div class="review-block"><h4>Default shipping address</h4>
-           <p>${esc(addr.name || "")}<br>${[addr.address1, addr.address2, addr.city,
-              addr.region, addr.postal].filter(Boolean).map(esc).join("<br>")}</p></div>`
-      : `<p class="t-small">No address saved yet. The address you enter at checkout is remembered here.</p>`;
-
-    $("#prefOut").innerHTML = `
-      <div class="review-block"><h4>Currency</h4>
-        <p>${M.currency} — <button class="btn-text" id="curBtn" style="font-size:15px">switch to ${M.currency === "USD" ? "CAD" : "USD"}</button></p></div>
-      <div class="review-block"><h4>Email</h4><p>${esc(me.email)}</p></div>
-      <div class="review-block"><h4>Session</h4>
-        <p class="t-small">This is a local session stored in this browser only. It is not a
-        server account, and no password is checked. Connect Shopify Customer Accounts in
-        <code>assets/js/config.js</code> to enable real sign-in.</p></div>`;
-    $("#curBtn")?.addEventListener("click", () => {
-      M.setCurrency(M.currency === "USD" ? "CAD" : "USD"); paintAccount();
+  function paintAddresses() {
+    const a = M.store.get("mabel.checkout.v1", {}) || {};
+    $("#addrOut").innerHTML = a.address1
+      ? `<div class="review-block">
+           <h3 style="font-size:13px;color:var(--ink-2);margin:0 0 8px">Default shipping address</h3>
+           <p>${esc(a.name || "")}${a.org ? "<br>" + esc(a.org) : ""}<br>${
+             [a.address1, a.address2, a.city, a.region, a.postal,
+              { CA: "Canada", US: "United States" }[a.country] || a.country]
+               .filter(Boolean).map(esc).join("<br>")}</p>
+           <p class="t-tiny" style="margin-top:12px">Saved from your last checkout on this device.
+             It is filled in for you next time.
+             <button class="btn-text" id="clearAddr" style="font-size:12px">Forget it</button></p>
+         </div>`
+      : `<div class="empty" style="padding:36px 0">
+           <p class="t-head">No address saved.</p>
+           <p class="t-small">The address you enter at checkout is remembered here, on this device only.</p>
+         </div>`;
+    $("#clearAddr")?.addEventListener("click", () => {
+      M.store.del("mabel.checkout.v1"); paintAddresses(); M.toast("Address forgotten");
     });
   }
 
-  function paintAuth() {
+  function paintPrefs() {
+    const me = M.Session.get();
+    if (!me) return;
+    const theme = M.store.get("mabel.theme.v1", "system");
+    $("#prefOut").innerHTML = `
+      <div class="review-block">
+        <h3 style="font-size:13px;color:var(--ink-2);margin:0 0 10px">Currency</h3>
+        <div class="seg" role="group" aria-label="Currency">
+          ${["USD", "CAD"].map(c => `<button class="seg-b" data-cur="${c}"
+             aria-pressed="${String(M.currency === c)}">${c}</button>`).join("")}
+        </div>
+      </div>
+      <div class="review-block">
+        <h3 style="font-size:13px;color:var(--ink-2);margin:0 0 10px">Appearance</h3>
+        <div class="seg" role="group" aria-label="Appearance">
+          ${[["system", "System"], ["light", "Light"], ["dark", "Dark"]].map(([v, l]) =>
+            `<button class="seg-b" data-set-theme="${v}" aria-pressed="${String(theme === v)}">${l}</button>`).join("")}
+        </div>
+      </div>
+      <div class="review-block">
+        <h3 style="font-size:13px;color:var(--ink-2);margin:0 0 8px">Your session</h3>
+        <p>${esc(me.email)}<br><span class="t-small">Signed in since ${esc(dateFmt(me.since))}</span></p>
+        <p class="t-tiny" style="margin-top:12px">This session lives in this browser only. It is not
+          a server account and no password is checked &mdash; it exists so your bag, address and
+          order references follow you between visits on this device. Connect Shopify Customer
+          Accounts to enable real sign-in.</p>
+      </div>`;
+
+    $$("#prefOut [data-cur]").forEach(b => b.addEventListener("click", () => {
+      M.setCurrency(b.dataset.cur); paintPrefs(); paintOrders();
+    }));
+    $$("#prefOut [data-set-theme]").forEach(b => b.addEventListener("click", () => {
+      const v = b.dataset.setTheme;
+      M.store.set("mabel.theme.v1", v);
+      applyTheme(v);
+      paintPrefs();
+    }));
+  }
+
+  function applyTheme(v) {
+    if (v === "system") document.documentElement.removeAttribute("data-theme");
+    else document.documentElement.setAttribute("data-theme", v);
+  }
+
+  function showAccount() {
+    const me = M.Session.get();
+    $("#authView").hidden = true;
+    $("#acctView").hidden = false;
+    $("#hiInitials").textContent = M.Session.initials();
+    $("#hi").textContent = me.name;
+    $("#hiMail").textContent = me.email;
+    paintOrders(); paintAddresses(); paintPrefs();
+    const hash = location.hash.slice(1);
+    selectPanel(PANELS.includes(hash) ? hash : "orders");
+  }
+
+  function selectPanel(id) {
+    $$(".acct-nav button").forEach(b => b.setAttribute("aria-current", String(b.dataset.go === id)));
+    $$("[data-panel]").forEach(p => { p.hidden = p.dataset.panel !== id; });
+    history.replaceState(null, "", "#" + id);
+  }
+
+  function showAuth() {
     $("#authView").hidden = false;
     $("#acctView").hidden = true;
   }
 
-  /* ---------------------------------------------------------------- boot */
+  /* ----------------------------------------------------------------- boot -- */
   function boot() {
+    applyTheme(M.store.get("mabel.theme.v1", "system"));
+
     if (shopifyAuth()) {
       $("#shopifyAuth").hidden = false;
       $("#shopifyAuth").href = shopifyAuth();
+      $("#localForm").hidden = true;
       $("#localNote").textContent =
-        "Sign in with your MABEL Robotics account, hosted securely by Shopify.";
+        "Sign in to your MABEL Robotics account, hosted securely by Shopify.";
     }
 
     $$(".auth-tab").forEach(t => t.addEventListener("click", () => {
       $$(".auth-tab").forEach(x => x.setAttribute("aria-selected", String(x === t)));
-      const mode = t.dataset.mode;
-      $("#nameField").hidden = mode !== "create";
-      $("#authSubmit").textContent = mode === "create" ? "Create account" : "Sign in";
-      $("#authTitle").textContent = mode === "create" ? "Create your account" : "Sign in";
+      const create = t.dataset.mode === "create";
+      $("#nameField").hidden = !create;
+      $("#authSubmit").textContent = create ? "Create account" : "Continue";
+      $("#authTitle").textContent = create ? "Create your account" : "Sign in";
+      $("#authEmail").focus();
     }));
 
-    $("#authForm").addEventListener("submit", e => {
+    const err = $("#authErr");
+    $("#authEmail").addEventListener("input", () => {
+      if (err.textContent) { err.textContent = ""; $("#authEmail").setAttribute("aria-invalid", "false"); }
+    });
+
+    $("#authForm").addEventListener("submit", async e => {
       e.preventDefault();
       const email = $("#authEmail").value.trim();
-      const name = $("#authName").value.trim();
-      const err = $("#authErr");
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
-        err.textContent = "Enter a valid email address.";
+      if (!M.EMAIL_RE.test(email)) {
+        err.textContent = "Enter a valid email address, for example you@lab.edu.";
         $("#authEmail").setAttribute("aria-invalid", "true");
         $("#authEmail").focus();
         return;
       }
-      err.textContent = "";
-      me = { email, name: name || email.split("@")[0], since: new Date().toISOString() };
-      M.store.set(KEY, me);
-      paintAccount();
+      const btn = $("#authSubmit");
+      btn.setAttribute("aria-disabled", "true");
+      const was = btn.textContent;
+      btn.textContent = "Signing in…";
+      await new Promise(r => setTimeout(r, 260));     // let the state change register
+      M.Session.signIn(email, $("#authName").value);
+      btn.removeAttribute("aria-disabled");
+      btn.textContent = was;
+      showAccount();
       M.toast("Signed in");
-      history.replaceState(null, "", "#orders");
+      $("#hi").focus();
     });
 
     $("#signOut").addEventListener("click", () => {
-      M.store.del(KEY); me = null; paintAuth(); M.toast("Signed out");
+      M.Session.signOut();
+      showAuth();
+      M.toast("Signed out");
+      $("#authEmail").focus();
     });
 
-    $$(".acct-nav button").forEach(b => b.addEventListener("click", () => {
-      $$(".acct-nav button").forEach(x => x.setAttribute("aria-current", String(x === b)));
-      $$("[data-panel]").forEach(p => { p.hidden = p.dataset.panel !== b.dataset.go; });
-      history.replaceState(null, "", "#" + b.dataset.go);
-    }));
+    $$(".acct-nav button").forEach(b => b.addEventListener("click", () => selectPanel(b.dataset.go)));
+    window.addEventListener("hashchange", () => {
+      const id = location.hash.slice(1);
+      if (M.Session.signedIn() && PANELS.includes(id)) selectPanel(id);
+    });
 
-    me ? paintAccount() : paintAuth();
-
-    const hash = location.hash.slice(1);
-    if (hash && me) document.querySelector(`.acct-nav button[data-go="${hash}"]`)?.click();
+    M.Session.signedIn() ? showAccount() : showAuth();
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
