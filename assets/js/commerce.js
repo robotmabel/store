@@ -109,9 +109,15 @@
     const rec = {
       ref,
       placed: new Date().toISOString(),
-      status: "Quote requested",
+      status: "Received — awaiting payment link",
       email: order.email,
       name: order.name,
+      phone: order.phone || "",
+      org: order.org || "",
+      po: order.po || "",
+      notes: order.notes || "",
+      method: order.method || "standard",
+      pay: order.pay || "card",
       shipping: order.shipping,
       currency: M.currency,
       lines: order.lines.map(l => ({
@@ -164,7 +170,9 @@
       return {
         shopify: "You will be taken to Shopify's secure checkout to pay. Your card details never touch this site.",
         stripe: "You will be taken to Stripe's secure checkout to pay. Your card details never touch this site.",
-        quote: "Card payment is not switched on yet. Your order is recorded and sent to our team, who will confirm stock and email you a payment link within one business day.",
+        quote: window.MABEL.Notify && window.MABEL.Notify.configured()
+          ? "Card payment is not switched on yet. Your order is emailed to our team, who confirm stock and send you a payment link within one business day."
+          : "Card payment is not switched on yet, and neither is order email. Your order is saved in this browser and you will be given a button to send it to us.",
       }[mode()];
     },
   };

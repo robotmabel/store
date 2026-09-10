@@ -156,12 +156,13 @@
         subtotal: totals.subtotal,
         shippingCost: ship,
         total: totals.subtotal + ship,
-        email: form.email, name: form.name,
+        email: form.email, name: form.name, phone: form.phone, org: form.org,
+        po: form.po, notes: form.notes, method: form.method, pay: form.pay,
         shipping: { address1: form.address1, address2: form.address2, city: form.city,
                     region: form.region, postal: form.postal, country: form.country },
       });
       if (res.kind === "redirect") { location.href = res.url; return; }
-      done(res.record);
+      await done(res.record);
     } catch (err) {
       console.error(err);
       btn.removeAttribute("aria-disabled");
@@ -174,24 +175,62 @@
     }
   }
 
-  function done(rec) {
+  async function done(rec, viaProcessor = false) {
     step = 4;
     paintSteps();
+    const first = esc((form.name || "").split(" ")[0] || "");
+    const ref = `<b class="t-num">${esc(rec.ref)}</b>`;
+
+    // Render the confirmation immediately, with the email line pending, then
+    // replace that one line with what actually happened. The order is already
+    // recorded either way — the email is a notification, not the order.
     $("#doneOut").innerHTML = `
       <div class="done-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5"
         stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <h2 class="t-hero center" style="margin:0 0 10px">Thank you, ${esc(form.name.split(" ")[0] || "")}.</h2>
+      <h2 class="t-hero center" style="margin:0 0 10px">Thank you${first ? ", " + first : ""}.</h2>
       <p class="t-sub center" style="margin:0 auto 8px;max-width:520px">
-        Your order reference is <b class="t-num">${esc(rec.ref)}</b>. We have emailed a copy to
-        ${esc(form.email)}.</p>
-      <p class="t-small center" style="max-width:560px;margin:0 auto 30px">${esc(M.Commerce.payNote())}</p>
+        Your order reference is ${ref}.</p>
+      <div id="mailState" class="center" style="max-width:600px;margin:0 auto 26px" aria-live="polite">
+        <p class="t-small">Sending your order&hellip;</p>
+      </div>
       <div class="center" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-        <a class="btn" href="${esc(M.Commerce.quoteMailto(rec))}">Email this order to us</a>
         <a class="btn btn-quiet" href="${h("account.html#orders")}">View your orders</a>
         <a class="btn btn-quiet" href="${h("store.html")}">Keep shopping</a>
       </div>`;
     M.Bag.clear();
     $("#coAside").hidden = true;
+
+    const state = $("#mailState");
+
+    if (viaProcessor) {
+      state.innerHTML = `<p class="t-small">Your receipt has been emailed to you by our payment
+        provider. We have your order and will confirm dispatch.</p>`;
+      return;
+    }
+
+    const r = await M.Notify.send(rec);
+    if (r.ok) {
+      state.innerHTML = `<p class="t-small">We have emailed your order to our team${
+        M.CFG.notify.toCustomer !== false && form.email
+          ? ` and copied you at ${esc(form.email)}` : ""
+      }. We will confirm stock and send a payment link within one business day.</p>`;
+      return;
+    }
+
+    // Nothing was sent. Say so plainly and hand over a one-click way to send it.
+    const why = r.reason === "not-configured"
+      ? "Automatic order email is not switched on for this store yet, so nothing has been sent to us automatically."
+      : `We could not send your order automatically (${esc(r.error || r.reason)}).`;
+    state.innerHTML = `
+      <div class="note-box" style="text-align:left">
+        <b>Your order is saved, but you need to send it.</b>
+        <p style="margin:8px 0 0">${why} Your order is stored in this browser under
+        ${ref} &mdash; press the button below to email it to us, or write to
+        <a href="mailto:${esc(M.CFG.commerce.quoteEmail)}">${esc(M.CFG.commerce.quoteEmail)}</a>
+        quoting that reference.</p>
+      </div>
+      <a class="btn btn-lg" id="sendOrderBtn" style="margin-top:16px"
+         href="${esc(M.Commerce.quoteMailto(rec))}">Email this order to us</a>`;
   }
 
   /* -------------------------------------------------------------- boot --- */
@@ -222,8 +261,9 @@
       return;
     }
 
+    // Returned from Shopify's or Stripe's hosted checkout.
     if (new URLSearchParams(location.search).get("state") === "done") {
-      done({ ref: "MR-" + Date.now().toString(36).toUpperCase().slice(-6) });
+      await done({ ref: "MR-" + Date.now().toString(36).toUpperCase().slice(-6) }, true);
       return;
     }
 

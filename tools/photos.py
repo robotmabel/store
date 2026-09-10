@@ -32,19 +32,25 @@ OUT = f"{ROOT}/assets/img/photos"     # normalised, committed
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36")
 
-# Canvas: square, on the same #f5f5f7 the cards use, with the subject inset so
+# Canvas: square, on the same ground the cards use, with the subject inset so
 # nothing touches an edge. 1200px covers a 2x retina 600px tile.
+#
+# BG MUST TRACK --bg-2 IN assets/css/store.css. The normaliser floods each
+# vendor photo's studio background out to this colour so it sits seamlessly in
+# the tile; if the two drift apart every photo grows a visible box. Re-run
+# `python3 tools/photos.py --fetch --force` after any change here.
 SIZE = 1200
 MARGIN = 0.085
-BG = (245, 245, 247)
+BG = (244, 234, 210)          # --bone / --bg-2
 
 PHOTOS: dict[str, dict] = {}
 
 
-def local(pid: str, path: str, note: str = "", crop: tuple | None = None):
-    """A photograph of the actual item, taken by us."""
+def local(pid: str, path: str, note: str = "", crop: tuple | None = None, wide=False):
+    """A photograph of the actual item, taken by us. `wide` also writes an
+    unsquared <id>-wide.webp for hero use."""
     PHOTOS[pid] = {"kind": "local", "path": os.path.expanduser(path),
-                   "credit": "MABEL Robotics", "note": note, "crop": crop}
+                   "credit": "MABEL Robotics", "note": note, "crop": crop, "wide": wide}
 
 
 def vendor(pid: str, url: str, source: str, credit: str, note: str = "",
@@ -55,7 +61,7 @@ def vendor(pid: str, url: str, source: str, credit: str, note: str = "",
 
 
 # ---------------------------------------------------------------- normalise --
-def normalise(src: str, dst: str, crop=None) -> tuple[int, int]:
+def normalise(src: str, dst: str, crop=None, square=True) -> tuple[int, int]:
     from PIL import Image, ImageChops
 
     im = Image.open(src)
@@ -108,6 +114,13 @@ def normalise(src: str, dst: str, crop=None) -> tuple[int, int]:
         im = im.crop((max(0, box[0] - pad_x), max(0, box[1] - pad_y),
                       min(w, box[2] + pad_x), min(h, box[3] + pad_y)))
 
+    if not square:
+        # Hero use: keep the frame's own aspect ratio. Padding a landscape
+        # photograph out to a square just puts a cream border round it.
+        im.thumbnail((1800, 1800), Image.LANCZOS)
+        im.save(dst, "WEBP", quality=86, method=6)
+        return im.size
+
     # Fit into the square with an even margin.
     inner = int(SIZE * (1 - 2 * MARGIN))
     im.thumbnail((inner, inner), Image.LANCZOS)
@@ -147,7 +160,11 @@ def fetch(only: set[str] | None = None, force=False) -> int:
                     bad += 1
                     continue
             w, h = normalise(raw, out, p.get("crop"))
-            print(f"  ok      {pid:<26} {w}x{h}  [{p['kind']}]")
+            note = ""
+            if p.get("wide"):
+                ww, wh = normalise(raw, f"{OUT}/{pid}-wide.webp", p.get("crop"), square=False)
+                note = f"  + wide {ww}x{wh}"
+            print(f"  ok      {pid:<26} {w}x{h}  [{p['kind']}]{note}")
             ok += 1
         except Exception as e:
             print(f"  FAIL    {pid}: {type(e).__name__} {e}")
@@ -199,10 +216,10 @@ M = "~/Desktop/MABEL/marketing"
 # one frame at full print resolution. Crops are (left, top, right, bottom) as
 # fractions, measured off the frame rather than guessed.
 local("mabel-assembled", f"{M}/hero_photo_1.JPG",
-      "MABEL as built and calibrated, in the lab.")
+      "MABEL as built and calibrated, in the lab.", wide=True)
 local("mabel-kit", f"{M}/working_progress_4.JPG",
       "Part-built, with the subsystem parts still on the bench behind it.",
-      crop=(0.02, 0.06, 0.86, 1.0))
+      crop=(0.02, 0.06, 0.86, 1.0), wide=True)
 local("mabel-arm", f"{M}/working_progress_4.JPG",
       "A single 7-DOF arm, shoulder to hand.", crop=(0.475, 0.24, 0.635, 0.99))
 local("orca-hand-pair", f"{M}/working_progress_4.JPG",

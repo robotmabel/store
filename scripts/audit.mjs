@@ -46,6 +46,7 @@ const PAGES = [
   { path: "/about.html", name: "about" },
   { path: "/support.html", name: "support" },
   { path: "/404.html", name: "notfound" },
+  { path: "/setup.html", name: "setup" },
 ];
 
 const VIEWPORTS = [

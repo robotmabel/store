@@ -35,6 +35,30 @@ window.MABEL_CONFIG = {
     paymentLinks: {},              // { "damiao-dm8009p": "https://buy.stripe.com/..." }
   },
 
+  /* ---- Order email -----------------------------------------------------
+     A static site cannot send mail. If Shopify or Stripe is connected above,
+     THEY send the receipt and your merchant notification and you can leave
+     this blank. Otherwise fill in ONE of these and the browser will POST each
+     order to that service, which emails you. All of them are free at low
+     volume and take a PUBLIC key, which is why they can live in this file.
+
+     Fastest option, about two minutes and no account:
+       1. Go to https://web3forms.com
+       2. Enter the address you want orders sent to, press Create Access Key
+       3. Paste the key they email you into web3formsKey below
+
+     Until one of these is set, the confirmation screen tells the customer that
+     no email was sent and gives them a button to send it themselves. It never
+     claims a message went out that did not. See docs/EMAIL.md. */
+  notify: {
+    provider: "",                  // force one: web3forms | formspree | emailjs | endpoint
+    web3formsKey: "",              // web3forms.com access key  <- easiest
+    formspreeId: "",               // formspree.io form id, e.g. "xdkogqyz"
+    emailjs: { serviceId: "", templateId: "", customerTemplateId: "", publicKey: "" },
+    endpoint: "",                  // or POST the order to your own function
+    toCustomer: true,              // also send the customer a copy
+  },
+
   /* ---- Commerce behaviour --------------------------------------------- */
   commerce: {
     currency: "USD",

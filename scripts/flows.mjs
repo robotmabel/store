@@ -239,6 +239,106 @@ check("an order reference was issued",
 check("bag emptied after ordering", await js(`document.querySelector('[data-bag-count]').textContent`), "0");
 check("order recorded", await js(`JSON.parse(localStorage.getItem('mabel.orders.v1')).length`), 1);
 
+/* ------------------------------------------------------ 5b: order email --- */
+group("Order email");
+
+// (a) Nothing configured: the confirmation must say so and hand over a mailto.
+await go("/store.html", 1600);
+await js(`localStorage.clear()`);
+await go("/store.html", 1600);
+await js(`document.querySelector('[data-add="damiao-dm4340"]').click()`);
+await go("/checkout.html", 1500);
+check("no email provider is configured by default", await js(`MABEL.Notify.configured()`), false);
+await js(`
+  const set=(n,v)=>{const e=document.querySelector('[name="'+n+'"]');e.value=v;e.dispatchEvent(new Event('change',{bubbles:true}))};
+  set('email','jerry@lab.ca'); set('name','Jerry Cheng'); set('address1','128 Sterling Road');
+  set('city','Toronto'); set('region','ON'); set('postal','M6R 2B7');
+  document.querySelector('[data-next="2"]').click()`);
+await sleep(400);
+await js(`document.querySelector('[data-next="3"]').click()`); await sleep(400);
+await js(`document.getElementById('placeBtn').click()`); await sleep(1200);
+check("confirmation reached", await js(`document.querySelector('.co-step.on').dataset.step`), "4");
+check("it does NOT claim an email was sent",
+  await js(`!/we have emailed your order/i.test(document.getElementById('mailState').textContent)`), true);
+check("it says email is not switched on",
+  await js(`/not switched on/i.test(document.getElementById('mailState').textContent)`), true);
+check("a one-click send button is offered",
+  await js(`!!document.getElementById('sendOrderBtn')`), true);
+check("that button carries the reference, the lines and the customer", await js(`(() => {
+  const u = decodeURIComponent(document.getElementById('sendOrderBtn').getAttribute('href'));
+  const ref = document.querySelector('#doneOut .t-num').textContent;
+  return u.includes(ref) && u.includes('MR-ACT-4340') && u.includes('jerry@lab.ca');
+})()`), true);
+
+// (b) A provider configured: the order must actually be POSTed to it.
+await go("/store.html", 1600);
+await js(`localStorage.clear()`);
+await go("/store.html", 1600);
+await js(`document.querySelector('[data-add="damiao-dm4340"]').click()`);
+await go("/checkout.html", 1500);
+await js(`
+  window.__posts = [];
+  MABEL.CFG.notify.provider = "endpoint";
+  MABEL.CFG.notify.endpoint = "https://hook.test.invalid/orders";
+  const real = window.fetch;
+  window.fetch = (url, opts) => {
+    if (String(url).includes("hook.test.invalid")) {
+      window.__posts.push({ url: String(url), body: opts && opts.body });
+      return Promise.resolve(new Response('{"ok":true}', {status:200, headers:{'Content-Type':'application/json'}}));
+    }
+    return real(url, opts);
+  };`);
+check("provider is now detected", await js(`MABEL.Notify.provider()`), "endpoint");
+await js(`
+  const set=(n,v)=>{const e=document.querySelector('[name="'+n+'"]');e.value=v;e.dispatchEvent(new Event('change',{bubbles:true}))};
+  set('email','jerry@lab.ca'); set('name','Jerry Cheng'); set('address1','128 Sterling Road');
+  set('city','Toronto'); set('region','ON'); set('postal','M6R 2B7'); set('notes','Leave with reception');
+  document.querySelector('[data-next="2"]').click()`);
+await sleep(400);
+await js(`document.querySelector('[data-next="3"]').click()`); await sleep(400);
+await js(`document.getElementById('placeBtn').click()`); await sleep(1400);
+check("the order was POSTed to the configured endpoint", await js(`window.__posts.length`), 1);
+check("the payload carries the reference", await js(`
+  JSON.parse(window.__posts[0].body).order.ref === document.querySelector('#doneOut .t-num').textContent`), true);
+check("the payload carries the line items", await js(`
+  JSON.parse(window.__posts[0].body).order.lines[0].sku`), "MR-ACT-4340");
+check("the payload carries the customer", await js(`
+  JSON.parse(window.__posts[0].body).order.email`), "jerry@lab.ca");
+check("the payload carries the order notes", await js(`
+  JSON.parse(window.__posts[0].body).order.notes`), "Leave with reception");
+check("a readable text version is included", await js(`
+  /NEW ORDER/.test(JSON.parse(window.__posts[0].body).text)`), true);
+check("the confirmation now says it was emailed", await js(`
+  /we have emailed your order/i.test(document.getElementById('mailState').textContent)`), true);
+
+// (c) A provider that fails must not claim success.
+await go("/store.html", 1600);
+await js(`localStorage.clear()`);
+await go("/store.html", 1600);
+await js(`document.querySelector('[data-add="damiao-dm4340"]').click()`);
+await go("/checkout.html", 1500);
+await js(`
+  MABEL.CFG.notify.provider = "endpoint";
+  MABEL.CFG.notify.endpoint = "https://hook.test.invalid/orders";
+  const real = window.fetch;
+  window.fetch = (url, opts) => String(url).includes("hook.test.invalid")
+    ? Promise.resolve(new Response('{"message":"bad key"}', {status:401, headers:{'Content-Type':'application/json'}}))
+    : real(url, opts);`);
+await js(`
+  const set=(n,v)=>{const e=document.querySelector('[name="'+n+'"]');e.value=v;e.dispatchEvent(new Event('change',{bubbles:true}))};
+  set('email','jerry@lab.ca'); set('name','Jerry Cheng'); set('address1','128 Sterling Road');
+  set('city','Toronto'); set('region','ON'); set('postal','M6R 2B7');
+  document.querySelector('[data-next="2"]').click()`);
+await sleep(400);
+await js(`document.querySelector('[data-next="3"]').click()`); await sleep(400);
+await js(`document.getElementById('placeBtn').click()`); await sleep(1400);
+check("a failed send is reported, not hidden", await js(`
+  /could not send your order automatically/i.test(document.getElementById('mailState').textContent)`), true);
+check("the error detail is surfaced", await js(`
+  /401|bad key/i.test(document.getElementById('mailState').textContent)`), true);
+check("the send button is still offered after a failure",
+  await js(`!!document.getElementById('sendOrderBtn')`), true);
+
 /* ------------------------------------------------------------------ 6 ---- */
 group("Account");
 await go("/account.html", 1300);

@@ -5,46 +5,61 @@
    ========================================================================== */
 
 /* ------------------------------------------------------------- 1. tokens -- */
-:root {
-  /* Ink. Apple's greys are warm-neutral, never pure black on white. */
-  --ink:        #1d1d1f;
-  --ink-2:      #5f5f66;
-  --ink-3:      #67676f;
-  --ink-inv:    #f5f5f7;
+/* The palette is MABEL's, taken from the project site's assets/mabel.css so the
+   store and the project read as one company. The layout stays as it was — this
+   is a re-colour, not a redesign.
 
-  /* Ground */
-  --bg:         #ffffff;
-  --bg-2:       #f5f5f7;
-  --bg-3:       #ebebed;
-  --bg-dark:    #000000;
-  --surface:    #ffffff;
-  --overlay:    rgba(0,0,0,.48);
+   Two deliberate departures from mabel.css, both for contrast:
+     · Buttons fill with --hi-deep (#B92E17) rather than --hi (#E4442A). White
+       on #E4442A is 3.9:1, under AA for 17px text; on #B92E17 it is 6.1:1.
+       --hi stays as the hover and as the non-text accent.
+     · Secondary ink is a step darker than --ash so it clears AA on --paper as
+       well as on --bone.
+   scripts/audit.mjs checks every one of these against its real painted
+   background, so the palette cannot drift out of compliance unnoticed. */
+:root {
+  /* Ink — MABEL's Gotham night */
+  --ink:        #151820;   /* --ink */
+  --ink-2:      #5C5442;   /* --ash, darkened for AA on --paper */
+  --ink-3:      #665E4A;
+  --ink-inv:    #FDF6E2;
+
+  /* Ground — aged newsprint */
+  --bg:         #FDF6E2;   /* --panel: the white of a comic panel */
+  --bg-2:       #F4EAD2;   /* --bone */
+  --bg-3:       #ECDFBC;   /* --paper */
+  --bg-dark:    #151820;
+  --surface:    #FDF6E2;
+  --overlay:    rgba(21,24,32,.52);
 
   /* Line */
-  --line:       #d2d2d7;
-  --line-soft:  #e8e8ed;
+  --line:       #D6C79F;
+  --line-soft:  #E4D8B4;
 
-  /* Accent — one blue, one green, one amber. Nothing else. */
-  --key:        #0071e3;
-  --key-hover:  #0077ed;
-  --key-press:  #006edb;
-  --link:       #0066cc;
-  --ok:         #0f6537;
-  --warn:       #8f3f00;
-  --danger:     #d40b0b;
+  /* Accent — the highlight, its deep voice, and the one thing that shouts */
+  --key:        #B92E17;   /* --hi-deep: button fill, AA-safe under white */
+  --key-fg:     #FFF9F0;
+  --key-hover:  #C6301A;   /* --rust */
+  --key-press:  #93220F;   /* --rust-dim */
+  --link:       #B92E17;
+  --accent:     #E4442A;   /* --hi: non-text accents, rules, focus */
+  --pop:        #FFCE0A;   /* --pop: at most one thing per screen */
+  --ok:         #226138;
+  --warn:       #8A4B12;
+  --danger:     #93220F;
 
   /* Nav translucency */
-  --nav-bg:     rgba(255,255,255,.72);
-  --nav-line:   rgba(0,0,0,.10);
-  --panel-bg:   rgba(250,250,252,.94);
+  --nav-bg:     rgba(253,246,226,.78);
+  --nav-line:   rgba(21,24,32,.14);
+  --panel-bg:   rgba(253,246,226,.96);
 
   /* Radius */
   --r-sm: 8px;  --r-md: 12px;  --r-lg: 18px;  --r-xl: 28px;  --r-pill: 980px;
 
-  /* Elevation. Apple's shadows are wide and very faint. */
-  --sh-1: 0 2px 8px rgba(0,0,0,.04), 0 1px 2px rgba(0,0,0,.04);
-  --sh-2: 0 8px 28px rgba(0,0,0,.07), 0 2px 6px rgba(0,0,0,.04);
-  --sh-3: 0 18px 60px rgba(0,0,0,.12), 0 4px 12px rgba(0,0,0,.06);
+  /* Elevation — warm, so shadows sit on cream rather than greying it */
+  --sh-1: 0 2px 8px rgba(21,24,32,.05), 0 1px 2px rgba(21,24,32,.04);
+  --sh-2: 0 8px 28px rgba(21,24,32,.09), 0 2px 6px rgba(21,24,32,.05);
+  --sh-3: 0 18px 60px rgba(21,24,32,.16), 0 4px 12px rgba(21,24,32,.08);
 
   /* Motion */
   --ease:   cubic-bezier(.28,.11,.32,1);
@@ -61,32 +76,39 @@
           Helvetica, Arial, sans-serif;
   --font-display: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Inter",
           "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, monospace;
+  --font-mono: "Space Mono", ui-monospace, "SF Mono", SFMono-Regular, Menlo, monospace;
   color-scheme: light;
 }
 
+/* Dark follows mabel.css's dark sections: ink ground, cream text, and the
+   accent flips from red to brass — a red button on a near-black panel
+   disappears, which is the same reason the project site flips to --pop. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --ink: #f5f5f7; --ink-2: #a1a1a6; --ink-3: #86868b; --ink-inv: #1d1d1f;
-    --bg: #000000; --bg-2: #101012; --bg-3: #1c1c1e; --surface: #141416;
-    --line: #38383c; --line-soft: #29292c;
-    --key: #0a84ff; --key-hover: #3d9dff; --link: #2997ff;
-    --nav-bg: rgba(22,22,24,.72); --nav-line: rgba(255,255,255,.12);
-    --panel-bg: rgba(24,24,26,.94); --overlay: rgba(0,0,0,.6);
-    --sh-1: 0 2px 8px rgba(0,0,0,.4); --sh-2: 0 8px 28px rgba(0,0,0,.5);
-    --sh-3: 0 18px 60px rgba(0,0,0,.6);
+    --ink: #FDF6E2; --ink-2: #C3B99D; --ink-3: #A99F87; --ink-inv: #151820;
+    --bg: #151820; --bg-2: #1C2029; --bg-3: #262B36; --surface: #1A1E27;
+    --line: #3A3F4C; --line-soft: #2A2F3A;
+    --key: #FFCE0A; --key-fg: #151820; --key-hover: #FFD838; --key-press: #E0A800;
+    --link: #D9A13F; --accent: #E4442A;
+    --ok: #6BC48C; --warn: #E0A24A; --danger: #F2705A;
+    --nav-bg: rgba(21,24,32,.78); --nav-line: rgba(253,246,226,.16);
+    --panel-bg: rgba(21,24,32,.96); --overlay: rgba(0,0,0,.64);
+    --sh-1: 0 2px 8px rgba(0,0,0,.45); --sh-2: 0 8px 28px rgba(0,0,0,.55);
+    --sh-3: 0 18px 60px rgba(0,0,0,.65);
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --ink: #f5f5f7; --ink-2: #a1a1a6; --ink-3: #86868b; --ink-inv: #1d1d1f;
-  --bg: #000000; --bg-2: #101012; --bg-3: #1c1c1e; --surface: #141416;
-  --line: #38383c; --line-soft: #29292c;
-  --key: #0a84ff; --key-hover: #3d9dff; --link: #2997ff;
-  --nav-bg: rgba(22,22,24,.72); --nav-line: rgba(255,255,255,.12);
-  --panel-bg: rgba(24,24,26,.94); --overlay: rgba(0,0,0,.6);
-  --sh-1: 0 2px 8px rgba(0,0,0,.4); --sh-2: 0 8px 28px rgba(0,0,0,.5);
-  --sh-3: 0 18px 60px rgba(0,0,0,.6);
+  --ink: #FDF6E2; --ink-2: #C3B99D; --ink-3: #A99F87; --ink-inv: #151820;
+  --bg: #151820; --bg-2: #1C2029; --bg-3: #262B36; --surface: #1A1E27;
+  --line: #3A3F4C; --line-soft: #2A2F3A;
+  --key: #FFCE0A; --key-fg: #151820; --key-hover: #FFD838; --key-press: #E0A800;
+  --link: #D9A13F; --accent: #E4442A;
+  --ok: #6BC48C; --warn: #E0A24A; --danger: #F2705A;
+  --nav-bg: rgba(21,24,32,.78); --nav-line: rgba(253,246,226,.16);
+  --panel-bg: rgba(21,24,32,.96); --overlay: rgba(0,0,0,.64);
+  --sh-1: 0 2px 8px rgba(0,0,0,.45); --sh-2: 0 8px 28px rgba(0,0,0,.55);
+  --sh-3: 0 18px 60px rgba(0,0,0,.65);
   color-scheme: dark;
 }
 
@@ -173,7 +195,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); margin: 0; font-weight: 600; 
 
 /* ------------------------------------------------------------ 5. buttons -- */
 .btn {
-  --btn-bg: var(--key); --btn-fg: #fff;
+  --btn-bg: var(--key); --btn-fg: var(--key-fg);
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   min-height: 44px; padding: 11px 22px;
   font-size: 17px; font-weight: 400; letter-spacing: -.01em; line-height: 1.2;
@@ -256,7 +278,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); margin: 0; font-weight: 600; 
 .nav-icon svg { width: 17px; height: 17px; }
 .nav-count {
   position: absolute; top: 7px; right: 5px; min-width: 16px; height: 16px;
-  padding: 0 4px; border-radius: 8px; background: var(--key); color: #fff;
+  padding: 0 4px; border-radius: 8px; background: var(--key); color: var(--key-fg);
   font-size: 10px; font-weight: 600; line-height: 16px; text-align: center;
   font-variant-numeric: tabular-nums;
   transform: scale(0); transition: transform var(--t) var(--ease-out);
@@ -368,6 +390,11 @@ h1, h2, h3, h4 { font-family: var(--font-display); margin: 0; font-weight: 600; 
   display: grid; place-items: center;
 }
 .card-art img, .card-art svg { width: 100%; height: 100%; object-fit: contain; }
+/* Photographs are baked onto --bone. On the dark theme the tile is ink, so the
+   photo becomes a deliberate light card rather than a stray pale rectangle. */
+.card-art img[src*="/photos/"], .pdp-stage img[src*="/photos/"],
+.li-art img[src*="/photos/"], .split-art img[src*="/photos/"] { background: #F4EAD2; border-radius: 14px; }
+.hero-art img, .split-art img[src*="-wide"] { background: none; }
 .card-brand { font-size: 11px; color: var(--ink-3); letter-spacing: .01em; }
 .card-name {
   font-family: var(--font-display); font-size: 17px; font-weight: 600;
@@ -412,13 +439,13 @@ h1, h2, h3, h4 { font-family: var(--font-display); margin: 0; font-weight: 600; 
 .sel {
   appearance: none; -webkit-appearance: none;
   padding: 9px 34px 9px 14px; border: 1px solid var(--line); border-radius: var(--r-pill);
-  background: var(--bg) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='11' height='7'><path d='M1 1l4.5 4.5L10 1' fill='none' stroke='%2367676f' stroke-width='1.6' stroke-linecap='round'/></svg>") no-repeat right 13px center;
+  background: var(--bg) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='11' height='7'><path d='M1 1l4.5 4.5L10 1' fill='none' stroke='%235C5442' stroke-width='1.6' stroke-linecap='round'/></svg>") no-repeat right 13px center;
   font-size: 14px; cursor: pointer;
 }
 .search-in {
   flex: 1; min-width: 200px; max-width: 340px;
   padding: 10px 16px 10px 38px; border: 1px solid var(--line); border-radius: var(--r-pill);
-  background: var(--bg) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 16 16'><circle cx='7' cy='7' r='5' fill='none' stroke='%2367676f' stroke-width='1.7'/><path d='M11 11l4 4' stroke='%2367676f' stroke-width='1.7' stroke-linecap='round'/></svg>") no-repeat left 14px center;
+  background: var(--bg) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 16 16'><circle cx='7' cy='7' r='5' fill='none' stroke='%235C5442' stroke-width='1.7'/><path d='M11 11l4 4' stroke='%235C5442' stroke-width='1.7' stroke-linecap='round'/></svg>") no-repeat left 14px center;
   font-size: 15px;
 }
 .empty { padding: 70px 20px; text-align: center; color: var(--ink-2); }
@@ -557,7 +584,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); margin: 0; font-weight: 600; 
 }
 .steps li[aria-current="step"] { color: var(--ink); font-weight: 600; }
 .steps li[aria-current="step"] b { background: var(--ink); color: var(--bg); }
-.steps li.done b { background: var(--ok); color: #fff; }
+.steps li.done b { background: var(--ok); color: var(--bg); }
 .steps li.done { color: var(--ink-2); }
 
 .co-step { display: none; }
@@ -579,7 +606,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); margin: 0; font-weight: 600; 
 .field input[aria-invalid="true"] { border-color: var(--danger); }
 .field .err { font-size: 12px; color: var(--danger); min-height: 15px; }
 .field select { appearance: none; -webkit-appearance: none;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='11' height='7'><path d='M1 1l4.5 4.5L10 1' fill='none' stroke='%2367676f' stroke-width='1.6' stroke-linecap='round'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='11' height='7'><path d='M1 1l4.5 4.5L10 1' fill='none' stroke='%235C5442' stroke-width='1.6' stroke-linecap='round'/></svg>");
   background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
 
 .pay-opts { display: grid; gap: 12px; margin-top: 24px; }
@@ -606,7 +633,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); margin: 0; font-weight: 600; 
   background: var(--ok); display: grid; place-items: center;
   animation: pop .5s var(--ease-out) both;
 }
-.done-mark svg { width: 34px; height: 34px; color: #fff; }
+.done-mark svg { width: 34px; height: 34px; color: var(--bg); }
 
 /* --------------------------------------------------------- 16. account -- */
 .auth { max-width: 400px; margin: 0 auto; padding: clamp(40px, 7vw, 90px) 0; }
