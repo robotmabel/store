@@ -175,6 +175,21 @@ const AUDIT = String.raw`(() => {
       (worst ? " — widest offender reaches " + Math.round(worstW) + "px" : ""), worst ? path(worst) : "");
   }
 
+  /* ---- content clipped by an overflow-hidden ancestor ----
+     A scrollWidth check on the document cannot see this: the content really is
+     too wide, but a clipping ancestor swallows it, so nothing scrolls and the
+     page looks fine to the check while the words are cut off on screen. */
+  document.querySelectorAll("body *").forEach(el => {
+    const cs = getComputedStyle(el);
+    if (cs.overflowX !== "hidden" && cs.overflowX !== "clip") return;
+    // Screen-reader-only text is a 1px clipping box on purpose — that is the
+    // pattern, not a defect.
+    if (el.clientWidth < 8 || el.clientHeight < 8) return;
+    if (el.scrollWidth > el.clientWidth + 2)
+      E("clipped", "Content is wider than its clipping box and is being cut off: " +
+        el.scrollWidth + "px of content in " + el.clientWidth + "px", path(el));
+  });
+
   /* ---- tap targets ---- */
   const small = [], tight = [];
   document.querySelectorAll('a[href],button,input:not([type="hidden"]),select,textarea,[role="button"]').forEach(el => {

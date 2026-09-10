@@ -330,6 +330,60 @@ h1, h2, h3, h4 { font-family: var(--font-display); margin: 0; font-weight: 600; 
 .foot-grid a:hover { color: var(--ink); }
 .foot-end { display: flex; flex-wrap: wrap; gap: 8px 20px; padding-top: 16px; align-items: center; }
 
+/* ------------------------------------------------------- 9. cover hero -- */
+/* The robot photograph sits behind the words rather than beside them. The
+   section paints an ink ground FIRST and the photograph is a dimmed layer on
+   top of it, so if the image never loads the type is still on a dark field and
+   still readable — and the contrast checker measures the ground it is really
+   painted on rather than guessing at an image. */
+.hero-cover {
+  position: relative;
+  isolation: isolate;
+  background: var(--bg-dark);
+  color: var(--ink-inv);
+  min-height: min(88vh, 820px);
+  display: grid;
+  align-items: center;
+  justify-items: stretch;
+  text-align: center;
+  overflow: hidden;
+  padding: clamp(72px, 12vh, 140px) 0;
+}
+.hero-bg {
+  position: absolute; inset: 0; z-index: -2;
+  background: url("../img/photos/mabel-assembled-wide.webp") center 42% / cover no-repeat;
+  opacity: .42;
+  /* No bleed. Both transform: scale() and negative insets enlarge the layer,
+     and an oversized absolute child still counts toward its container's
+     scrollable overflow — which pushed the page wider than the viewport.
+     background-size: cover already fills the box. */
+}
+/* A vignette, heavier top and bottom, so the headline and the buttons both sit
+   on the darkest part of the frame rather than on the robot's white torso. */
+.hero-cover::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(21,24,32,.86) 0%, rgba(21,24,32,.44) 34%,
+                            rgba(21,24,32,.52) 66%, rgba(21,24,32,.90) 100%),
+    radial-gradient(120% 78% at 50% 46%, rgba(21,24,32,0) 30%, rgba(21,24,32,.62) 100%);
+}
+.hero-cover-in { position: relative; z-index: 1; width: 100%; }
+.hero-cover .t-eyebrow { color: var(--pop); }
+.hero-cover .t-sub { color: #E8DFC6; max-width: 660px; margin: 16px auto 0; }
+.hero-cover .t-display { text-shadow: 0 2px 30px rgba(21,24,32,.55); }
+/* On ink, a red button disappears — mabel.css flips the primary to --pop for
+   exactly this reason, so the cover does the same. */
+.hero-cover .btn { --btn-bg: var(--pop); --btn-fg: var(--ink); }
+.hero-cover .btn:hover { --btn-bg: #FFD838; }
+.hero-cover .btn-ghost {
+  --btn-bg: transparent; --btn-fg: var(--ink-inv); border-color: rgba(253,246,226,.55);
+}
+.hero-cover .btn-ghost:hover { --btn-bg: rgba(253,246,226,.14); --btn-fg: var(--ink-inv); }
+@media (max-width: 760px) {
+  .hero-cover { min-height: min(80vh, 620px); padding: 64px 0; }
+  .hero-bg { background-position: center 38%; opacity: .38; }
+}
+
 /* --------------------------------------------------------------- 9. hero -- */
 .hero { text-align: center; padding: clamp(44px, 6vw, 72px) 0 0; }
 .hero .t-sub { max-width: 660px; margin: 14px auto 0; }
